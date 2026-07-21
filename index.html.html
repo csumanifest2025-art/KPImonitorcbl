@@ -1,0 +1,2789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consolbase Customer Service — KPI Dashboard</title>
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22Consolbase%20Customer%20Service%20%5Cu2014%20KPI%20Dashboard%22%2C%20%22short_name%22%3A%20%22Consolbase%20KPI%22%2C%20%22description%22%3A%20%22Client%20status-reporting%20KPI%20dashboard%20and%20report%20log%20for%20Consolbase%20Customer%20Service.%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22scope%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%231E3D2E%22%2C%20%22theme_color%22%3A%20%22%231E3D2E%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAALEklEQVR4nO3dW2wcVxkH8P%2BZ3eyuvU6ydmzHTmw3zhUKiVQ3oUlLJBBtKh4KFBAP0BYiJC5SC6JIXKQIVAmJCHhBVQUvXEpAICRQVUpLEKkCQaRQkgiTQJpUabAdO3Ycx44de%2B3dmcPDxKnj%2BrKXc3Zm9vv/pLw06uxk9/vPd%2BbMmRmFkOnYu0MHvQ9kT8%2BxbhX0PswV6M6w2AkINhQV/2AWPS2l0mGo2Iex8KkYlQqC9Q9h4VM5bAfB2sZZ%2BGSSrSAY3ygLn2wyHQTH5MZY/GSb6RozkiYWPgXBRDcouwOw%2BCkoJmqvrACw%2BClo5dZgyQFg8VNYlFOLJQWAxU9hU2pNFh0AFj%2BFVSm1WVQAWPwUdsXWaMEBYPFTVBRTqwUFgMVPUVNozS4bABY/RVUhtWt0KQRR1CwZAB79KeqWq%2BFFA8Dip2qxVC1zCESiLRgAHv2p2ixW0%2BwAJNpbAsCjP1WrhWqbHYBEuy0APPpTtZtf4%2BwAJNqtAPDoT1LMrXV2ABKNASDRHIDDH5JntubZAUg0BoBEYwBINAaARFM8ASbJ2AFINAaARGMASDQGgERjAEg0BoBEYwBINAaARGMASDQGgERjAEg0BoBEYwBINAaARGMASDQGgERjAEg0BoBEiwe9A1K1pjQ21gJrkxpNSaA5qdGcANJxIOVoJBwgFQMSDuBqYMYDch4w4SqM5oCxHHBlWuFSFriUVfjfpMLgdND/quhhACogpoDtqzS6VmtsrfP/rCzim48rIB4DEANWr9BYn5r9m9tv5x7LAedvKPxnXOHkqMLZCQWXd3wviTfFW5J0gHsbNPY0eNiV0agL4FAz6QInRxWOXXXwyjWFSbfy%2BxB2DIBh61MaD7VoPNjsBVL0i8l5wPFrCi8OOjg5qsAf3ccAGLIlrbH/Dg87Mxoq6J1ZxuC0wnMDCr8fdDAlvCswAGVqSWns7/Dw3sbwF/58E3ngRz0OXrgsdzIwRE06WhwFfLzNwyfaPMSjVvk31cWBXRmNFy4HvSfBYQBKsD6l8bUtHt62ks0z6hiAIt3fpPHFjS5SsaD3hExgAIrwWLuHR9u9oHeDDGIAChBXwJObXTzQxCFPtWEAluEo4MA2F/c1sPirkdz5rwIoAF/e5LH4qxgDsITPbvCwr5lj/mrGIdAi9jV7%2BMi6yhZ/75TC6esK5yaA/qzCwDRwI6%2BQ9YC89tcXJRwgHfNXkDYm/CnZTWmNTWl/ZSkVhwFYQHuNxhOdlSn%2BS1mFPw4pHLmiMDi99BW1Kdf/M5ZT6M/O/tc3/5%2BmBNCV8XB3RmN3vUYNp2qXxQDMk3CAA9s86/P8vVMKh3odHB02tzDtygxweMjB4SG/W%2Bxp0HigycOu%2Bugt06gUBmCeR9o8bKy1N5TIa%2BBXfQ5%2B0ecgb3HEMu0BR4cVjg7H0Faj8XCrv0I1ybO%2B2/DrmKMlpfFRi%2BP%2BkRngS6djeLbXbvHP1zel8PQFB4%2BdiOP5y5X97LBjAOb43AYPKyx9IxcnFR7vjuPseHCDkZEc8PQFB586GcNfr3JQBHAIdMs7V2lr8/39WYWvnolhJGdl80UbnFZ46rUYdmU07srIbgcMwE0fszT0Gc8DXznjhKb453p1VOHVUdmdgEMg%2BHPpuy0c/TWAg%2Bdjy05vUnAYAAAfXmdnmvB3lx384xqLP8zEByCugPc1mR/%2BjOaAn/SI/3pDT/wv1JXRSFu46HWo18FE3vx2ySzxAXi3hbH/SA74w5D4rzYSRP9KjgLubTA//Hl%2BwMEMF5FGgugAbKrVWL3C7DY1gD9dEf21RoroX8rGUx1OX%2BdDaqNEdgDqzAfg75z2jBTRAXj7SvPbPDXGAESJ2ADEFdBWY7YDTLnA%2BQkGIErEBqA5af7q78VJPnU5asQGYG3S/DbfmOTRP2oEB8D8sfrN%2B3QpKsQGoNFCBxieYQeIGrEBqLHwLx%2BZMb9NsktsAGw89WFC%2BNtWokhsABIW/uU5rv%2BJHLEBSDrmT4K5AC56xAaACBAcgBnP/IyNjWEV2SX2J5u2MFyx9UwhskfsT5a1MGNj49ZKsktuACx0gDUJ89sku8QGYNjCRas1CS6FixqxARjMmj8Jbk0Z3yRZJjcAFm5b7LT4WHWyQ2wAhmbMr93vrOWLKKJGbABynv/UZpNqY8DmNLtAlIgNAAD8d9z8NruEP248aoQHwPyA5V31DECUyA6AhRvYt6/yX2FK0SA6ABduKFw3/ABbBeB%2BC0%2BbJjtEB8DVwPER81/Bh1rsvWuMzBL/M9l4WVxDAniwmV0gCsQH4MSYwqSFhXGPtntcHBcB4gOQ84AjFp7m3LAC2N/BLhB24gMAAL8dsPNEtw%2B0etjJ6wKhxgDAf5O6jZfZKQBf3%2BqimdOiocUA3PTrS3a%2BilVx4OCdLjKGX8Rhws6Mxmc2yB6mMQA3dV9XOD5iZylbe43Gd97hhuaGmbVJjW9sc/HtO12sT8keojEAc/zwooO8pXrorNV4ZkceWy28lKNQDSuAxzs9/LTLxd41sgt/FgMwR39W4Tf99r6SNQng%2B9tdPNLmIV7BddNtNRpPbPTws7vz%2BGBrZT877OJB70DYHOp1cE%2B9xgZLN7fEFfDJDg/vadQ41OfgL8N2ZqCSDrC7QWNfk4dd9bxPYTEMwDzTHvCtcw6e2eEiabE/3lGrcWCri752hcNDCi8POxgq8y61pgRwV8afer2nXqOWF%2BKWpTr27uBgcAHvX%2BvhyU2VnSHpmVLovq5wfsIfjg1kgUlXIesBeQ9Ixvwjezqm0ZgAmpLAupTGprTG5nRp7zz424jCN8/KTQo7wCJeGnTQWQs83Fq5EHTUaHTUaGBtxT5SPJ4EL%2BEHbzg4coWj52rGACxBA/ju6zG8Yun6AAWPAViGq4GnXovh5WGGoBoxAAXIa%2BDguRh%2B2cevq9rwFy2QBvDjHgffe92x8mRpCgYDUKTDQw4%2B/68YzvGN8FWBAShB75TCF/4dw8977a0dospgAErkauDZXgefPhXDny0tZ7BtIg/8c1R2J%2BOVYEO21Wns7/DQlQn/upvBaeC5AQcvDjpW7oeOEgbAsPYajYdaNPY1h%2Bum%2BJwHHL%2Bm8NKggxOj0exYNjAAliQd4L4GjT0N/mrMIMIw5QInxxSOXXVwfMTO0y%2BijgGogLjyH5nYldHYVqexJa1RZ2EV1ngeODehcGZc4dSYwtlxxZP0ZXAxXAXkNXBqzC/KWetSGhvTQEvSf5Zoc0KjMQmsjAMJRyPl%2BK9dTTj%2BCXfOA3IamMgrjOaA0RwwPKNwacpfOXpxCrhs4a031Y4BCEh/VqE/CyD0p8zVjdOgJBoDQKIxACQaA0CiMQAkGgNAojEAJBoDQKIxACQaA0CiMQAkGgNAojEAJBoDQKIxACQaA0CiMQAkGgNAojk9x7p5Tx6J1HOsW7EDkGgMAInGAJBoDACJ5gD%2ByUDQO0JUSbM1zw5AojEAJNqtAHAYRFLMrXV2ABLttgCwC1C1m1/j7AAk2lsCwC5A1Wqh2mYHINEWDAC7AFWbxWqaHYBEWzQA7AJULZaq5SU7AENAUbdcDXMIRKItGwB2AYqqQmq3oA7AEFDUFFqzBQ%2BBGAKKimJqtahzAIaAwq7YGi36JJghoLAqpTZLmgViCChsSq3JkqdBGQIKi3JqsazrAAwBBa3cGiz7QhhDQEExUXtGi7dj7w5tcntECzF50DW6FILdgGwzXWPWCpbdgEyydXC1fsRmEKgctkcVFRuyMAhUjEoNpys%2BZmcQaCmVPo8M9KSVYSAg2MmT0M3aMBTVLWwzhf8HMt5OdJGQyl0AAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22192x192%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAg%2BklEQVR4nO3debCd913f8c9zzr1Xy9VubbYlJ5btOHYSG2yaOIF0spAQIKalbUgxLYUObaEtCZMwBTqUQss0hK0Uhk4YhqZhSYGBhGaBEtKQhazFJHYSvMZxHNmWZUmWrF33nvP0j2slSiLLWu65z/J7vWY08uSPzO88V/d838/vec5zqtBKl73wurrpNQAshgc%2BdHvV9Br4Wn4oDTHgARYIhGY46EvAsAc4N6Jg8hzgCTDwARaXIFh8DugiMPABlpYguHAO4Hky9AHaQQycHwftHBj6AO0mBs6eA/UUDH2AbhIDZ%2BbgPAmDH6AfhMDpOSinMPQB%2Bk0MfJkDEYMfoDRCoPAAMPgBylZyCBT5wg1%2BAE5VYggU9YINfgDOpKQQKOKFGvwAnIsSQmDQ9AImzfAH4FyVMDt6Wzgl/PAAmLy%2B7gb07kUZ/ABMQt9CoFeXAAx/ACalbzOmFzXTtx8KAO3Wh92Azu8AGP4ALLU%2BzJ5OB0AffgAAdFPXZ1AntzC6ftAB6JcuXhLo3A6A4Q9A23RxNnUqALp4gAEoQ9dmVCe2LLp2UAEoWxcuCbR%2BB8DwB6BrujC7Wh0AXTiAAHA6bZ9hrQ2Ath84AHgqbZ5lrQyANh8wADgXbZ1prQuAth4oADhfbZxtrQqANh4gAFgMbZtxrQmAth0YAFhsbZp1rQiANh0QAJiktsy8xgOgLQcCAJZKG2ZfowHQhgMAAE1oegY2FgBNv3AAaFqTs7CRADD8AWBBUzNxyQPA8AeAr9TEbFzSADD8AeD0lnpGLlkAGP4AcGZLOSuXJAAMfwA4O0s1Mxt/DgAAsPQmHgDO/gHg3CzF7JxoABj%2BAHB%2BJj1DJxYAhj8AXJhJzlL3AABAgSYSAM7%2BAWBxTGqmLnoAGP4AsLgmMVsXNQAMfwCYjMWese4BAIACLVoAOPsHgMlazFm7KAFg%2BAPA0lismesSAAAU6IIDwNk/ACytxZi9dgAAoEAXFADO/gGgGRc6g887AAx/AGjWhcxilwAAoEDnFQDO/gGgHc53JtsBAIACnXMAOPsHgHY5n9lsBwAACnROAeDsHwDa6VxntB0AACjQWQeAs38AaLdzmdV2AACgQGcVAM7%2BAaAbznZm2wEAgAIJAAAo0FMGgO1/AOiWs5nddgAAoEBnDABn/wDQTU81w%2B0AAECBBAAAFOhJA8D2PwB025lmuR0AACiQAACAAp02AGz/A0A/PNlMtwMAAAUSAABQoK8JANv/ANAvp5vtdgAAoEACAAAKJAAAoEBfEQCu/wNAP331jLcDAAAFEgAAUCABAAAF%2BlIAuP4PAP126qy3AwAABRIAAFAgAQAABRIAAFCgQeIGQAAoxcmZbwcAAAokAACgQAIAAAokAACgQAIAAAokAACgQAIAAApUeQYAAJTHDgAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFGiq6QUA7VAlWTWVbJips3462TC98N/rppPZqWR2WGflMF/xZ3pQZ6pKpqpk8MTfU1VSVcmJcTI3Tk7UC3/PjatT/js5NJ88Nldl/1zy2Fyy/4n/3v/Efx%2BYT8Z100cF%2BksAQEGmqmTbijqXLE8uXr7w99ZlC39vWVZnehH3BJcNFv582emm%2BZNP%2BPk6efhYlQePJjuPVdn5pb%2Br7D2xeOuEUgkA6KkN08mVq%2BpcvvKJP7PJZSsWzti7YKpKtq%2Bos31F8tWhcGyUfPFYlXsPVbnjUHLXwSr3H63sGMA5qC574XV%2BZaDjhlWyY7bOtasX/jxr9cIZfUmOjZJ7Dle561CVOw9VufNglUeON70qaC87ANBRT19Z5xvW1blxXZ3nrKm/aru9PMuHyXPWLByLkx4%2BVuXW/VX%2Ben%2BVTx6ocmTU4AKhZewAQEesGCbPXV/nuevGuXFdnYtmml5Rt4zq5I6DCzFw6/6FnQJvfpRMAECLzQ6T52%2Bo88KLxvmGdXVmCj/LX0yPzycf3jvI%2B/dU%2BdTj7h%2BgPAIAWmaqSl6woc7LNy%2Bc6Xflpr0u2z%2BXfPCJGPjM43YGKIMAgJbYMVvnFZvrvHTTOGvcndOYPScWYuB9jy5cJoC%2BEgDQoKkqefHGOt958ThXrfKr2Db3Hq7yzl1V3rdnkGNuIKRnBAA0YO10cvOWcW6%2BeJwN002vhqdyeJT8xe5B3vVIlS8csStAPwgAWEJbliXfvW2cl20au6Gvo25/vMo7dw3yV3urzHv3pMNcaYQlsPmJwf%2BKzWM39XXcdWvqXLdmlN3Hkz94cJD/s3uQE%2BOmVwXnzg4ATNDGmeSWbeN86xaDv6/2zSV/9OAg73pkkKPuE6BDBABMwLJB8qpLxnn1peMsHza9GpbCwfnkbQ8P8icPD3JovunVwFMTALDIXryxzg88bZTNy5peCU04Mkp%2B/fPDvGe3LR/azT0AsEievrLOj1wxzrNWa%2BqSrRwm16yuBQCtJwDgAk1VCzf43bLNdX6gOwQAXIBrVtd53RXjPH2ls36gWwQAnIepKvm%2By8b5rkvHcdIPdJEAgHN0yfI6P/GMcZ7p0b1AhwkAOAcv3VTnNTtGWemjfUDHCQA4C9OD5DU7Fp7kB9AHAgCewkUzyU9fPcozfbwP6BEBAGfwzNV1fubqUTbMNL0SgMUlAOBJfPOmOq%2B7YpRp39oH9JAAgNN49aXj/MDTXO8H%2BksAwCmqJD94%2BTj/4GLDH%2Bg3AQBPmKqSf3fVKC/e6GY/oP8EAGRh%2BP/0M0d53nrDHyiD25so3lSV/EfDHyiMAKBoU1XyU1ePcpPhDxRGAFCsYZX85NWjPH%2BD4Q%2BURwBQrNddMc43Gv5AoQQARfr%2By8Z5uef6AwUTABTnlVvGuWWb4Q%2BUTQBQlJvW1/nhHYY/gACgGNtX1PmJZ4wyqJpeCUDzBABFWDlMfuaZ46wcNr0SgHbwJEB6r0ryY1eNsn2FO/4Xy/655ItHqzx4rMqeE8ne48meE1UOzieHR8nB%2BSrHx8l8ncyPk1G98LHLYbXw7IWpQbJyWGd2mMxOJbPDZMN0nQ0zyYaZ5KKZOpcsT7YuqzPjNAUmQgDQe7dsG%2BcFPu533nYdq3LHoeTuQ1XuOlTl80eqHJo/9/%2Bf%2BXrhz/EkGSUH5r76WszXXpupkmycSS5dUWfHyjo7ZpMdK%2Bs8fWXta5rhAgkAeu1Zq%2Bt873Y3/Z2LI6PkE49VuXV/lU8eGOSR482tpU7y6Ink0RNVPnXgy4EwVSVXrqpz7ao6166uc93aOuunm1sndJEAoLdWDpMfv2rspr%2BzcGSUfGDPIB/aW%2BWTB6rMt3zDZL5O7jxY5c6DVd728MJOweUr69ywrs7Xr134Y4cAzkwA0Fv/5vJRti5v%2BSRr2O2PV/nTRwb5q70L1%2By7qk5y35Eq9x2p8kcPJSuGyd9ZV%2BcFG8Z53vo6q7zTwdfwa0Ev/d2L6rx8s%2BF/OvN18v49Vf74oUHuPdzP7ZGjo%2BSDe6t8cO8w04PkuevqvHTTODettzMAJwkAemfNVPKaHaOml9E64zp576OD/M7OKruO9XPwn87cOPnwviof3jfM7DB56aZxvn3rwk2FUDIBQO/8q6ePs9YNYV/h449VedP9g%2Bw8Ws7gP53Do%2BQduwZ5x67kmtV1XrllnJdsqjNV9mGhUAKAXrl%2Bbe1Lfk7x0LEqv/75QT7xmAn31e44WOWOg8P81heSv3fxOK/cOs4a74gUxD93emN6kLzWc/6TLNwU97aHBnnzA4NO39y3FPbNJW9%2BYJC37hzkW7eM8%2BpLx9k40/SqYPIEAL3xqkvGnvaXZPfx5L/cPcxnDzrrPxfHx8mfPDzIux8Z5BWbx/nHl46zeVnTq4LJEQD0wrrp5NWXOtX92L4qP3/vMAfP40l9LJgbJ%2B/cNcifPTLIzVvH%2BZ5t7imhnwQAvfC928v%2Bop86yW8/MMjv7RzEHsjimK%2BTtz88yJ/vHuRVl4zzDy8ZZ0XB/8boH5%2BIpfO2r6jzbVvKPfs/Pk5%2B9q5hftfwn4gjo%2BQtXxzk%2B/5mKu/ZXTnG9IYAoPN%2B4GnjDAu93H14lPzYZ4f54N5CD8AS2jeX/MK9w7zm08PcecjxpvsEAJ125Wxd7Df9HZhLXv8ZN/sttTsPVnnN7cP88ucG5/WtiNAWAoBOu2VbmVv/B%2BaS1392mM/19FG%2BbVcn%2BbNHBvn%2BT07lfXv8DOgmAUBnXbaizjddVN7Z/%2BFR8hN/O8wXjhg8Tds/l7zh7mF%2B/G%2BHjX5tMpwPAUBn3bJtnNJG4Nw4%2BQ93DHOPM/9WuXV/lX/5qam8%2BxFvqXSHjwHSSVuWJS/aWN7Z/y99bphPP274t9GRUfIrnxvkQ3urPGNVef826R4BQCfdvLW8O/9/d%2Bcg//fRwl50B926v8qt%2B/2caD/7VXTO9CB5RWFf%2BPP/9lf57Qf8ugKLxzsKnfOii%2BqiHs366InkjfcMPYAGWFQCgM75jq3lnP3XWbjL/MBc0ysB%2BkYA0Ck7Zus8c3U558Jve2jgpj9gIgQAnfKyTeUM/51Hq7zZdX9gQry70BlVkhdtLGf7/1fvG%2BR4OS8XWGICgM64fm2djTNNr2JpfGBPlU8esPUPTI4AoDNeWsj2//Fx8qb7ffE8MFkCgE6YqpJv2lDGfvifPDzInhNNrwLoOwFAJzxnTZ1VBTy38tB88vsP%2BrUEJs87DZ1w04Yytv//6CHfMQ8sDQFAJ9y0vv8BcHSU/O9dfiWBpeHdhtbbvqLOJcv7HwDvfsTZP7B0BACt97wCzv7rJG9/2K8jsHS849B6X7e2/wHw8ceq7D7e9CqAkggAWq1K8uw1/Q%2BAd7n2Dywx7zq02hWzdWZ7/kycvSeSTzzmqX/A0hIAtNp1BZz9v3/PIP1/lUDbCABa7boCrv%2B/b4%2Bzf2DpCQBa7ZpV/Q6AXceq3H1IAABLTwDQWuunkw09//a/j7r2DzREANBaV/X87D9JPrZPAADNEAC01hWz/Q6Ao6Pk9scFANAMAUBrXdXzAPjMwSrz/X6JQIsJAFrritmmVzBZtx1w9g80RwDQSlNVsnVZv0%2BPb7P9DzRIANBKFy%2BvM%2BjxfJwbJ/f6%2BB/QIAFAK21b0fQKJuu%2BI67/A80SALTStuX9no53OfsHGiYAaKVLe74DcO/hplcAlE4A0Ep9vwHwgSN2AIBmCQBa6aKePwL4C0cFANAsAUArbZzp7w7AvhPJofmmVwGUTgDQOjODZNVU06uYnIePO/sHmicAaJ0%2Bn/0nya5jTa8AQADQQn3/CuDddgCAFhAAtM7aHm//J8nu402vAEAA0EKzPQ%2BAx%2BbsAADNEwC0zuyw3/cA7J9regUAAoAW6v8OQNMrABAAtNDssOkVTNbj8y4BAM0TALRO3wPg6KjpFQAIAFpoWY/vATgxTkb9fXlAhwgAWmeqxzvkzv6BthAAtM6wxwFwYtz0CgAWCABap887AKO6xy8O6BQBQOv0eQfAFQCgLQQArdPvHYCmVwCwQADAEqoFANASAoDW6fNZcp8vbwDdIgBonXkBADBxAoDW6XcA9PjFAZ0iAGidPl8CmPEbB7SEtyNap88BsKLn33MAdIcAoHWOj/t7oXzZIBn09%2BUBHSIAaJ3D802vYLJW%2BK0DWsBbEa1zuOePy1sz3eNrHEBnCABap%2B87AOumm14BgACghfq%2BAyAAgDYQALTO4VG/75Jb7xIA0AICgNY5MNf0CiZr07KmVwAgAGihfSeaXsFkbV1mBwBongCgdfac6PclgC12AIAWEAC0zvFxcqTHNwJuXW4HAGieAKCV9vZ4F2DTTLLSI4GBhgkAWmlvz%2B8DuGylXQCgWQKAVnr4WH93AJLkaSsEANAsAUArPXis6RVM1pWzTa8AKJ0AoJV2Hu33DsDVq%2BwAAM0SALRS33cArpitM%2Bx34wAtJwBopQePVenzOfLMYCECAJoiAGiluXHySM9vBLx%2BjQAAmiMAaK37jjS9gsm6fq0AAJojAGitew73ewfgOWvcBwA0RwDQWvce6vd0XDlMnu0yANAQAUBr3dvzHYAkef56AQA0QwDQWntOJI/NNb2KyXr%2BBgEANEMA0Gp3Hez3LsAly%2Btc6eOAQAMEAK12%2B%2BP9DoAkeckmAQAsPQFAq5UQAC/aOE7/XyXQNgKAVrvncJUjo6ZXMVmbZpIb19kFAJaWAKDVxnXy2Z7fB5AkN28dN70EoDACgNa77UD/A%2BCm9XU2zTS9CqAkAoDW%2B/hj/Q%2BAQZX8/YvtAgBLRwDQevcfqbKr518MlCSv3DrO7LDpVQClEAB0Qgm7ACuHyXfYBQCWiACgEz5aQAAkyasusQsALA0BQCfcdqD/HwdMktVTyasvtQsATJ4AoBPm6%2BSv9paxC/CdF4%2BzwScCgAkTAHTG%2B/aU8c91%2BTD5wacXsN0BNKqMd1R64ZMHquzr%2BbcDnvTijXWuX%2BvpgMDkCAA6Y1wn7y9kFyBJXrtjnJlyXi6wxLy90Cnv3V3GfQBJsn1Fne%2B7zA2BwGQIADrlnsNV7j5UTgT8o0vGedZqlwKAxScA6Jx37ConAKok//4Zo6yeanolQN8IADrn/XsGOTjf9CqWzuZlyY9dNUo52QMsBQFA5xwfJ3%2B%2Bu6x/us9bX%2Bd7trsfAFg8Zb2L0hvv2FVlXNil8e/dPs6LNxb2ojvohrV1vnubWKP9BACd9PCxKh8o5MmAJ1VJfvTKkZsCW2rFMHntFeO88VmjbF7W9GrgqQkAOuutOwcpbRTODJKfvWaUHbOlvfJ2u3Fdnd/8ulFeucWZP90hAOis%2B49U%2Bci%2BsnYBkmTVVPLGa0fZvkIENG3tdPLjV43yc9eOsmWZnwfdIgDotLfuLPOf8Lrp5JeePcrlKw2dJlRJXrF5nDd//XxeusnPgG4q892T3rj7UJWPPVbeLkCSrJ9OfvnZozzTPQFL6upVdf7bc0Z5/ZVjz2eg0wQAnfeb9w%2BK%2B0TASaumkl981ijfdFGhB2AJrZ9OfvTKcX7tulGuEV30gACg8x44WuXPCnsuwKmWDZKfunrko2cTsmKY/NPt47zlhvl8y%2BaxBzLRGzaw6IW3PDDISzaOs2LY9EqaUSX555eNc/WqOr947zCHCnpS4qRMVcm3bx3nn2wbZ91006uBxVfuaRO98thc8ocP%2Buf8jRvqvOl6W9QXYqpKXrllnP95w3z%2B7eWGP/3lHZPe%2BIOHBnnwmA3aLcvq/MqzR/kXTxtnxm/4WZsZJN%2BxdZzfvmE%2Br71inC0e5kPPeXugN%2BbGya98zj/pJBlUyXddOs6brh/lxnV2A85k3fTCY5bfeuN8fnjHOJsMfgrhHgB65VMHqvzFo1Ve5rPZSZLtK%2Br83LWjfGRfld%2B4f5CH7JB8yVWr6ty8pc43bxpnWjdSIAFA7/zG/cM8b/181vjX/SUv2FDneetHec/uQX5v5yCPHG96Rc1YOUxevHGcb99a5yqPU6Zw3iLpnQNzya/eN8xPPmPU9FJaZVgl37plnJdtHud9jw7yxw9Xue9w/3cEpqrkG9bVecmmcV6woc4yZ/uQRADQUx/YU%2BWm9VW%2B2aWArzFVJS/fPM7LNye3Hajy7kcG%2BfC%2BKid69BiBZYOFL%2Bh5wYY6z98wthsEp%2BHXgt76tfuGec4aX9JyJtevrXP92lEOj5IP7Bnkg3ur3HagynwHD9llK%2BrcsK7OjWvrfP06Z/rwVAQAvXVklLzh7kF%2B%2BdmjDPq/031BZofJt20Z59u2JIfmk0/sr3Lr/iqfOjDI7hbeLzBVJTtm61yzus61q%2Btcv6bORTNNrwq6RQDQa589WOV3dg7yz7b3aH97wlZNJS/ZWOclG%2Bsk4zx0rModBxe%2BeOnuw1U%2Bf7jK4SW6vaJKsmEm2baizuUr6%2BxYmVw%2Bu/DfzvDhwggAeu/3vjjI1bN1btrQwX3tFrhkeZ1LlucrvvZ231yy82iVB49W2XMi2XMi2XuiysH5hR2EQ6Mqx0bJqE7m62RcLzybYFgtnL1PVcmKYZ3ZqYXdh1VTyfrpOhtmkoumk4tm6ly8PLl4uUEPkyIA6L06yRvuGebXrxtl2woRsBg2TCcbputct8bxhK7S1hThyCj5j3cOcsQnAwGSCAAK8sDRKj93zzDOWQEEAIX56L4qv3aff/YA3gkpzjt3DfK/dvqnD5TNuyBF%2Bh8PDPKe3R4OAJRLAFCs//q5YT6yTwQAZRIAFGu%2BTv7zXcN8VAQABRIAFG2%2BTv7TXcN87DERAJRFAFC8%2BTr5mTuH%2BbgIAAoiACALEfDTdw7zl3tEAFAGAQBPmK%2BTN9w9zNsf9msB9J93OjhFneS/f36Q3/qCXw2g37zLwWn8/oOD/Pw9w8z5FmGgpwQAPIm/eLTK6z87zL4TTa8EYPEJADiDOw5W%2Bde3T%2BXOQ24OBPpFAMBT2Hsied1nhnnPbr8uQH94R4OzMDdOfuHeQd54zzBHRk2vBuDCCQA4B%2B99tMoP3TbM3S4JAB0nAOAcPXSsyms/PcwfPjhI3fRiAM6TAIDzMF8nv/mFQX7k08N84YjdAKB7BABcgL89WOUHbxvmd784yLztAKBDBABcoPk6ecsXB/mh24b57EG7AUA3CABYJPcfqfIjnx7mDXcP8%2BjxpldDU46MFp4fAW1XXfbC62xcwiJbNki%2B69JxXn3pOMtkdhEOzidvf3iQtz88yKH5plcDT00AwARtnEm%2BZ/s4r9g8zpSTwl56bC7544cGeceuQY56RgQdIgBgCWxZltyybZyXC4HeePR48ocPDfKnjwxywpdG0UECAJbQlmV1btlW52Wbxpl2aaCTPv14lXfuGuRDeyuf/KDTBAA0YN10cvPWcW7eOs766aZXw1M5Mkre%2B%2Bgg79xV5X7PfaAnBAA0aHqQvHjjON95cZ0rZ/0qts3nDld5164q790zyDHX9%2BkZAQAtceVsnVdsrvOSTeOsnmp6NeXadyL5wN5B3renyp0%2BzkePCQBomakqecGGOt%2ByeZwb1tVuGlwCB%2BaSD%2B0b5P17qtx%2BoPIdDxRBAECLrZpKnr%2B%2BzgsvGufGdXVm3Di4aA7NJx/ZN8hf7qnyyQNVRt4JKYwAgI5YOUyeu77O89aPc8PaOhtmml5Rt4zr5K5DVW7dX%2BWv91e541CVsXc/CiYAoKN2rKxz47qFP89eU3vi4GnsPp7cun%2BQv95f5W8OVJ7QB6cQANADU1VyxWyda1fXuWZ1nWetrrN5WdOrWlonxgt37d95qMpdh6rccTB56JgbKODJCADoqQ0zyVWzdS5fWWfHbJ3LVybbVvTjpsLj4%2BTBY1XuPVTlzkPJnYeqfP6wB/PAuRAAUJCpaiECLl2eXLy8ziWn/L15WbviYFQnu45X2Xl0YdjvPJo8eLTKzmNVHj0ed%2BrDBfJpYyjIfL3wtcX3H0mSr5z2VZI108n66TobppP1M8mG6Trrphc%2BjbByWGflMJmdSlYMk5WDZGZQZ1glw2ohLoZVMvXEvQhz42SuXvj7xDiZq6uF/22cnKgX7sLfP1dl/9zCF%2Bqc7r/dpAeTIwCAJAtn1AfmkgNzVe7/0v/aoi0BYFG5bxgACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACiQAAKBAAgAACjR44EO3V00vAgBYOg986PbKDgAAFEgAAECBBAAAFEgAAECBBAAAFEgAAECBBAAAFGiQLHwesOmFAACTd3Lm2wEAgAIJAAAokAAAgAIJAAAo0JcCwI2AANBvp856OwAAUCABAAAFEgAAUKCvCAD3AQBAP331jLcDAAAFEgAAUCABAAAF%2BpoAcB8AAPTL6Wa7HQAAKJAAAIACnTYAXAYAgH54spluBwAACiQAAKBATxoALgMAQLedaZbbAQCAAgkAACjQGQPAZQAA6KanmuF2AACgQE8ZAHYBAKBbzmZ22wEAgAIJAAAo0FkFgMsAANANZzuz7QAAQIHOOgDsAgBAu53LrLYDAAAFOqcAsAsAAO10rjPaDgAAFOicA8AuAAC0y/nMZjsAAFCg8woAuwAA0A7nO5PtAABAgc47AOwCAECzLmQWX9AOgAgAgGZc6Ax2CQAACnTBAWAXAACW1mLMXjsAAFCgRQkAuwAAsDQWa%2BYu2g6ACACAyVrMWesSAAAUaFEDwC4AAEzGYs/YRd8BEAEAsLgmMVsncglABADA4pjUTHUPAAAUaGIBYBcAAC7MJGfpRHcARAAAnJ9Jz9CJXwIQAQBwbpZidroHAAAKtCQBYBcAAM7OUs3MJdsBEAEAcGZLOSuX9BKACACA01vqGbnk9wCIAAD4Sk3MxkZuAhQBALCgqZnY2KcARAAApWtyFjb6MUARAECpmp6BjT8HoOkDAABLrQ2zr/EASNpxIABgKbRl5rUiAJL2HBAAmJQ2zbrWBEDSrgMDAIupbTOuVQGQtO8AAcCFauNsa10AJO08UABwPto601oZAEl7DxgAnK02z7LWBkDS7gMHAGfS9hnW6gBI2n8AAeCrdWF2tX6Bp7rshdfVTa8BAJ5MFwb/Sa3fAThVlw4sAGXp2ozqVAAk3TvAAPRfF2dT5xZ8KpcEAGhSFwf/SZ3bAThVlw88AN3W9RnU6QBIuv8DAKB7%2BjB7Ov8CTuWSAACT1IfBf1LndwBO1acfDADt0rcZ06sXcyq7AQAshr4N/pN6%2BaJOJQQAOB99Hfwn9eoSwOn0/QcIwOIrYXb0/gWeym4AAGdSwuA/qZgXeiohAMCpShr8JxX3gk8lBADKVuLgP6nYF34qIQBQlpIH/0nFH4BTCQGAfjP4v8yBeBJiAKAfDP3Tc1CeghAA6CaD/8wcnHMgBgDazdA/ew7UeRIDAO1g6J8fB20RiAGApWXoXzgHcAIEAcDiMvAXnwO6BAQBwLkx8CfPAW6IKABYYNg3w0FvKYEA9IUB307/H0pRuWunquvYAAAAAElFTkSuQmCC%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D">
+<meta name="theme-color" content="#1E3D2E">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAALEklEQVR4nO3dW2wcVxkH8P+Z3eyuvU6ydmzHTmw3zhUKiVQ3oUlLJBBtKh4KFBAP0BYiJC5SC6JIXKQIVAmJCHhBVQUvXEpAICRQVUpLEKkCQaRQkgiTQJpUabAdO3Ycx44de+3dmcPDxKnj+rKXc3Zm9vv/pLw06uxk9/vPd+bMmRmFkOnYu0MHvQ9kT8+xbhX0PswV6M6w2AkINhQV/2AWPS2l0mGo2Iex8KkYlQqC9Q9h4VM5bAfB2sZZ+GSSrSAY3ygLn2wyHQTH5MZY/GSb6RozkiYWPgXBRDcouwOw+CkoJmqvrACw+Clo5dZgyQFg8VNYlFOLJQWAxU9hU2pNFh0AFj+FVSm1WVQAWPwUdsXWaMEBYPFTVBRTqwUFgMVPUVNozS4bABY/RVUhtWt0KQRR1CwZAB79KeqWq+FFA8Dip2qxVC1zCESiLRgAHv2p2ixW0+wAJNpbAsCjP1WrhWqbHYBEuy0APPpTtZtf4+wAJNqtAPDoT1LMrXV2ABKNASDRHIDDH5JntubZAUg0BoBEYwBINAaARFM8ASbJ2AFINAaARGMASDQGgERjAEg0BoBEYwBINAaARGMASDQGgERjAEg0BoBEYwBINAaARGMASDQGgERjAEg0BoBEiwe9A1K1pjQ21gJrkxpNSaA5qdGcANJxIOVoJBwgFQMSDuBqYMYDch4w4SqM5oCxHHBlWuFSFriUVfjfpMLgdND/quhhACogpoDtqzS6VmtsrfP/rCzim48rIB4DEANWr9BYn5r9m9tv5x7LAedvKPxnXOHkqMLZCQWXd3wviTfFW5J0gHsbNPY0eNiV0agL4FAz6QInRxWOXXXwyjWFSbfy+xB2DIBh61MaD7VoPNjsBVL0i8l5wPFrCi8OOjg5qsAf3ccAGLIlrbH/Dg87Mxoq6J1ZxuC0wnMDCr8fdDAlvCswAGVqSWns7/Dw3sbwF/58E3ngRz0OXrgsdzIwRE06WhwFfLzNwyfaPMSjVvk31cWBXRmNFy4HvSfBYQBKsD6l8bUtHt62ks0z6hiAIt3fpPHFjS5SsaD3hExgAIrwWLuHR9u9oHeDDGIAChBXwJObXTzQxCFPtWEAluEo4MA2F/c1sPirkdz5rwIoAF/e5LH4qxgDsITPbvCwr5lj/mrGIdAi9jV7+Mi6yhZ/75TC6esK5yaA/qzCwDRwI6+Q9YC89tcXJRwgHfNXkDYm/CnZTWmNTWl/ZSkVhwFYQHuNxhOdlSn+S1mFPw4pHLmiMDi99BW1Kdf/M5ZT6M/O/tc3/5+mBNCV8XB3RmN3vUYNp2qXxQDMk3CAA9s86/P8vVMKh3odHB02tzDtygxweMjB4SG/W+xp0HigycOu+ugt06gUBmCeR9o8bKy1N5TIa+BXfQ5+0ecgb3HEMu0BR4cVjg7H0Faj8XCrv0I1ybO+2/DrmKMlpfFRi+P+kRngS6djeLbXbvHP1zel8PQFB4+diOP5y5X97LBjAOb43AYPKyx9IxcnFR7vjuPseHCDkZEc8PQFB586GcNfr3JQBHAIdMs7V2lr8/39WYWvnolhJGdl80UbnFZ46rUYdmU07srIbgcMwE0fszT0Gc8DXznjhKb453p1VOHVUdmdgEMg+HPpuy0c/TWAg+djy05vUnAYAAAfXmdnmvB3lx384xqLP8zEByCugPc1mR/+jOaAn/SI/3pDT/wv1JXRSFu46HWo18FE3vx2ySzxAXi3hbH/SA74w5D4rzYSRP9KjgLubTA//Hl+wMEMF5FGgugAbKrVWL3C7DY1gD9dEf21RoroX8rGUx1OX+dDaqNEdgDqzAfg75z2jBTRAXj7SvPbPDXGAESJ2ADEFdBWY7YDTLnA+QkGIErEBqA5af7q78VJPnU5asQGYG3S/DbfmOTRP2oEB8D8sfrN+3QpKsQGoNFCBxieYQeIGrEBqLHwLx+ZMb9NsktsAGw89WFC+NtWokhsABIW/uU5rv+JHLEBSDrmT4K5AC56xAaACBAcgBnP/IyNjWEV2SX2J5u2MFyx9UwhskfsT5a1MGNj49ZKsktuACx0gDUJ89sku8QGYNjCRas1CS6FixqxARjMmj8Jbk0Z3yRZJjcAFm5b7LT4WHWyQ2wAhmbMr93vrOWLKKJGbABynv/UZpNqY8DmNLtAlIgNAAD8d9z8NruEP248aoQHwPyA5V31DECUyA6AhRvYt6/yX2FK0SA6ABduKFw3/ABbBeB+C0+bJjtEB8DVwPER81/Bh1rsvWuMzBL/M9l4WVxDAniwmV0gCsQH4MSYwqSFhXGPtntcHBcB4gOQ84AjFp7m3LAC2N/BLhB24gMAAL8dsPNEtw+0etjJ6wKhxgDAf5O6jZfZKQBf3+qimdOiocUA3PTrS3a+ilVx4OCdLjKGX8Rhws6Mxmc2yB6mMQA3dV9XOD5iZylbe43Gd97hhuaGmbVJjW9sc/HtO12sT8keojEAc/zwooO8pXrorNV4ZkceWy28lKNQDSuAxzs9/LTLxd41sgt/FgMwR39W4Tf99r6SNQng+9tdPNLmIV7BddNtNRpPbPTws7vz+GBrZT877OJB70DYHOp1cE+9xgZLN7fEFfDJDg/vadQ41OfgL8N2ZqCSDrC7QWNfk4dd9bxPYTEMwDzTHvCtcw6e2eEiabE/3lGrcWCri752hcNDCi8POxgq8y61pgRwV8afer2nXqOWF+KWpTr27uBgcAHvX+vhyU2VnSHpmVLovq5wfsIfjg1kgUlXIesBeQ9Ixvwjezqm0ZgAmpLAupTGprTG5nRp7zz424jCN8/KTQo7wCJeGnTQWQs83Fq5EHTUaHTUaGBtxT5SPJ4EL+EHbzg4coWj52rGACxBA/ju6zG8Yun6AAWPAViGq4GnXovh5WGGoBoxAAXIa+DguRh+2cevq9rwFy2QBvDjHgffe92x8mRpCgYDUKTDQw4+/68YzvGN8FWBAShB75TCF/4dw8977a0dospgAErkauDZXgefPhXDny0tZ7BtIg/8c1R2J+OVYEO21Wns7/DQlQn/upvBaeC5AQcvDjpW7oeOEgbAsPYajYdaNPY1h+um+JwHHL+m8NKggxOj0exYNjAAliQd4L4GjT0N/mrMIMIw5QInxxSOXXVwfMTO0y+ijgGogLjyH5nYldHYVqexJa1RZ2EV1ngeODehcGZc4dSYwtlxxZP0ZXAxXAXkNXBqzC/KWetSGhvTQEvSf5Zoc0KjMQmsjAMJRyPl+K9dTTj+CXfOA3IamMgrjOaA0RwwPKNwacpfOXpxCrhs4a031Y4BCEh/VqE/CyD0p8zVjdOgJBoDQKIxACQaA0CiMQAkGgNAojEAJBoDQKIxACQaA0CiMQAkGgNAojEAJBoDQKIxACQaA0CiMQAkGgNAojk9x7p5Tx6J1HOsW7EDkGgMAInGAJBoDACJ5gD+yUDQO0JUSbM1zw5AojEAJNqtAHAYRFLMrXV2ABLttgCwC1C1m1/j7AAk2lsCwC5A1Wqh2mYHINEWDAC7AFWbxWqaHYBEWzQA7AJULZaq5SU7AENAUbdcDXMIRKItGwB2AYqqQmq3oA7AEFDUFFqzBQ+BGAKKimJqtahzAIaAwq7YGi36JJghoLAqpTZLmgViCChsSq3JkqdBGQIKi3JqsazrAAwBBa3cGiz7QhhDQEExUXtGi7dj7w5tcntECzF50DW6FILdgGwzXWPWCpbdgEyydXC1fsRmEKgctkcVFRuyMAhUjEoNpys+ZmcQaCmVPo8M9KSVYSAg2MmT0M3aMBTVLWwzhf8HMt5OdJGQyl0AAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAALEklEQVR4nO3dW2wcVxkH8P+Z3eyuvU6ydmzHTmw3zhUKiVQ3oUlLJBBtKh4KFBAP0BYiJC5SC6JIXKQIVAmJCHhBVQUvXEpAICRQVUpLEKkCQaRQkgiTQJpUabAdO3Ycx44de+3dmcPDxKnj+rKXc3Zm9vv/pLw06uxk9/vPd+bMmRmFkOnYu0MHvQ9kT8+xbhX0PswV6M6w2AkINhQV/2AWPS2l0mGo2Iex8KkYlQqC9Q9h4VM5bAfB2sZZ+GSSrSAY3ygLn2wyHQTH5MZY/GSb6RozkiYWPgXBRDcouwOw+CkoJmqvrACw+Clo5dZgyQFg8VNYlFOLJQWAxU9hU2pNFh0AFj+FVSm1WVQAWPwUdsXWaMEBYPFTVBRTqwUFgMVPUVNozS4bABY/RVUhtWt0KQRR1CwZAB79KeqWq+FFA8Dip2qxVC1zCESiLRgAHv2p2ixW0+wAJNpbAsCjP1WrhWqbHYBEuy0APPpTtZtf4+wAJNqtAPDoT1LMrXV2ABKNASDRHIDDH5JntubZAUg0BoBEYwBINAaARFM8ASbJ2AFINAaARGMASDQGgERjAEg0BoBEYwBINAaARGMASDQGgERjAEg0BoBEYwBINAaARGMASDQGgERjAEg0BoBEiwe9A1K1pjQ21gJrkxpNSaA5qdGcANJxIOVoJBwgFQMSDuBqYMYDch4w4SqM5oCxHHBlWuFSFriUVfjfpMLgdND/quhhACogpoDtqzS6VmtsrfP/rCzim48rIB4DEANWr9BYn5r9m9tv5x7LAedvKPxnXOHkqMLZCQWXd3wviTfFW5J0gHsbNPY0eNiV0agL4FAz6QInRxWOXXXwyjWFSbfy+xB2DIBh61MaD7VoPNjsBVL0i8l5wPFrCi8OOjg5qsAf3ccAGLIlrbH/Dg87Mxoq6J1ZxuC0wnMDCr8fdDAlvCswAGVqSWns7/Dw3sbwF/58E3ngRz0OXrgsdzIwRE06WhwFfLzNwyfaPMSjVvk31cWBXRmNFy4HvSfBYQBKsD6l8bUtHt62ks0z6hiAIt3fpPHFjS5SsaD3hExgAIrwWLuHR9u9oHeDDGIAChBXwJObXTzQxCFPtWEAluEo4MA2F/c1sPirkdz5rwIoAF/e5LH4qxgDsITPbvCwr5lj/mrGIdAi9jV7+Mi6yhZ/75TC6esK5yaA/qzCwDRwI6+Q9YC89tcXJRwgHfNXkDYm/CnZTWmNTWl/ZSkVhwFYQHuNxhOdlSn+S1mFPw4pHLmiMDi99BW1Kdf/M5ZT6M/O/tc3/5+mBNCV8XB3RmN3vUYNp2qXxQDMk3CAA9s86/P8vVMKh3odHB02tzDtygxweMjB4SG/W+xp0HigycOu+ugt06gUBmCeR9o8bKy1N5TIa+BXfQ5+0ecgb3HEMu0BR4cVjg7H0Faj8XCrv0I1ybO+2/DrmKMlpfFRi+P+kRngS6djeLbXbvHP1zel8PQFB4+diOP5y5X97LBjAOb43AYPKyx9IxcnFR7vjuPseHCDkZEc8PQFB586GcNfr3JQBHAIdMs7V2lr8/39WYWvnolhJGdl80UbnFZ46rUYdmU07srIbgcMwE0fszT0Gc8DXznjhKb453p1VOHVUdmdgEMg+HPpuy0c/TWAg+djy05vUnAYAAAfXmdnmvB3lx384xqLP8zEByCugPc1mR/+jOaAn/SI/3pDT/wv1JXRSFu46HWo18FE3vx2ySzxAXi3hbH/SA74w5D4rzYSRP9KjgLubTA//Hl+wMEMF5FGgugAbKrVWL3C7DY1gD9dEf21RoroX8rGUx1OX+dDaqNEdgDqzAfg75z2jBTRAXj7SvPbPDXGAESJ2ADEFdBWY7YDTLnA+QkGIErEBqA5af7q78VJPnU5asQGYG3S/DbfmOTRP2oEB8D8sfrN+3QpKsQGoNFCBxieYQeIGrEBqLHwLx+ZMb9NsktsAGw89WFC+NtWokhsABIW/uU5rv+JHLEBSDrmT4K5AC56xAaACBAcgBnP/IyNjWEV2SX2J5u2MFyx9UwhskfsT5a1MGNj49ZKsktuACx0gDUJ89sku8QGYNjCRas1CS6FixqxARjMmj8Jbk0Z3yRZJjcAFm5b7LT4WHWyQ2wAhmbMr93vrOWLKKJGbABynv/UZpNqY8DmNLtAlIgNAAD8d9z8NruEP248aoQHwPyA5V31DECUyA6AhRvYt6/yX2FK0SA6ABduKFw3/ABbBeB+C0+bJjtEB8DVwPER81/Bh1rsvWuMzBL/M9l4WVxDAniwmV0gCsQH4MSYwqSFhXGPtntcHBcB4gOQ84AjFp7m3LAC2N/BLhB24gMAAL8dsPNEtw+0etjJ6wKhxgDAf5O6jZfZKQBf3+qimdOiocUA3PTrS3a+ilVx4OCdLjKGX8Rhws6Mxmc2yB6mMQA3dV9XOD5iZylbe43Gd97hhuaGmbVJjW9sc/HtO12sT8keojEAc/zwooO8pXrorNV4ZkceWy28lKNQDSuAxzs9/LTLxd41sgt/FgMwR39W4Tf99r6SNQng+9tdPNLmIV7BddNtNRpPbPTws7vz+GBrZT877OJB70DYHOp1cE+9xgZLN7fEFfDJDg/vadQ41OfgL8N2ZqCSDrC7QWNfk4dd9bxPYTEMwDzTHvCtcw6e2eEiabE/3lGrcWCri752hcNDCi8POxgq8y61pgRwV8afer2nXqOWF+KWpTr27uBgcAHvX+vhyU2VnSHpmVLovq5wfsIfjg1kgUlXIesBeQ9Ixvwjezqm0ZgAmpLAupTGprTG5nRp7zz424jCN8/KTQo7wCJeGnTQWQs83Fq5EHTUaHTUaGBtxT5SPJ4EL+EHbzg4coWj52rGACxBA/ju6zG8Yun6AAWPAViGq4GnXovh5WGGoBoxAAXIa+DguRh+2cevq9rwFy2QBvDjHgffe92x8mRpCgYDUKTDQw4+/68YzvGN8FWBAShB75TCF/4dw8977a0dospgAErkauDZXgefPhXDny0tZ7BtIg/8c1R2J+OVYEO21Wns7/DQlQn/upvBaeC5AQcvDjpW7oeOEgbAsPYajYdaNPY1h+um+JwHHL+m8NKggxOj0exYNjAAliQd4L4GjT0N/mrMIMIw5QInxxSOXXVwfMTO0y+ijgGogLjyH5nYldHYVqexJa1RZ2EV1ngeODehcGZc4dSYwtlxxZP0ZXAxXAXkNXBqzC/KWetSGhvTQEvSf5Zoc0KjMQmsjAMJRyPl+K9dTTj+CXfOA3IamMgrjOaA0RwwPKNwacpfOXpxCrhs4a031Y4BCEh/VqE/CyD0p8zVjdOgJBoDQKIxACQaA0CiMQAkGgNAojEAJBoDQKIxACQaA0CiMQAkGgNAojEAJBoDQKIxACQaA0CiMQAkGgNAojk9x7p5Tx6J1HOsW7EDkGgMAInGAJBoDACJ5gD+yUDQO0JUSbM1zw5AojEAJNqtAHAYRFLMrXV2ABLttgCwC1C1m1/j7AAk2lsCwC5A1Wqh2mYHINEWDAC7AFWbxWqaHYBEWzQA7AJULZaq5SU7AENAUbdcDXMIRKItGwB2AYqqQmq3oA7AEFDUFFqzBQ+BGAKKimJqtahzAIaAwq7YGi36JJghoLAqpTZLmgViCChsSq3JkqdBGQIKi3JqsazrAAwBBa3cGiz7QhhDQEExUXtGi7dj7w5tcntECzF50DW6FILdgGwzXWPWCpbdgEyydXC1fsRmEKgctkcVFRuyMAhUjEoNpys+ZmcQaCmVPo8M9KSVYSAg2MmT0M3aMBTVLWwzhf8HMt5OdJGQyl0AAAAASUVORK5CYII=">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Consolbase KPI">
+<style>
+:root{
+  --hull:#1E3D2E;
+  --hull-2:#2A5240;
+  --ink:#21261F;
+  --ink-soft:#5B6459;
+  --paper:#F6F5F1;
+  --panel:#FFFFFF;
+  --line:#E1DED3;
+  --line-soft:#EDEBE2;
+  --green:#2FA365;
+  --green-soft:#E1F5E9;
+  --red:#B4432A;
+  --red-soft:#FAE8E1;
+  --amber:#D9772A;
+  --amber-soft:#FBEADA;
+  --steel:#1E3D2E;
+  --steel-soft:#E7F1EC;
+  --brown:#8A5A2E;
+  --brown-soft:#F3E9DC;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;overflow-x:hidden;max-width:100%;}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--steel-soft);}
+
+/* ---------- layout ---------- */
+#shell{display:flex;min-height:100vh;}
+#sidebar{
+  width:230px;flex:0 0 230px;background:var(--hull);color:#DCE6DC;
+  display:flex;flex-direction:column;position:fixed;top:0;bottom:0;left:0;
+  transition:transform .2s ease; z-index:40;
+}
+#sidebar .brand{
+  padding:22px 20px 16px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+#sidebar .brand .mark{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#9BC2A6;text-transform:uppercase;
+}
+#sidebar .brand h1{
+  margin:6px 0 0;font-size:17px;font-weight:700;letter-spacing:.01em;line-height:1.25;color:#fff;
+}
+#sidebar nav{flex:1;padding:14px 10px;overflow-y:auto;}
+.navgroup{margin-bottom:4px;}
+.navlink{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;
+  color:#C3D6C7;text-decoration:none;font-size:13.5px;font-weight:600;cursor:pointer;
+  border:1px solid transparent;
+}
+.navlink:hover{background:rgba(255,255,255,.08);color:#fff;}
+.navlink.active{background:var(--amber);color:#fff;border-color:var(--amber);}
+.navlink .ico{width:16px;text-align:center;font-size:14px;}
+.subnav{margin:2px 0 10px 26px;display:none;flex-direction:column;gap:1px;}
+.subnav.open{display:flex;}
+.subnav a{
+  padding:7px 10px;font-size:12.5px;color:#A9C4AE;text-decoration:none;border-radius:6px;font-weight:600;
+}
+.subnav a:hover{color:#fff;background:rgba(255,255,255,.07);}
+.subnav a.active{color:#fff;background:rgba(255,255,255,.14);}
+#sidebar .foot{
+  padding:14px 18px 18px;border-top:1px solid rgba(255,255,255,.1);
+  font-family:var(--mono);font-size:10.5px;color:#7FA089;line-height:1.6;
+}
+.poweredby{display:inline-block;margin-top:6px;font-size:9.5px;letter-spacing:.04em;opacity:.65;}
+#main{flex:1;margin-left:230px;min-width:0;}
+#topbar{
+  position:sticky;top:0;z-index:30;background:var(--brown);
+  border-bottom:1px solid rgba(0,0,0,.15);padding:14px 28px;display:flex;align-items:center;
+  justify-content:space-between;gap:16px;
+}
+#topbar .title{font-size:15px;font-weight:700;color:#fff;}
+#topbar .title .eyebrow{
+  display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:rgba(255,255,255,.68);
+  text-transform:uppercase;font-weight:600;margin-bottom:2px;
+}
+#topbar .whoami{display:flex;align-items:center;gap:10px;}
+#topbar .whoami-name{
+  font-size:12.5px;color:rgba(255,255,255,.8);white-space:nowrap;
+}
+#topbar .whoami-name strong{color:#fff;}
+#topbar .datepill{
+  font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.16);color:#fff;
+  padding:6px 10px;border-radius:7px;font-weight:700;
+}
+#topbar #menubtn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;}
+#topbar .btn.sm.ghost{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff;}
+#topbar .btn.sm.ghost:hover{background:rgba(255,255,255,.2);}
+
+/* ---------- login screen ---------- */
+#loginScreen{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:var(--hull);padding:20px;
+}
+.login-card{
+  background:var(--panel);border-radius:14px;padding:34px 32px 30px;width:100%;max-width:360px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+.login-brand{text-align:center;margin-bottom:18px;}
+.login-brand .mark{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;
+}
+.login-brand h1{margin:6px 0 0;font-size:16px;font-weight:700;color:var(--ink);}
+#loginHeading{margin:0 0 18px;font-size:15px;font-weight:700;color:var(--ink);text-align:center;}
+#loginScreen .field{margin-bottom:14px;}
+.login-error{
+  display:none;background:var(--red-soft);color:var(--red);border-radius:8px;padding:9px 11px;
+  font-size:12px;margin-top:4px;line-height:1.5;
+}
+.syncbadge{
+  display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  padding:6px 10px;border-radius:7px;text-transform:uppercase;letter-spacing:.03em;background:var(--line-soft);color:var(--ink-soft);
+}
+.syncbadge i{width:7px;height:7px;border-radius:50%;background:var(--ink-soft);display:inline-block;}
+.syncbadge.local{background:var(--line-soft);color:var(--ink-soft);}
+.syncbadge.local i{background:var(--ink-soft);}
+.syncbadge.connecting{background:var(--amber-soft);color:#7A5313;}
+.syncbadge.connecting i{background:var(--amber);animation:pulse 1s infinite;}
+.syncbadge.live{background:var(--green-soft);color:var(--green);}
+.syncbadge.live i{background:var(--green);}
+.syncbadge.error{background:var(--red-soft);color:var(--red);}
+.syncbadge.error i{background:var(--red);}
+.syncbadge.offline{background:var(--amber-soft);color:#7A5313;}
+.syncbadge.offline i{background:var(--amber);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+#menubtn{display:none;background:none;border:1px solid var(--line);border-radius:7px;padding:7px 10px;cursor:pointer;font-size:15px;}
+.page{display:none;padding:24px 28px 60px;max-width:1180px;}
+.page.active{display:block;}
+
+/* ---------- primitives ---------- */
+.grid{display:grid;gap:14px;}
+.kpi-grid{grid-template-columns:repeat(4,1fr);}
+.rpt-filter-grid{grid-template-columns:repeat(3, minmax(0,1fr));}
+@media(max-width:980px){ .rpt-filter-grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+@media(max-width:560px){ .rpt-filter-grid{grid-template-columns:minmax(0,1fr);} }
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.card h3{margin:0 0 4px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;}
+.card .big{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--hull);line-height:1.1;margin-top:6px;}
+.card .sub{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
+.section{margin-top:26px;}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px;}
+.section-head h2{font-size:15px;margin:0;font-weight:700;}
+.section-head p{margin:2px 0 0;font-size:12px;color:var(--ink-soft);}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+th{
+  text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1px solid var(--line);padding:8px 10px;font-weight:600;white-space:nowrap;
+}
+td{padding:8px 10px;border-bottom:1px solid var(--line-soft);font-family:var(--mono);white-space:nowrap;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--paper);}
+.tablewrap{overflow-x:auto;border-radius:10px;}
+.stamp{
+  display:inline-block;font-family:var(--mono);font-weight:800;font-size:10.5px;letter-spacing:.06em;
+  padding:4px 9px;border-radius:5px;text-transform:uppercase;transform:rotate(-2deg);border:1.5px solid currentColor;
+}
+.stamp.sent{color:var(--green);background:var(--green-soft);}
+.stamp.notsent{color:var(--red);background:var(--red-soft);}
+.stamp.pending{color:var(--amber);background:var(--amber-soft);}
+.stamp.logged{color:var(--steel);background:var(--steel-soft);}
+.btn{
+  font-family:var(--sans);font-weight:700;font-size:12.5px;border-radius:8px;padding:9px 16px;
+  border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;
+}
+.btn:hover{border-color:var(--ink-soft);}
+.btn.primary{background:var(--hull);border-color:var(--hull);color:#fff;}
+.btn.primary:hover{background:var(--hull-2);}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+input:disabled{opacity:.6;cursor:not-allowed;background:var(--line-soft);}
+.btn.danger{color:var(--red);border-color:var(--red);background:var(--red-soft);}
+.btn.sm{padding:5px 10px;font-size:11.5px;border-radius:6px;}
+.btn.ghost{background:transparent;}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.field label{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+.field input,.field select,.field textarea{
+  font-family:var(--sans);font-size:13px;padding:9px 10px;border:1px solid var(--line);border-radius:7px;
+  background:#fff;color:var(--ink);width:100%;min-width:0;box-sizing:border-box;
+}
+.field select{text-overflow:ellipsis;}
+.field textarea{resize:vertical;min-height:56px;}
+.formrow{display:flex;gap:12px;flex-wrap:wrap;}
+.formrow .field{flex:1;min-width:160px;}
+.subtabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
+.subtabs button{
+  font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:8px 14px;
+  border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;
+}
+.subtabs button.active{background:var(--hull);border-color:var(--hull);color:#fff;}
+.searchbar{display:flex;gap:10px;margin-bottom:12px;align-items:center;flex-wrap:wrap;}
+.searchbar input[type=text],.searchbar input[type=date],.searchbar select{
+  font-family:var(--sans);font-size:12.5px;padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:#fff;
+}
+.checklist-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-bottom:1px solid var(--line-soft);}
+.freqinput{display:flex;align-items:center;gap:6px;flex:0 0 auto;}
+.freqinput label{font-family:var(--mono);font-size:9.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}
+.freqinput input{width:48px;padding:6px 7px;border:1px solid var(--line);border-radius:6px;font-family:var(--mono);font-size:12px;text-align:center;}
+.checklist-row:last-child{border-bottom:none;}
+.checklist-row .name{flex:1;font-size:13px;font-weight:600;}
+.checklist-row .meta{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);}
+.toggle{
+  display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:0 0 auto;
+}
+.toggle button{
+  border:none;background:#fff;padding:7px 12px;font-family:var(--mono);font-size:11px;font-weight:800;
+  letter-spacing:.03em;cursor:pointer;color:var(--ink-soft);
+}
+.toggle button.on.sentbtn{background:var(--green);color:#fff;}
+.toggle button.on.notbtn{background:var(--red);color:#fff;}
+.progress{height:8px;background:var(--line-soft);border-radius:99px;overflow:hidden;margin-top:8px;}
+.progress > div{height:100%;background:var(--steel);}
+.empty{padding:34px 10px;text-align:center;color:var(--ink-soft);font-size:13px;}
+.empty .big-ico{font-size:26px;margin-bottom:8px;}
+.toast{
+  position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(16px);
+  background:var(--hull);color:#fff;padding:11px 18px;border-radius:9px;font-size:12.5px;font-weight:600;
+  opacity:0;pointer-events:none;transition:all .25s ease;z-index:100;box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.install-banner{
+  position:fixed;left:16px;right:16px;bottom:16px;max-width:480px;margin:0 auto;
+  background:var(--hull);color:#fff;border-radius:14px;padding:14px 16px;
+  display:none;align-items:center;gap:12px;box-shadow:0 14px 34px rgba(0,0,0,.32);z-index:200;
+  border:1px solid rgba(255,255,255,.12);
+}
+.install-banner.show{display:flex;}
+.install-icon{
+  flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--amber);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;font-family:var(--mono);
+}
+.install-copy{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
+.install-copy strong{font-size:13px;}
+.install-copy span{font-size:11.5px;color:rgba(255,255,255,.75);line-height:1.4;}
+.install-actions{flex:0 0 auto;display:flex;gap:8px;}
+.install-banner .btn.sm.primary{background:var(--amber);border-color:var(--amber);}
+.install-banner .btn.sm.ghost{color:#fff;border-color:rgba(255,255,255,.35);background:transparent;}
+.install-banner .btn.sm.ghost:hover{background:rgba(255,255,255,.12);}
+@media(max-width:520px){
+  .install-banner{flex-wrap:wrap;}
+  .install-actions{width:100%;justify-content:flex-end;}
+}
+.modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(20,26,20,.55);z-index:300;
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.show{display:flex;}
+.modal-card{
+  background:var(--panel);border-radius:14px;max-width:520px;width:100%;max-height:88vh;
+  overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 20px;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);
+}
+.modal-head h2{margin:0;font-size:15px;font-weight:700;}
+#editModalBody{padding:18px 20px;display:flex;flex-direction:column;gap:14px;}
+.modal-foot{
+  display:flex;justify-content:flex-end;gap:10px;padding:16px 20px;border-top:1px solid var(--line);
+  position:sticky;bottom:0;background:var(--panel);
+}
+.notice{
+  border:1px solid var(--line);background:var(--steel-soft);color:var(--hull-2);border-radius:10px;
+  padding:12px 14px;font-size:12.5px;line-height:1.55;margin-bottom:18px;
+}
+.notice.warn{background:var(--amber-soft);color:#7A5313;border-color:#EAD3A0;}
+.two-col{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;}
+.chart-wrap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px 6px;}
+.chart-title{font-size:11.5px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-top:6px;}
+.legend span{display:inline-flex;align-items:center;gap:5px;}
+.legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+.rankbadge{
+  font-family:var(--mono);font-weight:800;font-size:10.5px;background:var(--brown-soft);color:var(--brown);
+  padding:2px 6px;border-radius:5px;
+}
+.hint{font-size:11.5px;color:var(--ink-soft);}
+a.linklike{color:var(--steel);text-decoration:none;font-weight:700;cursor:pointer;}
+.freq-tag{font-family:var(--mono);font-size:10px;color:var(--brown);background:var(--brown-soft);padding:2px 6px;border-radius:5px;}
+@media(max-width:880px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .two-col{grid-template-columns:1fr;}
+  #sidebar{transform:translateX(-100%);}
+  #sidebar.open{transform:translateX(0);}
+  #main{margin-left:0;}
+  #menubtn{display:inline-block;}
+  .page{padding:18px 14px 60px;}
+}
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-brand">
+      <span class="mark">Consolbase Customer Service</span>
+      <h1>KPI &amp; Report Tracking</h1>
+    </div>
+    <h2 id="loginHeading">Welcome back</h2>
+    <div class="field">
+      <label>Name</label>
+      <input id="loginName" type="text" placeholder="Your name" autocomplete="username">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
+    </div>
+    <div class="field" id="accessCodeField" style="display:none;">
+      <label>Staff Access Code</label>
+      <input id="loginAccessCode" type="password" placeholder="Given to you by your admin" autocomplete="off">
+    </div>
+    <div id="loginError" class="login-error"></div>
+    <button class="btn primary" id="authSubmitBtn" style="width:100%;margin-top:8px;" onclick="submitAuthForm()">Log In</button>
+    <p class="hint" style="text-align:center;margin-top:16px;">
+      <a class="linklike" id="authToggleLink" onclick="toggleSignupMode()">New officer? Create an account</a>
+    </p>
+    <p style="text-align:center;margin-top:18px;"><span class="poweredby" style="opacity:.45;">Powered by Omlin</span></p>
+  </div>
+</div>
+
+<div id="shell" style="display:none;">
+  <aside id="sidebar">
+    <div class="brand">
+      <span class="mark">Consolbase Customer Service</span>
+      <h1>KPI &amp; Report<br>Tracking</h1>
+    </div>
+    <nav id="navroot"></nav>
+    <div class="foot">Works offline. Syncs via Firebase.<br><span class="poweredby">Powered by Omlin</span></div>
+  </aside>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="menubtn" onclick="toggleSidebar()">☰</button>
+      <div class="title"><span class="eyebrow" id="crumb">Overview</span><span id="pagetitle">Dashboard</span></div>
+      <div class="whoami">
+        <span class="syncbadge local" id="syncBadge"><i></i>Local device only</span>
+        <span class="datepill" id="todaypill"></span>
+        <span class="whoami-name">Logged in as <strong id="whoamiName">—</strong></span>
+        <button class="btn sm ghost" onclick="doLogout()">Log out</button>
+      </div>
+    </div>
+
+    <div id="pages"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div id="installBanner" class="install-banner">
+  <div class="install-icon">C</div>
+  <div class="install-copy">
+    <strong id="installTitle">Install this app</strong>
+    <span id="installSubtitle">Add it to your home screen for quick, full-screen access.</span>
+  </div>
+  <div class="install-actions">
+    <button class="btn sm primary" id="installActionBtn" onclick="handleInstallClick()">Install</button>
+    <button class="btn sm ghost" id="installDismissBtn" onclick="dismissInstallBanner()">Not now</button>
+  </div>
+</div>
+
+<div id="editModalOverlay" class="modal-overlay">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2 id="editModalTitle">Edit Entry</h2>
+      <button class="btn sm ghost" onclick="closeEditModal()">✕</button>
+    </div>
+    <div id="editModalBody"></div>
+    <div class="modal-foot">
+      <button class="btn ghost" onclick="closeEditModal()">Cancel</button>
+      <button class="btn primary" onclick="saveEditModal()">Save changes</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script>
+const DATA = {"kpa_monthly":[{"year":2023,"month":"January","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"February","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"March","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2023,"month":"April","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"May","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"June","weeks_due":3,"weeks_submitted":1,"compliance":0.333333333333333},{"year":2023,"month":"July","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"August","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2023,"month":"September","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"October","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2023,"month":"November","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2023,"month":"December","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"January","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"February","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2024,"month":"March","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"April","weeks_due":4,"weeks_submitted":3,"compliance":0.75},{"year":2024,"month":"May","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2024,"month":"June","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"July","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"August","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2024,"month":"September","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"October","weeks_due":5,"weeks_submitted":4,"compliance":0.8},{"year":2024,"month":"November","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2024,"month":"December","weeks_due":4,"weeks_submitted":2,"compliance":0.5},{"year":2025,"month":"January","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2025,"month":"February","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"March","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"April","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"May","weeks_due":5,"weeks_submitted":4,"compliance":0.8},{"year":2025,"month":"June","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"July","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2025,"month":"August","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"September","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"October","weeks_due":5,"weeks_submitted":5,"compliance":1},{"year":2025,"month":"November","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2025,"month":"December","weeks_due":4,"weeks_submitted":3,"compliance":0.75},{"year":2026,"month":"January","weeks_due":5,"weeks_submitted":4,"compliance":0.8},{"year":2026,"month":"February","weeks_due":4,"weeks_submitted":4,"compliance":1},{"year":2026,"month":"March","weeks_due":4,"weeks_submitted":3,"compliance":0.75},{"year":2026,"month":"April","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"May","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"June","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"July","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"August","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"September","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"October","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"November","weeks_due":0,"weeks_submitted":0,"compliance":null},{"year":2026,"month":"December","weeks_due":0,"weeks_submitted":0,"compliance":null}],"kpa_yearly":[{"year":2023,"weeks_due":50,"weeks_submitted":48,"compliance":0.96},{"year":2024,"weeks_due":52,"weeks_submitted":48,"compliance":0.923076923076923},{"year":2025,"weeks_due":52,"weeks_submitted":50,"compliance":0.961538461538462},{"year":2026,"weeks_due":13,"weeks_submitted":11,"compliance":0.846153846153846}],"mbl_monthly":[{"month":"Jun-2024","shipments":13,"avg_turnaround":0.923076923076923,"late":2,"pct_late":0.153846153846154},{"month":"Jul-2024","shipments":50,"avg_turnaround":0.8125,"late":5,"pct_late":0.1},{"month":"Aug-2024","shipments":36,"avg_turnaround":2.80555555555556,"late":3,"pct_late":0.0833333333333333},{"month":"Sep-2024","shipments":16,"avg_turnaround":0.3125,"late":0,"pct_late":0},{"month":"Oct-2024","shipments":2,"avg_turnaround":0.5,"late":0,"pct_late":0},{"month":"Nov-2024","shipments":3,"avg_turnaround":0.333333333333333,"late":0,"pct_late":0},{"month":"Jan-2025","shipments":1,"avg_turnaround":0,"late":0,"pct_late":0},{"month":"Mar-2025","shipments":1,"avg_turnaround":0,"late":0,"pct_late":0},{"month":"May-2025","shipments":3,"avg_turnaround":0.666666666666667,"late":0,"pct_late":0},{"month":"Jun-2025","shipments":1,"avg_turnaround":null,"late":0,"pct_late":0},{"month":"Jul-2025","shipments":9,"avg_turnaround":0.833333333333333,"late":0,"pct_late":0}],"mbl_by_line":[{"line":"Shipping Line","shipments":"Shipments","avg_turnaround":"Avg Turnaround (days)","late":"Late (> SLA)","pct_late":"% Late"},{"line":"CMA","shipments":7,"avg_turnaround":0.666666666666667,"late":0,"pct_late":0},{"line":"COSCON","shipments":8,"avg_turnaround":0.5,"late":1,"pct_late":0.125},{"line":"DSS","shipments":1,"avg_turnaround":0,"late":0,"pct_late":0},{"line":"EMIRATES","shipments":26,"avg_turnaround":0.461538461538462,"late":0,"pct_late":0},{"line":"EVERGREEN","shipments":2,"avg_turnaround":1,"late":0,"pct_late":0},{"line":"GULF","shipments":3,"avg_turnaround":0.666666666666667,"late":0,"pct_late":0},{"line":"HAPAG","shipments":4,"avg_turnaround":0.5,"late":0,"pct_late":0},{"line":"INCHCAPE","shipments":2,"avg_turnaround":1,"late":0,"pct_late":0},{"line":"MAERSK","shipments":25,"avg_turnaround":1.83333333333333,"late":3,"pct_late":0.12},{"line":"MAGELLAN","shipments":4,"avg_turnaround":0.5,"late":0,"pct_late":0},{"line":"MESSINA","shipments":1,"avg_turnaround":0,"late":0,"pct_late":0},{"line":"MSC","shipments":15,"avg_turnaround":1,"late":1,"pct_late":0.0666666666666667},{"line":"ONE","shipments":23,"avg_turnaround":0.545454545454545,"late":2,"pct_late":0.0869565217391304},{"line":"PIL","shipments":4,"avg_turnaround":0.25,"late":0,"pct_late":0},{"line":"SHARAF","shipments":6,"avg_turnaround":6.8,"late":1,"pct_late":0.166666666666667},{"line":"WEC","shipments":7,"avg_turnaround":4.85714285714286,"late":2,"pct_late":0.285714285714286}],"mbl_alltime":{"shipments":135,"avg_turnaround":1.28682170542636,"late":10,"pct_late":0.0740740740740741},"fcl_monthly":[{"year":2024,"month":"January","total_sent":30,"client_days":750,"avg_rate":0.04},{"year":2024,"month":"February","total_sent":19,"client_days":600,"avg_rate":0.0316666666666667},{"year":2024,"month":"March","total_sent":13,"client_days":624,"avg_rate":0.0208333333333333},{"year":2024,"month":"April","total_sent":12,"client_days":600,"avg_rate":0.02},{"year":2024,"month":"May","total_sent":26,"client_days":576,"avg_rate":0.0451388888888889},{"year":2024,"month":"June","total_sent":37,"client_days":720,"avg_rate":0.0513888888888889},{"year":2024,"month":"July","total_sent":37,"client_days":720,"avg_rate":0.0513888888888889},{"year":2024,"month":"August","total_sent":30,"client_days":576,"avg_rate":0.0520833333333333},{"year":2024,"month":"September","total_sent":25,"client_days":720,"avg_rate":0.0347222222222222},{"year":2024,"month":"October","total_sent":8,"client_days":576,"avg_rate":0.0138888888888889},{"year":2024,"month":"November","total_sent":35,"client_days":576,"avg_rate":0.0607638888888889},{"year":2024,"month":"December","total_sent":72,"client_days":650,"avg_rate":0.110769230769231},{"year":2025,"month":"January","total_sent":62,"client_days":875,"avg_rate":0.0708571428571429},{"year":2025,"month":"February","total_sent":68,"client_days":700,"avg_rate":0.0971428571428571},{"year":2025,"month":"March","total_sent":72,"client_days":756,"avg_rate":0.0952380952380952},{"year":2025,"month":"April","total_sent":80,"client_days":784,"avg_rate":0.102040816326531},{"year":2025,"month":"May","total_sent":64,"client_days":980,"avg_rate":0.0653061224489796},{"year":2025,"month":"June","total_sent":47,"client_days":784,"avg_rate":0.0599489795918367},{"year":2025,"month":"July","total_sent":78,"client_days":784,"avg_rate":0.0994897959183674},{"year":2025,"month":"August","total_sent":83,"client_days":840,"avg_rate":0.0988095238095238},{"year":2025,"month":"September","total_sent":50,"client_days":1050,"avg_rate":0.0476190476190476},{"year":2025,"month":"October","total_sent":40,"client_days":1085,"avg_rate":0.0368663594470046},{"year":2025,"month":"November","total_sent":20,"client_days":868,"avg_rate":0.0230414746543779},{"year":2025,"month":"December","total_sent":30,"client_days":899,"avg_rate":0.0333704115684093},{"year":2026,"month":"January","total_sent":43,"client_days":1085,"avg_rate":0.03963133640553},{"year":2026,"month":"February","total_sent":46,"client_days":896,"avg_rate":0.0513392857142857},{"year":2026,"month":"March","total_sent":100,"client_days":896,"avg_rate":0.111607142857143},{"year":2026,"month":"April","total_sent":58,"client_days":896,"avg_rate":0.0647321428571429},{"year":2026,"month":"May","total_sent":76,"client_days":1155,"avg_rate":0.0658008658008658},{"year":2026,"month":"June","total_sent":74,"client_days":952,"avg_rate":0.0777310924369748},{"year":2026,"month":"July","total_sent":29,"client_days":952,"avg_rate":0.0304621848739496},{"year":2026,"month":"August","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"September","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"October","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"November","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"December","total_sent":0,"client_days":0,"avg_rate":null}],"fcl_clients":[{"client":"ACCELER STATUS","sent":41,"client_days":889,"rate":0.0461192350956131,"rank":12},{"client":"AFRIASIA GLOBAL LOGISTICS","sent":0,"client_days":30,"rate":0,"rank":33},{"client":"AFRIFRESH CONVEYOR STATUS","sent":0,"client_days":48,"rate":0,"rank":33},{"client":"AKAMAI FREIGHT","sent":35,"client_days":889,"rate":0.0393700787401575,"rank":13},{"client":"AL ALYAAN MOTORS LTD","sent":9,"client_days":512,"rate":0.017578125,"rank":24},{"client":"BATA SHOE STATUS","sent":42,"client_days":889,"rate":0.047244094488189,"rank":11},{"client":"BIRDWELL VENTURES","sent":10,"client_days":889,"rate":0.0112485939257593,"rank":23},{"client":"C.STEINWEG","sent":2,"client_days":365,"rate":0.00547945205479452,"rank":29},{"client":"CAR & GENERAL STATUS","sent":9,"client_days":889,"rate":0.0101237345331834,"rank":24},{"client":"CASPA SHIPPING LTD","sent":66,"client_days":175,"rate":0.377142857142857,"rank":7},{"client":"COASTAL BOTTLERS STATUS","sent":170,"client_days":889,"rate":0.191226096737908,"rank":2},{"client":"CROWN PAINTS STATUS","sent":155,"client_days":889,"rate":0.174353205849269,"rank":3},{"client":"CUSNA INVESTMENT","sent":315,"client_days":889,"rate":0.354330708661417,"rank":1},{"client":"D","sent":0,"client_days":302,"rate":0,"rank":33},{"client":"DHL GLOBAL FORW.","sent":68,"client_days":175,"rate":0.388571428571429,"rank":6},{"client":"ECU C& F (FCL )","sent":23,"client_days":889,"rate":0.0258717660292463,"rank":18},{"client":"FARM ENGINEERING INDUSTRIES LTD","sent":4,"client_days":56,"rate":0.0714285714285714,"rank":28},{"client":"FARM ENGINEERING INDUSTRIES LTD   FEIL","sent":0,"client_days":48,"rate":0,"rank":33},{"client":"FFK STATUS","sent":8,"client_days":889,"rate":0.00899887514060743,"rank":27},{"client":"FOURWAY LOGISTICS SOLUTIONS (KENYA) LTD","sent":0,"client_days":889,"rate":0,"rank":33},{"client":"FREIGHT-IN-TIME STATUS","sent":1,"client_days":91,"rate":0.010989010989011,"rank":32},{"client":"GLOBALFREIGHT LOGISTICS LTD","sent":0,"client_days":889,"rate":0,"rank":33},{"client":"ICRC STATUS","sent":0,"client_days":889,"rate":0,"rank":33},{"client":"IDEAL APPLIANCES STATUS","sent":49,"client_days":889,"rate":0.0551181102362205,"rank":10},{"client":"JAN JAPAN STATUS","sent":80,"client_days":889,"rate":0.0899887514060742,"rank":5},{"client":"KATEFREIGHT STATUS","sent":17,"client_days":889,"rate":0.0191226096737908,"rank":20},{"client":"KENYA BONDED STATUS","sent":59,"client_days":889,"rate":0.0663667041619798,"rank":8},{"client":"KEVIAN STATUS","sent":25,"client_days":889,"rate":0.0281214848143982,"rank":14},{"client":"MOBIKEY/ JAP ASSEMBLER","sent":25,"client_days":91,"rate":0.274725274725275,"rank":14},{"client":"MOBIKEY/JAP ASSEMBLER","sent":17,"client_days":421,"rate":0.0403800475059382,"rank":20},{"client":"PEL LOGISTIX AFRICA (K) LTD.","sent":85,"client_days":426,"rate":0.199530516431925,"rank":4},{"client":"PN MASHRU","sent":53,"client_days":484,"rate":0.109504132231405,"rank":9},{"client":"RAPIDKATE STATUS","sent":9,"client_days":889,"rate":0.0101237345331834,"rank":24},{"client":"RECKITT STATUS","sent":24,"client_days":889,"rate":0.0269966254218223,"rank":17},{"client":"RISING FREIGHT STATUS","sent":25,"client_days":889,"rate":0.0281214848143982,"rank":14},{"client":"ROBIAM-  RANK NETWORK","sent":16,"client_days":889,"rate":0.0179977502812149,"rank":22},{"client":"RUMAN STATUS","sent":18,"client_days":889,"rate":0.0202474690663667,"rank":19},{"client":"SONGHONG","sent":2,"client_days":365,"rate":0.00547945205479452,"rank":29},{"client":"TRANSFRIEGHT","sent":2,"client_days":889,"rate":0.00224971878515186,"rank":29}],"lcl_monthly":[{"year":2024,"month":"January","total_sent":57,"client_days":540,"avg_rate":0.105555555555556},{"year":2024,"month":"February","total_sent":33,"client_days":456,"avg_rate":0.0723684210526316},{"year":2024,"month":"March","total_sent":51,"client_days":456,"avg_rate":0.111842105263158},{"year":2024,"month":"April","total_sent":45,"client_days":456,"avg_rate":0.0986842105263158},{"year":2024,"month":"May","total_sent":73,"client_days":540,"avg_rate":0.135185185185185},{"year":2024,"month":"June","total_sent":87,"client_days":456,"avg_rate":0.190789473684211},{"year":2024,"month":"July","total_sent":201,"client_days":630,"avg_rate":0.319047619047619},{"year":2024,"month":"August","total_sent":90,"client_days":504,"avg_rate":0.178571428571429},{"year":2024,"month":"September","total_sent":43,"client_days":504,"avg_rate":0.0853174603174603},{"year":2024,"month":"October","total_sent":42,"client_days":630,"avg_rate":0.0666666666666667},{"year":2024,"month":"November","total_sent":111,"client_days":504,"avg_rate":0.220238095238095},{"year":2024,"month":"December","total_sent":99,"client_days":504,"avg_rate":0.196428571428571},{"year":2025,"month":"January","total_sent":125,"client_days":630,"avg_rate":0.198412698412698},{"year":2025,"month":"February","total_sent":106,"client_days":504,"avg_rate":0.21031746031746},{"year":2025,"month":"March","total_sent":153,"client_days":504,"avg_rate":0.303571428571429},{"year":2025,"month":"April","total_sent":153,"client_days":504,"avg_rate":0.303571428571429},{"year":2025,"month":"May","total_sent":131,"client_days":630,"avg_rate":0.207936507936508},{"year":2025,"month":"June","total_sent":89,"client_days":504,"avg_rate":0.176587301587302},{"year":2025,"month":"July","total_sent":127,"client_days":628,"avg_rate":0.202229299363057},{"year":2025,"month":"August","total_sent":115,"client_days":504,"avg_rate":0.228174603174603},{"year":2025,"month":"September","total_sent":127,"client_days":629,"avg_rate":0.201907790143084},{"year":2025,"month":"October","total_sent":92,"client_days":504,"avg_rate":0.182539682539683},{"year":2025,"month":"November","total_sent":115,"client_days":504,"avg_rate":0.228174603174603},{"year":2025,"month":"December","total_sent":117,"client_days":629,"avg_rate":0.186009538950715},{"year":2026,"month":"January","total_sent":255,"client_days":875,"avg_rate":0.291428571428571},{"year":2026,"month":"February","total_sent":212,"client_days":728,"avg_rate":0.291208791208791},{"year":2026,"month":"March","total_sent":200,"client_days":728,"avg_rate":0.274725274725275},{"year":2026,"month":"April","total_sent":132,"client_days":784,"avg_rate":0.168367346938776},{"year":2026,"month":"May","total_sent":136,"client_days":1085,"avg_rate":0.125345622119816},{"year":2026,"month":"June","total_sent":101,"client_days":784,"avg_rate":0.128826530612245},{"year":2026,"month":"July","total_sent":45,"client_days":784,"avg_rate":0.0573979591836735},{"year":2026,"month":"August","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"September","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"October","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"November","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"December","total_sent":0,"client_days":0,"avg_rate":null}],"lcl_clients":[{"client":"ALLPORTS SHIPPING","sent":208,"client_days":840,"rate":0.247619047619048,"rank":4},{"client":"CONSOLIDATED CONSOLE SHIPPING SERVICES LTD","sent":62,"client_days":840,"rate":0.0738095238095238,"rank":18},{"client":"COSOL MASTER LTD","sent":27,"client_days":840,"rate":0.0321428571428571,"rank":22},{"client":"DFS","sent":64,"client_days":840,"rate":0.0761904761904762,"rank":17},{"client":"DHL","sent":33,"client_days":810,"rate":0.0407407407407407,"rank":20},{"client":"EAST AFRICAN CONSOLIDATORS","sent":479,"client_days":839,"rate":0.570917759237187,"rank":2},{"client":"ECU SHIPPING LOGISTICS KENYA LTD","sent":66,"client_days":210,"rate":0.314285714285714,"rank":16},{"client":"ENECO CONSOLIDATOR LTD","sent":2,"client_days":119,"rate":0.0168067226890756,"rank":27},{"client":"EQUATOR EXPRESS LOGISTICS LTD","sent":104,"client_days":210,"rate":0.495238095238095,"rank":12},{"client":"GENUINE FREIGHT SERVICES LTD","sent":44,"client_days":840,"rate":0.0523809523809524,"rank":19},{"client":"GLOBAL EXPRESS","sent":72,"client_days":840,"rate":0.0857142857142857,"rank":15},{"client":"GROUPAGE LOGISTICS SERVICES (K) LTD","sent":156,"client_days":810,"rate":0.192592592592593,"rank":9},{"client":"HELMA FREIGHT LTD","sent":419,"client_days":840,"rate":0.498809523809524,"rank":3},{"client":"ILM LOGISTICS INTERNATIONAL","sent":0,"client_days":210,"rate":0,"rank":31},{"client":"JIHAN","sent":139,"client_days":840,"rate":0.16547619047619,"rank":10},{"client":"LOGWIN","sent":183,"client_days":840,"rate":0.217857142857143,"rank":7},{"client":"OCEAN SIGMA LTD","sent":5,"client_days":35,"rate":0.142857142857143,"rank":26},{"client":"PENTAGON PRIME KENYA CO. LTD","sent":118,"client_days":684,"rate":0.172514619883041,"rank":11},{"client":"POLESTAR LOGISTICS LTD","sent":190,"client_days":840,"rate":0.226190476190476,"rank":6},{"client":"RHS FREIGHT SERVICES KENYA LTD","sent":74,"client_days":840,"rate":0.0880952380952381,"rank":14},{"client":"ROYAL DISTRIBUTION MANAGEMENT LIMITED","sent":1,"client_days":35,"rate":0.0285714285714286,"rank":29},{"client":"SACO SHIPPING KENYA LTD","sent":208,"client_days":840,"rate":0.247619047619048,"rank":4},{"client":"SEALINE CONSOLIDATOR LIMITED","sent":2,"client_days":210,"rate":0.00952380952380953,"rank":27},{"client":"SIMPET GLOBAL LOGISTICS LTD","sent":481,"client_days":837,"rate":0.574671445639188,"rank":1},{"client":"SWIFTSTRIDES LOGISTICS","sent":10,"client_days":119,"rate":0.0840336134453782,"rank":25},{"client":"TELE SHIPPING AND LOGISTICS LTD","sent":14,"client_days":840,"rate":0.0166666666666667,"rank":24},{"client":"TELEFAST LOGISTICS KENYA LTD","sent":15,"client_days":684,"rate":0.0219298245614035,"rank":23},{"client":"TOPLINK CONSOLIDATOR","sent":1,"client_days":35,"rate":0.0285714285714286,"rank":29},{"client":"TREVART","sent":90,"client_days":840,"rate":0.107142857142857,"rank":13},{"client":"V GLOBAL LOGISTICS LTD","sent":168,"client_days":840,"rate":0.2,"rank":8},{"client":"WSC LOGISTICS KENYA LTD","sent":28,"client_days":175,"rate":0.16,"rank":21}],"bb_monthly":[{"year":2023,"month":"January","total_sent":92,"client_days":510,"avg_rate":0.180392156862745},{"year":2023,"month":"February","total_sent":85,"client_days":408,"avg_rate":0.208333333333333},{"year":2023,"month":"March","total_sent":116,"client_days":432,"avg_rate":0.268518518518519},{"year":2023,"month":"April","total_sent":73,"client_days":432,"avg_rate":0.168981481481481},{"year":2023,"month":"May","total_sent":78,"client_days":432,"avg_rate":0.180555555555556},{"year":2023,"month":"June","total_sent":108,"client_days":432,"avg_rate":0.25},{"year":2023,"month":"July","total_sent":69,"client_days":432,"avg_rate":0.159722222222222},{"year":2023,"month":"August","total_sent":121,"client_days":432,"avg_rate":0.280092592592593},{"year":2023,"month":"September","total_sent":103,"client_days":432,"avg_rate":0.238425925925926},{"year":2023,"month":"October","total_sent":0,"client_days":432,"avg_rate":0},{"year":2023,"month":"November","total_sent":105,"client_days":789,"avg_rate":0.133079847908745},{"year":2023,"month":"December","total_sent":94,"client_days":976,"avg_rate":0.0963114754098361},{"year":2024,"month":"January","total_sent":94,"client_days":630,"avg_rate":0.149206349206349},{"year":2024,"month":"February","total_sent":81,"client_days":504,"avg_rate":0.160714285714286},{"year":2024,"month":"March","total_sent":97,"client_days":504,"avg_rate":0.192460317460317},{"year":2024,"month":"April","total_sent":73,"client_days":504,"avg_rate":0.14484126984127},{"year":2024,"month":"May","total_sent":92,"client_days":630,"avg_rate":0.146031746031746},{"year":2024,"month":"June","total_sent":102,"client_days":504,"avg_rate":0.202380952380952},{"year":2024,"month":"July","total_sent":70,"client_days":528,"avg_rate":0.132575757575758},{"year":2024,"month":"August","total_sent":91,"client_days":528,"avg_rate":0.172348484848485},{"year":2024,"month":"September","total_sent":102,"client_days":690,"avg_rate":0.147826086956522},{"year":2024,"month":"October","total_sent":64,"client_days":690,"avg_rate":0.0927536231884058},{"year":2024,"month":"November","total_sent":109,"client_days":552,"avg_rate":0.197463768115942},{"year":2024,"month":"December","total_sent":100,"client_days":598,"avg_rate":0.167224080267559},{"year":2025,"month":"January","total_sent":78,"client_days":805,"avg_rate":0.0968944099378882},{"year":2025,"month":"February","total_sent":72,"client_days":644,"avg_rate":0.111801242236025},{"year":2025,"month":"March","total_sent":75,"client_days":644,"avg_rate":0.116459627329193},{"year":2025,"month":"April","total_sent":101,"client_days":644,"avg_rate":0.156832298136646},{"year":2025,"month":"May","total_sent":185,"client_days":840,"avg_rate":0.220238095238095},{"year":2025,"month":"June","total_sent":131,"client_days":672,"avg_rate":0.194940476190476},{"year":2025,"month":"July","total_sent":156,"client_days":672,"avg_rate":0.232142857142857},{"year":2025,"month":"August","total_sent":97,"client_days":672,"avg_rate":0.144345238095238},{"year":2025,"month":"September","total_sent":135,"client_days":840,"avg_rate":0.160714285714286},{"year":2025,"month":"October","total_sent":122,"client_days":875,"avg_rate":0.139428571428571},{"year":2025,"month":"November","total_sent":107,"client_days":700,"avg_rate":0.152857142857143},{"year":2025,"month":"December","total_sent":104,"client_days":725,"avg_rate":0.143448275862069},{"year":2026,"month":"January","total_sent":132,"client_days":875,"avg_rate":0.150857142857143},{"year":2026,"month":"February","total_sent":156,"client_days":728,"avg_rate":0.214285714285714},{"year":2026,"month":"March","total_sent":147,"client_days":728,"avg_rate":0.201923076923077},{"year":2026,"month":"April","total_sent":154,"client_days":756,"avg_rate":0.203703703703704},{"year":2026,"month":"May","total_sent":158,"client_days":945,"avg_rate":0.167195767195767},{"year":2026,"month":"June","total_sent":112,"client_days":756,"avg_rate":0.148148148148148},{"year":2026,"month":"July","total_sent":53,"client_days":756,"avg_rate":0.0701058201058201},{"year":2026,"month":"August","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"September","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"October","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"November","total_sent":0,"client_days":0,"avg_rate":null},{"year":2026,"month":"December","total_sent":0,"client_days":0,"avg_rate":null}],"bb_clients":[{"client":"SIMPET GLOBAL LOGISTICS LTD","sent":591,"client_days":1307,"rate":0.4521805661820964,"rank":1},{"client":"HELMA FREIGHT LTD","sent":564,"client_days":1307,"rate":0.43152257077276207,"rank":2},{"client":"POLESTAR LOGISTICS LTD","sent":476,"client_days":1307,"rate":0.3641928079571538,"rank":3},{"client":"ECU SHIPPING LOGISTICS KENYA LTD","sent":391,"client_days":1307,"rate":0.2991583779648049,"rank":4},{"client":"EQUATOR EXPRESS LOGISTICS LTD","sent":248,"client_days":1307,"rate":0.18974751338944146,"rank":5},{"client":"SACO SHIPPING KENYA LTD","sent":158,"client_days":1307,"rate":0.12088752869166029,"rank":6},{"client":"ALLPORTS SHIPPING","sent":148,"client_days":1307,"rate":0.11323641928079571,"rank":7},{"client":"JIHAN","sent":135,"client_days":1307,"rate":0.10328997704667177,"rank":8},{"client":"CONSOLIDATED CONSOLE SHIPPING SERVICES LTD","sent":130,"client_days":1307,"rate":0.09946442234123948,"rank":9},{"client":"V GLOBAL LOGISTICS LTD","sent":129,"client_days":1307,"rate":0.09869931140015302,"rank":10},{"client":"LOGWIN","sent":126,"client_days":1307,"rate":0.09640397857689365,"rank":11},{"client":"LCL LOGISTIX","sent":102,"client_days":1307,"rate":0.07804131599081866,"rank":12},{"client":"GLOBAL EXPRESS","sent":87,"client_days":1307,"rate":0.0665646518745218,"rank":13},{"client":"TELE SHIPPING AND LOGISTICS LTD","sent":85,"client_days":1307,"rate":0.06503442999234889,"rank":14},{"client":"DFS","sent":71,"client_days":1307,"rate":0.05432287681713849,"rank":15},{"client":"COSOL MASTER LTD","sent":66,"client_days":1307,"rate":0.0504973221117062,"rank":16},{"client":"GROUPAGE LOGISTICS SERVICES (K) LTD","sent":61,"client_days":1307,"rate":0.046671767406273906,"rank":17},{"client":"GENUINE FREIGHT SERVICES LTD","sent":50,"client_days":1307,"rate":0.03825554705432287,"rank":18},{"client":"RHS FREIGHT SERVICES KENYA LTD","sent":45,"client_days":1307,"rate":0.03442999234889059,"rank":19},{"client":"PENTAGON PRIME KENYA CO. LTD","sent":44,"client_days":1307,"rate":0.03366488140780413,"rank":20},{"client":"WSC LOGISTICS KENYA LTD","sent":29,"client_days":1307,"rate":0.02218821729150727,"rank":21},{"client":"SEALINE CONSOLIDATOR LIMITED","sent":15,"client_days":1307,"rate":0.011476664116296864,"rank":22},{"client":"ILM LOGISTICS INTERNATIONAL","sent":9,"client_days":1307,"rate":0.006885998469778117,"rank":23},{"client":"TELEFAST LOGISTICS KENYA LTD","sent":8,"client_days":1307,"rate":0.00612088752869166,"rank":24},{"client":"DHL","sent":6,"client_days":1307,"rate":0.0045906656465187455,"rank":25},{"client":"ENECO CONSOLIDATOR LTD","sent":4,"client_days":1307,"rate":0.00306044376434583,"rank":26},{"client":"TREVART","sent":3,"client_days":1307,"rate":0.0022953328232593728,"rank":27}],"reporting_freq":[{"client":"ABA EXPRESS CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"ALLPORTS CONTAINER STATUS REPORT","freq":"TWICE A WEEK"},{"client":"CONSOLIDATED CONSOLE CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"COSOL MASTERS CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"DFS EXPRESS STATUS CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"EAST AFRICAN CONSOLIDATORS CONTAINER STATUS REPORT","freq":"DAILY"},{"client":"ECU SHIPPING- CONTAINER STATUS REPORT","freq":"3-4 TIMES A WEEK"},{"client":"GENUINE CONTAINER STATUS REPORT - 2016","freq":"DAILY"},{"client":"GLOBAL EXPRESS -  CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"GROUPAGE LOGISTICS CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"HELMA-CONTAINER STATUS REPORT","freq":"TWICE A WEEK"},{"client":"IRIS PORT  CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"JIHAN-CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"LCL LOGISTICS KENYA LTD - CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"LINEAR /NAKAI SEA & AIR  CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"LOGWIN - CONTAINER STATUS REPORT","freq":"DAILY"},{"client":"POLESTAR CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"RHS CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"SACO SHIPPING CONTAINER STATUS REPORT REPORT","freq":"TWICE A WEEK"},{"client":"SIMPET GLOBAL CONTAINER STATUS REPORT","freq":"DAILY"},{"client":"SWIFTSTRIDES  CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"TELE SHIPPING AND LOGISTICS LTD  CONTAINER STATUS REPORT","freq":"WHEN NECESSARY"},{"client":"TREVART EXPRESS  CONTAINER STATUS REPORT","freq":"ONCE A WEEK"},{"client":"V GLOBAL  CONTAINER STATUS REPORT","freq":"ONCE A WEEK"}],"dashboard":{"kpa_ytd_compliance":0.846153846153846,"mbl_avg_turnaround":1.28682170542636,"fcl_send_rate":0.0587362086258776,"lcl_send_rate":0.185962839652024,"bb_send_rate":0.16108219077645,"mbl_pct_late":0.0740740740740741,"fcl_clients_tracked":39,"lcl_bb_clients_tracked":76},"mbl_clients":["ALLPORTS","COSOL","DFS","EACS","ECS","ECU","ECU SHIPPING LOGISTICS KENYA LIMITED","GENUINE FREIGHT","GLOBAL","GROUPAGE","HELMA","HELMA FREIGHT LIMITED","ILM","LOGWIN","POLESTAR","RANK NETWORK","SACO","SHAHZAD/RANKNET WORKS","SIMPET","STANMORE","TELEFAST","TOPLINK","TREVART","V GLOBAL LOGISTICS LIMITED","V.GLOBAL"],"mbl_lines_all":["CMA","COSCON","DSS","EMIRATES","EVERGREEN","GULF","HAPAG","INCHCAPE","MAERSK","MAGELLAN","MESSINA","MSC","ONE","PIL","SHARAF","WEC"]};
+</script>
+
+<script>
+
+/* ============================================================
+   OMLIN KPI DASHBOARD — Firebase-backed, login-gated app
+   Data is cached in-memory (ENTRIES) and mirrored to localStorage
+   as a backup. If FIREBASE_CONFIG is filled in below, officers log
+   in with a name + password (Firebase Authentication) and the same
+   cache syncs to a shared Firestore database so every officer, on
+   every device, sees the same live log. No config = login is
+   disabled until an administrator sets Firebase up.
+   ============================================================ */
+
+// ---- Fill these in to enable shared/live sync + login across devices ----
+// 1. Create a free project at https://console.firebase.google.com
+// 2. Build > Authentication > Get started > Sign-in method > enable "Email/Password"
+// 3. Build > Firestore Database > Create database (start in production mode)
+// 4. Firestore > Rules — paste the rules shown in the "Backup & Data" page, then Publish
+// 5. Project settings (gear icon) > General > Your apps > add a Web app > copy the config object below
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyAnWcBpqJQeWCNEnndR9tVjBy-rPAtmuQI",
+  authDomain: "kpi-monitoring-tools.firebaseapp.com",
+  projectId: "kpi-monitoring-tools",
+  storageBucket: "kpi-monitoring-tools.firebasestorage.app",
+  messagingSenderId: "1018195619445",
+  appId: "1:1018195619445:web:45396d105700be4412923c"
+};
+
+// A simple shared passphrase staff must enter to create an account, so a random
+// person who finds the link can't just sign themselves up. Change this before
+// deploying, and only share the new value with your team (e.g. by chat or in
+// person) — anyone who knows it can create an account, so treat it like a
+// shared door code, not a secret per person. This is a lightweight deterrent,
+// not strong security: it lives in this file's source, so a technically
+// determined person could find it. For real per-person access control, create
+// accounts for staff yourself in the Firebase Console (Authentication > Users
+// > Add user) instead of using self-signup at all.
+const STAFF_ACCESS_CODE = 'cblmanifest2050';
+
+const LS_LOG = 'omlin_log_entries_v1';
+
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function pad2(n){return n<10?'0'+n:''+n;}
+function todayStr(){const d=new Date();return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());}
+function fmtDateLong(s){
+  if(!s) return '—';
+  const d = new Date(s+'T00:00:00');
+  if(isNaN(d)) return s;
+  return d.toLocaleDateString(undefined,{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+}
+function pct(x){ if(x===null||x===undefined||isNaN(x)) return '—'; return (x*100).toFixed(1)+'%'; }
+function num(x,d){ if(x===null||x===undefined||isNaN(x)) return '—'; return Number(x).toFixed(d===undefined?0:d); }
+function escapeHtml(s){ return (s===null||s===undefined)?'':String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ---------- ISO week helpers (for KPA weekly bucket) ---------- */
+function isoWeekInfo(date){
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = (d.getUTCDay() + 6) % 7;
+  d.setUTCDate(d.getUTCDate() - dayNum + 3);
+  const firstThursday = new Date(Date.UTC(d.getUTCFullYear(),0,4));
+  const week = 1 + Math.round(((d - firstThursday) / 86400000 - 3 + ((firstThursday.getUTCDay()+6)%7)) / 7);
+  const monday = new Date(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate()));
+  monday.setUTCDate(monday.getUTCDate() - dayNum);
+  const sunday = new Date(monday); sunday.setUTCDate(monday.getUTCDate()+6);
+  return {year:d.getUTCFullYear(), week, key:d.getUTCFullYear()+'-W'+pad2(week),
+    mondayStr: monday.toISOString().slice(0,10), sundayStr: sunday.toISOString().slice(0,10)};
+}
+
+/* ---------- local storage (always-on backup / offline fallback) ---------- */
+function loadLocalEntries(){
+  try{ const raw = localStorage.getItem(LS_LOG); return raw? JSON.parse(raw) : []; }
+  catch(e){ return []; }
+}
+function saveLocalEntries(arr){ try{ localStorage.setItem(LS_LOG, JSON.stringify(arr)); }catch(e){} }
+function loadOfficer(){ return (currentUser && currentUser.displayName) || (currentUser && currentUser.email) || 'Unknown'; }
+function uid(){ return 'e'+Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+
+/* ---------- in-memory cache: every render reads from here, synchronously ---------- */
+let ENTRIES = [];
+function loadEntries(){ return ENTRIES; }
+
+/* ---------- Firebase Auth + Firestore layer ---------- */
+let auth = null, db = null;
+let currentUser = null;
+let CLOUD_MODE = false;
+let FIREBASE_READY = false;
+let pollStarted = false;
+let syncStatus = 'local'; // 'local' | 'connecting' | 'live' | 'error'
+
+function initFirebase(){
+  if(FIREBASE_CONFIG && FIREBASE_CONFIG.apiKey && window.firebase){
+    try{
+      firebase.initializeApp(FIREBASE_CONFIG);
+      auth = firebase.auth();
+      db = firebase.firestore();
+      // Offline persistence: Firestore caches reads and queues writes locally
+      // (IndexedDB) whenever the network is unavailable, then syncs them to
+      // the server automatically the moment connectivity returns — no extra
+      // code needed for the "comes back online" part.
+      try{
+        db.enablePersistence({synchronizeTabs:true}).catch(err=>{
+          if(err && err.code==='failed-precondition'){
+            console.warn('Offline persistence unavailable: multiple tabs open in a browser without multi-tab support.');
+          } else if(err && err.code==='unimplemented'){
+            console.warn('Offline persistence not supported by this browser.');
+          } else {
+            console.warn('Offline persistence could not be enabled.', err);
+          }
+        });
+      }catch(e){ console.warn('enablePersistence threw', e); }
+      CLOUD_MODE = true;
+      FIREBASE_READY = true;
+      auth.onAuthStateChanged(async (user)=>{
+        currentUser = user;
+        if(user){ await onLoginSuccess(); }
+        else { showLoginScreen(); }
+      });
+    }catch(e){
+      console.error('Firebase init failed', e);
+      CLOUD_MODE = false; FIREBASE_READY = false;
+      showLoginScreen();
+    }
+  } else {
+    FIREBASE_READY = false;
+    showLoginScreen();
+  }
+  updateSyncBadge();
+}
+function toDbRow(e){
+  return { id:e.id, category:e.category, date:e.date, client:e.client||null, status:e.status||null,
+    officer:e.officer||null, notes:e.notes||null, line:e.line||null, received:e.received||null,
+    delivered:e.delivered||null, turnaround:(e.turnaround===undefined?null:e.turnaround),
+    late: !!e.late, ts: e.ts || new Date().toISOString() };
+}
+async function cloudFetchAll(){
+  if(!CLOUD_MODE) return null;
+  try{
+    const snap = await db.collection('report_entries').get();
+    syncStatus = 'live';
+    return snap.docs.map(d=>d.data());
+  }catch(e){ console.error('Cloud fetch failed', e); syncStatus = 'error'; return null; }
+}
+async function cloudUpsert(row){
+  if(!CLOUD_MODE) return;
+  try{
+    await db.collection('report_entries').doc(row.id).set(toDbRow(row));
+    syncStatus = 'live';
+  }catch(e){ console.error('Cloud save failed', e); syncStatus = 'error'; toast('Saved locally — cloud sync failed'); }
+  updateSyncBadge();
+}
+async function cloudDelete(id){
+  if(!CLOUD_MODE) return;
+  try{
+    await db.collection('report_entries').doc(id).delete();
+    syncStatus = 'live';
+  }catch(e){ console.error('Cloud delete failed', e); syncStatus = 'error'; }
+  updateSyncBadge();
+}
+async function cloudBulkUpsert(arr){
+  if(!CLOUD_MODE || !arr.length) return;
+  const BATCH = 400;
+  let failed = 0;
+  for(let i=0; i<arr.length; i+=BATCH){
+    const chunk = arr.slice(i, i+BATCH);
+    let ok = false;
+    for(let attempt=0; attempt<2 && !ok; attempt++){
+      try{
+        const batch = db.batch();
+        chunk.forEach(row=> batch.set(db.collection('report_entries').doc(row.id), toDbRow(row)));
+        await batch.commit();
+        ok = true;
+      }catch(e){
+        if(attempt===1){ console.error('Cloud bulk save failed for batch starting at '+i, e); }
+      }
+    }
+    if(!ok) failed += chunk.length;
+  }
+  if(failed>0){
+    syncStatus = 'error';
+    toast(`Cloud sync: ${failed} of ${arr.length} entries failed to upload — saved locally, will retry on next refresh`);
+  } else {
+    syncStatus = 'live';
+  }
+  updateSyncBadge();
+}
+async function cloudClearAll(){
+  if(!CLOUD_MODE) return;
+  try{
+    const snap = await db.collection('report_entries').get();
+    const docs = snap.docs;
+    const BATCH = 400;
+    for(let i=0; i<docs.length; i+=BATCH){
+      const batch = db.batch();
+      docs.slice(i, i+BATCH).forEach(d=> batch.delete(d.ref));
+      await batch.commit();
+    }
+    syncStatus = 'live';
+  }catch(e){ console.error('Cloud clear failed', e); syncStatus = 'error'; }
+  updateSyncBadge();
+}
+async function refreshFromCloud(showToast){
+  if(!CLOUD_MODE) return;
+  syncStatus = 'connecting'; updateSyncBadge();
+  const data = await cloudFetchAll();
+  if(data){
+    ENTRIES = data;
+    saveLocalEntries(ENTRIES);
+    if(showToast) toast('Refreshed from cloud');
+  }
+  updateSyncBadge();
+  renderPage(currentPage);
+}
+let isOnline = (typeof navigator!=='undefined') ? navigator.onLine : true;
+function updateSyncBadge(){
+  const el = document.getElementById('syncBadge');
+  if(!el) return;
+  if(CLOUD_MODE && !isOnline){
+    el.className = 'syncbadge offline';
+    el.innerHTML = '<i></i>Offline — changes saved, will sync';
+    return;
+  }
+  const map = {
+    local:      {cls:'local',  label:'Local device only'},
+    connecting: {cls:'connecting', label:'Syncing…'},
+    live:       {cls:'live',   label:'Live — synced'},
+    error:      {cls:'error',  label:'Sync error'},
+  };
+  const s = CLOUD_MODE ? map[syncStatus] : map.local;
+  el.className = 'syncbadge '+s.cls;
+  el.innerHTML = `<i></i>${s.label}`;
+}
+function handleOnline(){
+  isOnline = true;
+  updateSyncBadge();
+  if(CLOUD_MODE && currentUser){
+    toast('Back online — syncing your changes');
+    refreshFromCloud(false);
+    syncMasterFromCloud();
+  }
+}
+function handleOffline(){
+  isOnline = false;
+  updateSyncBadge();
+  if(CLOUD_MODE) toast("You're offline — you can keep working, changes will sync automatically");
+}
+window.addEventListener('online', handleOnline);
+window.addEventListener('offline', handleOffline);
+
+/* ---------- mutation helpers used throughout the app ---------- */
+function upsertEntry(entry, matchFn){
+  const idx = ENTRIES.findIndex(matchFn);
+  if(idx>=0){ entry.id = ENTRIES[idx].id; ENTRIES[idx] = entry; }
+  else { entry.id = uid(); ENTRIES.push(entry); }
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE) cloudUpsert(entry);
+  return ENTRIES;
+}
+function addEntry(entry){
+  entry.id = uid();
+  ENTRIES.push(entry);
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE) cloudUpsert(entry);
+  return entry;
+}
+function updateEntry(id, changes){
+  const idx = ENTRIES.findIndex(e=>e.id===id);
+  if(idx<0) return null;
+  const updated = Object.assign({}, ENTRIES[idx], changes, {id});
+  ENTRIES[idx] = updated;
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE) cloudUpsert(updated);
+  return updated;
+}
+function deleteEntry(id){
+  ENTRIES = ENTRIES.filter(e=>e.id!==id);
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE) cloudDelete(id);
+}
+function saveEntries(arr){
+  ENTRIES = arr;
+  saveLocalEntries(ENTRIES);
+}
+function replaceAllEntries(arr, resync){
+  ENTRIES = arr;
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE && resync){
+    cloudClearAll().then(()=>cloudBulkUpsert(ENTRIES));
+  } else if(CLOUD_MODE){
+    cloudBulkUpsert(ENTRIES);
+  }
+}
+
+/* ============================================================
+   MASTER CLIENT LISTS — editable roster used by checklists & forms
+   Seeded once from the source workbook, then fully editable
+   (add / remove) and synced the same way as report entries.
+   ============================================================ */
+const LS_MASTER = 'omlin_master_clients_v1';
+const MASTER_CATS = ['FCL','LCL','BB','MBL_CLIENT','MBL_LINE'];
+let MASTER = {FCL:[], LCL:[], BB:[], MBL_CLIENT:[], MBL_LINE:[]};
+
+function seedMasterFromWorkbook(){
+  return {
+    FCL: DATA.fcl_clients.map(c=>({id:uid(), name:c.client, active:true, agreedPerWeek:null})),
+    LCL: DATA.lcl_clients.map(c=>({id:uid(), name:c.client, active:true, agreedPerWeek:null})),
+    BB:  DATA.bb_clients.map(c=>({id:uid(), name:c.client, active:true, agreedPerWeek:null})),
+    MBL_CLIENT: DATA.mbl_clients.map(n=>({id:uid(), name:n, active:true})),
+    MBL_LINE:   DATA.mbl_lines_all.map(n=>({id:uid(), name:n, active:true})),
+  };
+}
+function loadLocalMaster(){
+  try{ const raw = localStorage.getItem(LS_MASTER); return raw? JSON.parse(raw) : null; }
+  catch(e){ return null; }
+}
+function saveLocalMaster(){ try{ localStorage.setItem(LS_MASTER, JSON.stringify(MASTER)); }catch(e){} }
+
+function toDbMasterRow(cat, item){ return {id:item.id, category:cat, name:item.name, active: item.active!==false, agreedPerWeek: (item.agreedPerWeek===undefined?null:item.agreedPerWeek)}; }
+function groupMasterRows(rows){
+  const m = {FCL:[], LCL:[], BB:[], MBL_CLIENT:[], MBL_LINE:[]};
+  rows.forEach(r=>{ if(m[r.category]) m[r.category].push({id:r.id, name:r.name, active: r.active!==false, agreedPerWeek: (r.agreedPerWeek===undefined?null:r.agreedPerWeek)}); });
+  return m;
+}
+async function cloudFetchMaster(){
+  if(!CLOUD_MODE) return null;
+  try{
+    const snap = await db.collection('master_clients').get();
+    return snap.docs.map(d=>d.data());
+  }catch(e){ console.error('Master fetch failed', e); return null; }
+}
+async function cloudUpsertMaster(cat, item){
+  if(!CLOUD_MODE) return;
+  try{ await db.collection('master_clients').doc(item.id).set(toDbMasterRow(cat,item)); }
+  catch(e){ console.error('Master save failed', e); toast('Saved locally — cloud sync failed'); }
+}
+async function cloudDeleteMaster(id){
+  if(!CLOUD_MODE) return;
+  try{ await db.collection('master_clients').doc(id).delete(); }
+  catch(e){ console.error('Master delete failed', e); }
+}
+async function cloudBulkUpsertMaster(){
+  if(!CLOUD_MODE) return;
+  const rows = [];
+  MASTER_CATS.forEach(cat=> MASTER[cat].forEach(item=> rows.push(toDbMasterRow(cat,item))));
+  if(!rows.length) return;
+  const BATCH = 400;
+  for(let i=0; i<rows.length; i+=BATCH){
+    const chunk = rows.slice(i, i+BATCH);
+    try{
+      const batch = db.batch();
+      chunk.forEach(row=> batch.set(db.collection('master_clients').doc(row.id), row));
+      await batch.commit();
+    }catch(e){ console.error('Master bulk seed failed for batch starting at '+i, e); }
+  }
+}
+async function syncMasterFromCloud(){
+  const rows = await cloudFetchMaster();
+  if(rows===null) return;
+  if(rows.length===0){
+    await cloudBulkUpsertMaster();
+  } else {
+    MASTER = groupMasterRows(rows);
+    saveLocalMaster();
+  }
+  renderPage(currentPage);
+}
+function addMasterClient(cat, rawName){
+  const name = (rawName||'').trim();
+  if(!name){ toast('Enter a name first'); return; }
+  const dupe = MASTER[cat].some(item=>item.name.toLowerCase()===name.toLowerCase());
+  if(dupe){ toast('Already on the list'); return; }
+  const item = {id:uid(), name, active:true, agreedPerWeek:null};
+  MASTER[cat].push(item);
+  saveLocalMaster();
+  if(CLOUD_MODE) cloudUpsertMaster(cat, item);
+  toast('Added '+name);
+}
+function removeMasterClient(cat, id){
+  const item = MASTER[cat].find(i=>i.id===id);
+  if(!item) return;
+  if(!confirm('Remove "'+item.name+'" from this list? Reports already logged for them are kept.')) return;
+  MASTER[cat] = MASTER[cat].filter(i=>i.id!==id);
+  saveLocalMaster();
+  if(CLOUD_MODE) cloudDeleteMaster(id);
+  renderMasterRowsOnly(cat);
+  toast('Removed '+item.name);
+}
+function toggleMasterActive(cat, id, makeActive){
+  const item = MASTER[cat].find(i=>i.id===id);
+  if(!item) return;
+  item.active = makeActive;
+  saveLocalMaster();
+  if(CLOUD_MODE) cloudUpsertMaster(cat, item);
+  renderMasterRowsOnly(cat);
+  if(currentPage==='dashboard') renderDashboard();
+}
+function setAgreedPerWeek(cat, id, value){
+  const item = MASTER[cat].find(i=>i.id===id);
+  if(!item) return;
+  const n = value===''? null : Math.max(0, Math.min(7, Math.round(Number(value))));
+  item.agreedPerWeek = isNaN(n) ? null : n;
+  saveLocalMaster();
+  if(CLOUD_MODE) cloudUpsertMaster(cat, item);
+  if(currentPage==='dashboard') renderDashboard();
+}
+
+/* ---------- toast ---------- */
+let toastTimer=null;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 1800);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+const NAV = [
+  {id:'dashboard', label:'Dashboard', icon:'&#9673;'},
+  {id:'reporting', label:'Reporting', icon:'&#128202;'},
+  {id:'log', label:'Log a Report', icon:'&#9998;', sub:[
+    {id:'log-kpa', label:'KPA Weekly'},
+    {id:'log-mbl', label:'MBL Guarantee'},
+    {id:'log-fcl', label:'FCL Container Status'},
+    {id:'log-lcl', label:'LCL Container Status'},
+    {id:'log-bb', label:'Break Bulk Released and Unreleased Status'},
+  ]},
+  {id:'history', label:'Report History', icon:'&#128348;'},
+  {id:'master', label:'Master Data', icon:'&#128100;', sub:[
+    {id:'master-fcl', label:'FCL Clients'},
+    {id:'master-lcl', label:'LCL Clients'},
+    {id:'master-bb', label:'Break Bulk Clients'},
+    {id:'master-mblc', label:'MBL Clients'},
+    {id:'master-mbll', label:'MBL Shipping Lines'},
+  ]},
+  {id:'reference', label:'Reference Data', icon:'&#128196;', sub:[
+    {id:'ref-kpa', label:'KPA Weekly'},
+    {id:'ref-mbl', label:'MBL Guarantee'},
+    {id:'ref-fcl', label:'FCL Container Status'},
+    {id:'ref-lcl', label:'LCL Container Status'},
+    {id:'ref-bb', label:'Break Bulk Released and Unreleased Status'},
+  ]},
+  {id:'data', label:'Backup &amp; Data', icon:'&#128190;'},
+];
+
+let currentPage = 'dashboard';
+
+function buildNav(){
+  const root = document.getElementById('navroot');
+  root.innerHTML = '';
+  NAV.forEach(item=>{
+    const grp = document.createElement('div');
+    grp.className='navgroup';
+    const a = document.createElement('div');
+    a.className='navlink'; a.dataset.page=item.id;
+    a.innerHTML = `<span class="ico">${item.icon}</span><span>${item.label}</span>`;
+    a.onclick = ()=>{
+      if(item.sub){
+        const sn = grp.querySelector('.subnav');
+        const isOpen = sn.classList.contains('open');
+        document.querySelectorAll('.subnav').forEach(s=>s.classList.remove('open'));
+        if(!isOpen){ sn.classList.add('open'); goTo(item.sub[0].id); }
+      } else {
+        goTo(item.id);
+      }
+    };
+    grp.appendChild(a);
+    if(item.sub){
+      const sn = document.createElement('div');
+      sn.className='subnav';
+      item.sub.forEach(s=>{
+        const link = document.createElement('a');
+        link.textContent = s.label; link.dataset.page = s.id;
+        link.onclick = (e)=>{ e.stopPropagation(); goTo(s.id); };
+        sn.appendChild(link);
+      });
+      grp.appendChild(sn);
+    }
+    root.appendChild(grp);
+  });
+}
+
+function parentOf(pageId){
+  for(const item of NAV){
+    if(item.id===pageId) return item;
+    if(item.sub && item.sub.find(s=>s.id===pageId)) return item;
+  }
+  return null;
+}
+
+function goTo(pageId){
+  currentPage = pageId;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pageEl = document.getElementById('page-'+pageId);
+  if(pageEl) pageEl.classList.add('active');
+
+  document.querySelectorAll('.navlink').forEach(n=>n.classList.remove('active'));
+  document.querySelectorAll('.subnav a').forEach(n=>n.classList.remove('active'));
+  const parent = parentOf(pageId);
+  if(parent){
+    const topLink = document.querySelector(`.navlink[data-page="${parent.id}"]`);
+    if(topLink) topLink.classList.add('active');
+    if(parent.sub){
+      const subEl = topLink.parentElement.querySelector('.subnav');
+      subEl.classList.add('open');
+      const subLink = document.querySelector(`.subnav a[data-page="${pageId}"]`);
+      if(subLink) subLink.classList.add('active');
+      document.getElementById('crumb').textContent = parent.label.replace('&amp;','&');
+      document.getElementById('pagetitle').textContent = parent.sub.find(s=>s.id===pageId).label;
+    } else {
+      document.getElementById('crumb').textContent = 'Overview';
+      document.getElementById('pagetitle').textContent = parent.label.replace('&amp;','&');
+    }
+  }
+  renderPage(pageId);
+  document.getElementById('sidebar').classList.remove('open');
+  window.scrollTo(0,0);
+}
+function toggleSidebar(){ document.getElementById('sidebar').classList.toggle('open'); }
+
+/* ============================================================
+   MINI CHART BUILDERS (pure SVG, no deps)
+   ============================================================ */
+function svgLineChart(points, opts){
+  opts = opts||{};
+  const w = opts.w||560, h = opts.h||160, pad = {l:34,r:12,t:14,b:22};
+  const vals = points.map(p=>p.y).filter(v=>v!==null && v!==undefined && !isNaN(v));
+  let min = opts.min!==undefined?opts.min:Math.min(0,...vals);
+  let max = opts.max!==undefined?opts.max:Math.max(...vals, 0.0001);
+  if(max===min) max = min+1;
+  const iw = w-pad.l-pad.r, ih = h-pad.t-pad.b;
+  const n = points.length;
+  const x = i => pad.l + (n<=1?0:(i/(n-1))*iw);
+  const y = v => pad.t + ih - ((v-min)/(max-min))*ih;
+  let path = '', started=false;
+  points.forEach((p,i)=>{
+    if(p.y===null||p.y===undefined||isNaN(p.y)){ started=false; return; }
+    path += (started?'L':'M')+x(i).toFixed(1)+','+y(p.y).toFixed(1)+' ';
+    started = true;
+  });
+  const gridLines = 3;
+  let grid = '';
+  for(let g=0; g<=gridLines; g++){
+    const gy = pad.t + (ih/gridLines)*g;
+    const val = max - (max-min)*(g/gridLines);
+    grid += `<line x1="${pad.l}" y1="${gy.toFixed(1)}" x2="${w-pad.r}" y2="${gy.toFixed(1)}" stroke="var(--line-soft)" stroke-width="1"/>`;
+    grid += `<text x="2" y="${(gy+3).toFixed(1)}" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)">${opts.fmt?opts.fmt(val):val.toFixed(1)}</text>`;
+  }
+  const stepLabel = Math.max(1, Math.ceil(n/6));
+  let labels = '';
+  points.forEach((p,i)=>{
+    if(i%stepLabel===0 || i===n-1){
+      labels += `<text x="${x(i).toFixed(1)}" y="${h-6}" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)" text-anchor="middle">${escapeHtml(p.label)}</text>`;
+    }
+  });
+  const dots = points.map((p,i)=> (p.y===null||p.y===undefined||isNaN(p.y))?'':`<circle cx="${x(i).toFixed(1)}" cy="${y(p.y).toFixed(1)}" r="2.2" fill="${opts.color||'var(--steel)'}"/>`).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}">
+    ${grid}
+    <path d="${path}" fill="none" stroke="${opts.color||'var(--steel)'}" stroke-width="2"/>
+    ${dots}
+    ${labels}
+  </svg>`;
+}
+
+function svgBarChart(points, opts){
+  opts = opts||{};
+  const w = opts.w||560, h = opts.h||160, pad = {l:34,r:12,t:14,b:22};
+  const vals = points.map(p=>p.y||0);
+  const max = opts.max!==undefined?opts.max:Math.max(...vals, 0.0001);
+  const iw = w-pad.l-pad.r, ih = h-pad.t-pad.b;
+  const n = points.length;
+  const bw = Math.max(2,(iw/n)*0.62);
+  const gap = (iw/n);
+  let bars='';
+  points.forEach((p,i)=>{
+    const bh = max>0 ? ((p.y||0)/max)*ih : 0;
+    const bx = pad.l + i*gap + (gap-bw)/2;
+    const by = pad.t + ih - bh;
+    bars += `<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx="1.5" fill="${p.color||opts.color||'var(--steel)'}"/>`;
+  });
+  const gridLines=3; let grid='';
+  for(let g=0; g<=gridLines; g++){
+    const gy = pad.t + (ih/gridLines)*g;
+    const val = max - (max/gridLines)*g;
+    grid += `<line x1="${pad.l}" y1="${gy.toFixed(1)}" x2="${w-pad.r}" y2="${gy.toFixed(1)}" stroke="var(--line-soft)" stroke-width="1"/>`;
+    grid += `<text x="2" y="${(gy+3).toFixed(1)}" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)">${opts.fmt?opts.fmt(val):val.toFixed(0)}</text>`;
+  }
+  const stepLabel = Math.max(1, Math.ceil(n/6));
+  let labels='';
+  points.forEach((p,i)=>{
+    if(i%stepLabel===0 || i===n-1){
+      const bx = pad.l + i*gap + gap/2;
+      labels += `<text x="${bx.toFixed(1)}" y="${h-6}" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)" text-anchor="middle">${escapeHtml(p.label)}</text>`;
+    }
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}">${grid}${bars}${labels}</svg>`;
+}
+
+/* ============================================================
+   PAGE SCAFFOLD — build empty containers for every page once
+   ============================================================ */
+const PAGE_IDS = ['dashboard','reporting','log-kpa','log-mbl','log-fcl','log-lcl','log-bb','history','master-fcl','master-lcl','master-bb','master-mblc','master-mbll','ref-kpa','ref-mbl','ref-fcl','ref-lcl','ref-bb','data'];
+function scaffoldPages(){
+  const root = document.getElementById('pages');
+  root.innerHTML = PAGE_IDS.map(id=>`<div class="page" id="page-${id}"></div>`).join('');
+}
+
+function renderPage(id){
+  const fn = RENDERERS[id];
+  if(fn) fn();
+}
+
+/* ============================================================
+   DASHBOARD — filterable by Day / Week / Month / Year / All / Custom
+   ============================================================ */
+function categoryClientList(cat){
+  if(cat==='FCL') return MASTER.FCL.filter(c=>c.active!==false).map(c=>c.name);
+  if(cat==='LCL') return MASTER.LCL.filter(c=>c.active!==false).map(c=>c.name);
+  if(cat==='BB') return MASTER.BB.filter(c=>c.active!==false).map(c=>c.name);
+  return [];
+}
+function activeCount(cat){ return (MASTER[cat]||[]).filter(c=>c.active!==false).length; }
+
+let dashPeriod = 'all';           // 'day' | 'week' | 'month' | 'year' | 'all' | 'custom'
+let dashRefDate = todayStr();     // anchor date for day / week nav
+let dashYear = new Date().getFullYear();
+let dashMonth = MONTHS[new Date().getMonth()];
+let dashCustomFrom = todayStr();
+let dashCustomTo = todayStr();
+
+function setDashPeriod(p){
+  dashPeriod = p;
+  renderDashboard();
+}
+function shiftDay(delta){
+  const d = new Date(dashRefDate+'T00:00:00');
+  d.setDate(d.getDate()+delta);
+  dashRefDate = d.toISOString().slice(0,10);
+  renderDashboard();
+}
+function shiftWeek(delta){ shiftDay(delta*7); }
+function shiftMonth(delta){
+  let idx = MONTHS.indexOf(dashMonth) + delta;
+  let y = dashYear;
+  while(idx<0){ idx+=12; y--; }
+  while(idx>11){ idx-=12; y++; }
+  dashMonth = MONTHS[idx]; dashYear = y;
+  renderDashboard();
+}
+function shiftYear(delta){ dashYear += delta; renderDashboard(); }
+
+/* ---- live (log-based) aggregation for day / week / custom ---- */
+function rangeClientProgress(cat, fromDate, toDate){
+  const entries = loadEntries().filter(e=>e.category===cat && e.date>=fromDate && e.date<=toDate);
+  const sentClients = new Set(entries.filter(e=>e.status==='sent').map(e=>e.client));
+  const sentEvents = entries.filter(e=>e.status==='sent').length;
+  return {distinctSent: sentClients.size, total: categoryClientList(cat).length, sentEvents};
+}
+function rangeKpaStatus(fromDate, toDate){
+  const entries = loadEntries().filter(e=>e.category==='KPA' && e.date>=fromDate && e.date<=toDate);
+  return {weeksLogged: entries.length, weeksSent: entries.filter(e=>e.status==='sent').length};
+}
+function rangeMbl(fromDate, toDate){
+  const entries = loadEntries().filter(e=>e.category==='MBL' && e.date>=fromDate && e.date<=toDate);
+  const shipments = entries.length;
+  const late = entries.filter(e=>e.late).length;
+  const avg = shipments? entries.reduce((s,e)=>s+(e.turnaround||0),0)/shipments : null;
+  return {shipments, late, avg_turnaround:avg, pct_late: shipments? late/shipments : null};
+}
+
+/* ---- historical (workbook) aggregation for month / year ---- */
+function aggMonthlyLike(monthlyArr, year, month){
+  const rows = monthlyArr.filter(r=>r.year===year && (month===null || r.month===month));
+  let total_sent=0, client_days=0;
+  rows.forEach(r=>{ total_sent+=r.total_sent||0; client_days+=r.client_days||0; });
+  return {total_sent, client_days, avg_rate: client_days? total_sent/client_days : null, rows: rows.length};
+}
+function aggMonthlyAll(monthlyArr){
+  let total_sent=0, client_days=0;
+  monthlyArr.forEach(r=>{ total_sent+=r.total_sent||0; client_days+=r.client_days||0; });
+  return {total_sent, client_days, avg_rate: client_days? total_sent/client_days : null};
+}
+function aggMonthlyAllKpa(){
+  let due=0, sub=0;
+  DATA.kpa_monthly.forEach(r=>{ due+=r.weeks_due||0; sub+=r.weeks_submitted||0; });
+  return {weeks_due:due, weeks_submitted:sub, compliance: due? sub/due : null};
+}
+function aggKpaHist(year, month){
+  if(month===null){
+    const yr = DATA.kpa_yearly.find(r=>r.year===year);
+    if(yr) return {weeks_due:yr.weeks_due, weeks_submitted:yr.weeks_submitted, compliance:yr.compliance};
+  }
+  const rows = DATA.kpa_monthly.filter(r=>r.year===year && (month===null || r.month===month));
+  let due=0, sub=0;
+  rows.forEach(r=>{ due+=r.weeks_due||0; sub+=r.weeks_submitted||0; });
+  return {weeks_due:due, weeks_submitted:sub, compliance: due? sub/due : null};
+}
+function aggMblHist(year, month){
+  const monAbbrev = month? month.slice(0,3) : null;
+  const rows = DATA.mbl_monthly.filter(r=>{
+    const parts = r.month.split('-'); const y = parseInt(parts[1]);
+    return y===year && (monAbbrev===null || parts[0]===monAbbrev);
+  });
+  let shipments=0, late=0, weighted=0;
+  rows.forEach(r=>{ shipments+=r.shipments||0; late+=r.late||0; if(r.avg_turnaround!==null && r.avg_turnaround!==undefined) weighted += r.avg_turnaround*(r.shipments||0); });
+  return {shipments, late, avg_turnaround: shipments? weighted/shipments : null, pct_late: shipments? late/shipments : null};
+}
+
+function availableYears(){
+  const ys = new Set();
+  DATA.kpa_monthly.forEach(r=>ys.add(r.year));
+  ys.add(new Date().getFullYear());
+  return Array.from(ys).sort();
+}
+
+function periodRangeLabel(){
+  if(dashPeriod==='day') return fmtDateLong(dashRefDate);
+  if(dashPeriod==='week'){ const w = isoWeekInfo(new Date(dashRefDate+'T00:00:00')); return `Week of ${w.mondayStr} – ${w.sundayStr}`; }
+  if(dashPeriod==='month') return `${dashMonth} ${dashYear}`;
+  if(dashPeriod==='year') return `${dashYear}`;
+  if(dashPeriod==='custom') return `${dashCustomFrom} – ${dashCustomTo}`;
+  return 'All-time';
+}
+
+function filterBarHtml(){
+  const pills = [['day','Day'],['week','Week'],['month','Month'],['year','Year'],['all','All-time'],['custom','Custom']];
+  const pillHtml = pills.map(([id,label])=>`<button class="${dashPeriod===id?'active':''}" onclick="setDashPeriod('${id}')">${label}</button>`).join('');
+
+  let context = '';
+  if(dashPeriod==='day'){
+    context = `<button class="btn sm ghost" onclick="shiftDay(-1)">← Prev</button>
+      <input type="date" value="${dashRefDate}" onchange="dashRefDate=this.value; renderDashboard();">
+      <button class="btn sm ghost" onclick="shiftDay(1)">Next →</button>
+      <button class="btn sm" onclick="dashRefDate=todayStr(); renderDashboard();">Today</button>`;
+  } else if(dashPeriod==='week'){
+    context = `<button class="btn sm ghost" onclick="shiftWeek(-1)">← Prev</button>
+      <input type="date" value="${dashRefDate}" onchange="dashRefDate=this.value; renderDashboard();">
+      <button class="btn sm ghost" onclick="shiftWeek(1)">Next →</button>
+      <button class="btn sm" onclick="dashRefDate=todayStr(); renderDashboard();">This week</button>`;
+  } else if(dashPeriod==='month'){
+    context = `<button class="btn sm ghost" onclick="shiftMonth(-1)">← Prev</button>
+      <select onchange="dashMonth=this.value; renderDashboard();">${MONTHS.map(m=>`<option value="${m}" ${m===dashMonth?'selected':''}>${m}</option>`).join('')}</select>
+      <select onchange="dashYear=parseInt(this.value); renderDashboard();">${availableYears().map(y=>`<option value="${y}" ${y===dashYear?'selected':''}>${y}</option>`).join('')}</select>
+      <button class="btn sm ghost" onclick="shiftMonth(1)">Next →</button>`;
+  } else if(dashPeriod==='year'){
+    context = `<button class="btn sm ghost" onclick="shiftYear(-1)">← Prev</button>
+      <select onchange="dashYear=parseInt(this.value); renderDashboard();">${availableYears().map(y=>`<option value="${y}" ${y===dashYear?'selected':''}>${y}</option>`).join('')}</select>
+      <button class="btn sm ghost" onclick="shiftYear(1)">Next →</button>`;
+  } else if(dashPeriod==='custom'){
+    context = `<span class="hint">From</span><input type="date" value="${dashCustomFrom}" onchange="dashCustomFrom=this.value; renderDashboard();">
+      <span class="hint">To</span><input type="date" value="${dashCustomTo}" onchange="dashCustomTo=this.value; renderDashboard();">`;
+  }
+
+  return `<div class="panel" style="margin-bottom:18px;">
+    <div class="subtabs" style="margin-bottom:${context?'10px':'0'};">${pillHtml}</div>
+    ${context? `<div class="searchbar" style="margin-bottom:0;">${context}</div>` : ''}
+  </div>`;
+}
+
+function renderDashboard(){
+  const html = `
+  <div class="notice">
+    <strong>Client status-reporting performance</strong> across KPA, MBL/Guarantee, FCL, LCL and Break Bulk.
+    Filter by day, week, month, year or a custom range — Month/Year/All-time pull from the source KPI workbook;
+    Day/Week/Custom show what's actually been logged in <strong>Log a Report</strong> for that window.
+  </div>
+
+  ${filterBarHtml()}
+
+  <div class="section" style="margin-top:0;">
+    <div class="section-head"><h2>Performance — ${periodRangeLabel()}</h2><p>${dashPeriod==='month'||dashPeriod==='year'||dashPeriod==='all' ? 'Source: KPI workbook' : 'Source: entries logged in this app'}</p></div>
+    ${kpiCardsForPeriod()}
+  </div>
+
+  <div class="section two-col">
+    <div class="chart-wrap">
+      <div class="chart-title">KPA Weekly Compliance — by month (all-time)</div>
+      ${svgLineChart(DATA.kpa_monthly.map(r=>({label:r.month.slice(0,3)+' '+String(r.year).slice(2), y:r.compliance})), {fmt:v=>Math.round(v*100)+'%', color:'var(--green)'})}
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title">MBL Avg Turnaround (hours) — by month (all-time)</div>
+      ${svgBarChart(DATA.mbl_monthly.map(r=>({label:r.month, y:(r.avg_turnaround||0)*24})), {color:'var(--brown)'})}
+    </div>
+  </div>
+  <div class="section chart-wrap">
+    <div class="chart-title">Send Rate — FCL / LCL / Break Bulk (by month, all clients combined, all-time)</div>
+    ${renderTripleLine()}
+    <div class="legend">
+      <span><i style="background:var(--brown)"></i>FCL</span>
+      <span><i style="background:var(--green)"></i>LCL</span>
+      <span><i style="background:var(--amber)"></i>Break Bulk</span>
+    </div>
+  </div>
+  `;
+  document.getElementById('page-dashboard').innerHTML = html;
+}
+
+function kpiCard(title, big, sub){
+  return `<div class="card"><h3>${title}</h3><div class="big">${big}</div><div class="sub">${sub}</div></div>`;
+}
+function progressCard(title, sent, total, sub){
+  return `<div class="card"><h3>${title}</h3><div class="big">${sent}/${total}</div>
+    <div class="progress"><div style="width:${total?(sent/total*100):0}%"></div></div>
+    <div class="sub">${sub}</div></div>`;
+}
+
+function kpiCardsForPeriod(){
+  if(dashPeriod==='month' || dashPeriod==='year' || dashPeriod==='all'){
+    let kpa, mbl, fcl, lcl, bb, fclTracked, lclbbTracked;
+    if(dashPeriod==='all'){
+      kpa = aggMonthlyAllKpa();
+      mbl = DATA.mbl_alltime;
+      fcl = aggMonthlyAll(DATA.fcl_monthly);
+      lcl = aggMonthlyAll(DATA.lcl_monthly);
+      bb = aggMonthlyAll(DATA.bb_monthly);
+      fclTracked = activeCount('FCL'); lclbbTracked = activeCount('LCL') + activeCount('BB');
+    } else {
+      const y = dashYear, m = dashPeriod==='month'? dashMonth : null;
+      kpa = aggKpaHist(y, m);
+      mbl = aggMblHist(y, m);
+      fcl = aggMonthlyLike(DATA.fcl_monthly, y, m);
+      lcl = aggMonthlyLike(DATA.lcl_monthly, y, m);
+      bb = aggMonthlyLike(DATA.bb_monthly, y, m);
+      fclTracked = activeCount('FCL');
+      lclbbTracked = activeCount('LCL') + activeCount('BB');
+    }
+    return `<div class="grid kpi-grid">
+      ${kpiCard('KPA Weekly · Compliance', pct(kpa.compliance), (kpa.weeks_submitted||0)+' of '+(kpa.weeks_due||0)+' weeks submitted')}
+      ${kpiCard('MBL Guarantee · Avg Turnaround', mbl.avg_turnaround!==null&&mbl.avg_turnaround!==undefined? num(mbl.avg_turnaround*24,1)+'h':'—', (mbl.shipments||0)+' shipments in period')}
+      ${kpiCard('FCL Container Status · Send Rate', pct(fcl.avg_rate), fcl.total_sent+' reports sent')}
+      ${kpiCard('LCL Container Status · Send Rate', pct(lcl.avg_rate), lcl.total_sent+' reports sent')}
+      ${kpiCard('Break Bulk Released and Unreleased Status · Send Rate', pct(bb.avg_rate), bb.total_sent+' reports sent')}
+      ${kpiCard('MBL Guarantee · % Delivered Late', pct(mbl.pct_late), (mbl.late||0)+' shipments beyond SLA')}
+      ${kpiCard('FCL · Clients Tracked', fclTracked, 'Active client accounts')}
+      ${kpiCard('LCL + Break Bulk · Clients Tracked', lclbbTracked, 'Active client accounts')}
+    </div>`;
+  }
+
+  // day / week / custom — live, from the log
+  let fromDate, toDate, kpaLabel, kpaSub;
+  if(dashPeriod==='day'){ fromDate = toDate = dashRefDate; }
+  else if(dashPeriod==='week'){ const w = isoWeekInfo(new Date(dashRefDate+'T00:00:00')); fromDate = w.mondayStr; toDate = w.sundayStr; }
+  else { fromDate = dashCustomFrom; toDate = dashCustomTo; }
+
+  const kpaR = rangeKpaStatus(fromDate, toDate);
+  const mblR = rangeMbl(fromDate, toDate);
+  const fclR = rangeClientProgress('FCL', fromDate, toDate);
+  const lclR = rangeClientProgress('LCL', fromDate, toDate);
+  const bbR  = rangeClientProgress('BB', fromDate, toDate);
+
+  const kpaStatusHtml = kpaR.weeksLogged
+    ? (kpaR.weeksSent ? '<span class="stamp sent">Sent</span>' : '<span class="stamp notsent">Not sent</span>')
+    : (()=>{
+        const curWk = isoWeekInfo(new Date());
+        const withinCurrentWeek = fromDate<=curWk.sundayStr && toDate>=curWk.mondayStr;
+        const overdue = withinCurrentWeek && new Date() > kpaDeadlineFor(curWk);
+        return overdue ? '<span class="stamp notsent">Overdue</span>' : '<span class="stamp pending">No entry</span>';
+      })();
+
+  return `<div class="grid kpi-grid">
+    <div class="card"><h3>KPA Weekly Report</h3><div class="big" style="font-size:20px;">${kpaStatusHtml}</div><div class="sub">${kpaR.weeksLogged} week record(s) in range</div></div>
+    ${progressCard('FCL Container Status Reports', fclR.distinctSent, fclR.total, fclR.sentEvents+' send event(s) logged')}
+    ${progressCard('LCL Container Status Reports', lclR.distinctSent, lclR.total, lclR.sentEvents+' send event(s) logged')}
+    ${progressCard('Break Bulk Released and Unreleased Status Reports', bbR.distinctSent, bbR.total, bbR.sentEvents+' send event(s) logged')}
+    ${kpiCard('MBL Guarantees Logged', mblR.shipments, mblR.shipments? num(mblR.avg_turnaround,1)+'h avg turnaround':'No entries in range')}
+    ${kpiCard('MBL · % Delivered Late', mblR.shipments? pct(mblR.pct_late):'—', mblR.late+' beyond SLA')}
+    ${kpiCard('FCL · Clients Tracked', activeCount('FCL'), 'Active client accounts')}
+    ${kpiCard('LCL + Break Bulk · Clients Tracked', activeCount('LCL') + activeCount('BB'), 'Active client accounts')}
+  </div>
+  <p class="hint" style="margin-top:10px;"><a class="linklike" onclick="goTo('log-fcl')">Go log reports for this window →</a></p>`;
+}
+
+function renderTripleLine(){
+  // align by "Mon YYYY" key across the three series
+  const key = r => r.month.slice(0,3)+' '+String(r.year).slice(2);
+  const allKeys = [];
+  const seen = new Set();
+  [DATA.fcl_monthly, DATA.lcl_monthly, DATA.bb_monthly].forEach(series=>{
+    series.forEach(r=>{ const k=key(r); if(!seen.has(k)){ seen.add(k); allKeys.push(k);} });
+  });
+  function seriesFor(data){
+    const map = {}; data.forEach(r=> map[key(r)] = r.avg_rate);
+    return allKeys.map(k=>({label:k, y: map[k]!==undefined? map[k]: null}));
+  }
+  const w=1080,h=170;
+  const fcl = seriesFor(DATA.fcl_monthly), lcl = seriesFor(DATA.lcl_monthly), bb = seriesFor(DATA.bb_monthly);
+  function pathFor(points,color){
+    const pad={l:34,r:12,t:14,b:22}; const iw=w-pad.l-pad.r, ih=h-pad.t-pad.b;
+    const vals = points.map(p=>p.y).filter(v=>v!==null && !isNaN(v));
+    const max = Math.max(...vals, 0.01);
+    const n=points.length;
+    const x = i => pad.l + (n<=1?0:(i/(n-1))*iw);
+    const y = v => pad.t + ih - (v/max)*ih;
+    let path='',started=false;
+    points.forEach((p,i)=>{
+      if(p.y===null||isNaN(p.y)){started=false;return;}
+      path += (started?'L':'M')+x(i).toFixed(1)+','+y(p.y).toFixed(1)+' ';
+      started=true;
+    });
+    return {path,max,x,y,pad,ih};
+  }
+  const maxAll = Math.max(...[...fcl,...lcl,...bb].map(p=>p.y||0), 0.05);
+  function drawPath(points,color){
+    const pad={l:34,r:12,t:14,b:22}; const iw=w-pad.l-pad.r, ih=h-pad.t-pad.b;
+    const n=points.length;
+    const x = i => pad.l + (n<=1?0:(i/(n-1))*iw);
+    const y = v => pad.t + ih - (v/maxAll)*ih;
+    let path='',started=false;
+    points.forEach((p,i)=>{
+      if(p.y===null||isNaN(p.y)){started=false;return;}
+      path += (started?'L':'M')+x(i).toFixed(1)+','+y(p.y).toFixed(1)+' ';
+      started=true;
+    });
+    return `<path d="${path}" fill="none" stroke="${color}" stroke-width="2"/>`;
+  }
+  const pad={l:34,r:12,t:14,b:22}; const ih=h-pad.t-pad.b;
+  let grid=''; const gridLines=3;
+  for(let g=0; g<=gridLines; g++){
+    const gy = pad.t + (ih/gridLines)*g;
+    const val = maxAll - (maxAll/gridLines)*g;
+    grid += `<line x1="${pad.l}" y1="${gy.toFixed(1)}" x2="${w-pad.r}" y2="${gy.toFixed(1)}" stroke="var(--line-soft)" stroke-width="1"/>`;
+    grid += `<text x="2" y="${(gy+3).toFixed(1)}" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)">${Math.round(val*100)}%</text>`;
+  }
+  const n = allKeys.length;
+  const stepLabel = Math.max(1, Math.ceil(n/8));
+  let labels='';
+  const iw=w-pad.l-pad.r;
+  allKeys.forEach((k,i)=>{
+    if(i%stepLabel===0 || i===n-1){
+      const bx = pad.l + (n<=1?0:(i/(n-1))*iw);
+      labels += `<text x="${bx.toFixed(1)}" y="${h-6}" font-family="var(--mono)" font-size="9" fill="var(--ink-soft)" text-anchor="middle">${escapeHtml(k)}</text>`;
+    }
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}">${grid}${drawPath(fcl,'var(--brown)')}${drawPath(lcl,'var(--green)')}${drawPath(bb,'var(--amber)')}${labels}</svg>`;
+}
+
+/* ============================================================
+   LOG A REPORT — KPA
+   ============================================================ */
+function kpaDeadlineFor(wk){
+  const monday = new Date(wk.mondayStr+'T00:00:00');
+  const thursday = new Date(monday);
+  thursday.setDate(monday.getDate()+3);
+  thursday.setHours(13,0,0,0); // Thursday, 1:00 PM
+  return thursday;
+}
+function renderLogKPA(){
+  const wk = isoWeekInfo(new Date());
+  const existing = loadEntries().find(e=>e.category==='KPA' && e.date===wk.mondayStr);
+  const deadline = kpaDeadlineFor(wk);
+  const isSent = existing && existing.status==='sent';
+  const isOverdue = !isSent && new Date() > deadline;
+  const deadlineLabel = deadline.toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'})+' by 1:00 PM';
+  const html = `
+  <div class="notice">The KPA report is due every <strong>Thursday before 1:00 PM</strong>. Mark it sent once it's gone out — one entry per week, updating today just edits this week's record.</div>
+  <div class="panel" style="max-width:560px;">
+    <div class="section-head">
+      <h2>Week of ${wk.mondayStr} – ${wk.sundayStr}</h2>
+      <p>Due: ${deadlineLabel}${isOverdue?' <span class="stamp notsent" style="margin-left:6px;">Overdue</span>':''}</p>
+    </div>
+    <div class="formrow">
+      <div class="field"><label>Status</label>
+        <div class="toggle" id="kpaToggle">
+          <button class="sentbtn ${existing&&existing.status==='sent'?'on':''}" onclick="setKpaStatus('sent')">Sent</button>
+          <button class="notbtn ${!existing||existing.status!=='sent'?'on':''}" onclick="setKpaStatus('not_sent')">Not sent</button>
+        </div>
+      </div>
+    </div>
+    <div class="formrow" style="margin-top:12px;">
+      <div class="field"><label>Notes (optional)</label><textarea id="kpaNotes">${escapeHtml(existing?existing.notes:'')}</textarea></div>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:10px;align-items:center;">
+      <button class="btn primary" onclick="saveKpa()">Save</button>
+      <span class="hint" id="kpaSavedHint">${existing? 'Last updated by '+escapeHtml(existing.officer||'—')+' at '+new Date(existing.ts).toLocaleString() : 'Not yet recorded this week'}</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Recent weeks</h2><p>Logged in this app</p></div>
+    <div class="tablewrap panel" style="padding:0;">
+      <table><thead><tr><th>Week Of</th><th>Status</th><th>Officer</th><th>Notes</th><th>Logged At</th><th></th></tr></thead>
+      <tbody>${recentKpaRows()}</tbody></table>
+    </div>
+  </div>
+  `;
+  document.getElementById('page-log-kpa').innerHTML = html;
+}
+let kpaPendingStatus = null;
+function setKpaStatus(s){
+  kpaPendingStatus = s;
+  document.querySelectorAll('#kpaToggle button').forEach(b=>b.classList.remove('on'));
+  document.querySelector('#kpaToggle .'+(s==='sent'?'sentbtn':'notbtn')).classList.add('on');
+}
+function saveKpa(){
+  const wk = isoWeekInfo(new Date());
+  const existing = loadEntries().find(e=>e.category==='KPA' && e.date===wk.mondayStr);
+  const status = kpaPendingStatus || (existing?existing.status:'sent');
+  const entry = {
+    category:'KPA', date:wk.mondayStr, client:null, status,
+    officer: loadOfficer(), notes: document.getElementById('kpaNotes').value, ts: new Date().toISOString()
+  };
+  upsertEntry(entry, e=>e.category==='KPA' && e.date===wk.mondayStr);
+  toast('KPA weekly report status saved');
+  kpaPendingStatus = null;
+  renderLogKPA();
+  if(currentPage==='dashboard') renderDashboard();
+}
+function recentKpaRows(){
+  const rows = loadEntries().filter(e=>e.category==='KPA').sort((a,b)=>b.date.localeCompare(a.date)).slice(0,12);
+  if(!rows.length) return `<tr><td colspan="6" style="font-family:var(--sans);color:var(--ink-soft);">No weeks logged yet.</td></tr>`;
+  return rows.map(e=>`<tr>
+    <td>${e.date}</td>
+    <td>${e.status==='sent'?'<span class="stamp sent">Sent</span>':'<span class="stamp notsent">Not sent</span>'}</td>
+    <td>${escapeHtml(e.officer)||'—'}</td>
+    <td style="white-space:normal;">${escapeHtml(e.notes)||'—'}</td>
+    <td>${new Date(e.ts).toLocaleString()}</td>
+    <td><button class="btn sm ghost" onclick="openEditModal('${e.id}')">Edit</button> <button class="btn sm ghost" onclick="deleteEntry('${e.id}');renderLogKPA();">Delete</button></td>
+  </tr>`).join('');
+}
+
+/* ============================================================
+   LOG A REPORT — FCL / LCL / BREAK BULK (daily client checklist)
+   ============================================================ */
+function checklistState(){
+  return {
+    FCL: {clients: categoryClientList('FCL').sort(), title:'FCL Container Status Reports', freq:null},
+    LCL: {clients: categoryClientList('LCL').sort(), title:'LCL Container Status Reports', freq: DATA.reporting_freq},
+    BB:  {clients: categoryClientList('BB').sort(), title:'Break Bulk Released and Unreleased Status', freq:null},
+  };
+}
+let checklistDate = {FCL: todayStr(), LCL: todayStr(), BB: todayStr()};
+let checklistSearch = {FCL:'', LCL:'', BB:''};
+const CHECKLIST_PAGE_IDS = {FCL:'page-log-fcl', LCL:'page-log-lcl', BB:'page-log-bb'};
+
+function freqFor(client){
+  const row = (DATA.reporting_freq||[]).find(r=>r.client===client);
+  return row? row.freq : null;
+}
+
+function lastSentBefore(cat, client, dateStr){
+  const rows = loadEntries().filter(e=>e.category===cat && e.client===client && e.status==='sent' && e.date<dateStr);
+  if(!rows.length) return null;
+  return rows.sort((a,b)=>b.date.localeCompare(a.date))[0].date;
+}
+
+/* Renders the static shell (title, date, search box, buttons) once.
+   The search box itself is never rebuilt on keystroke, so it never loses focus. */
+function renderChecklistPage(cat, pageId){
+  const cfg = checklistState()[cat];
+  const date = checklistDate[cat];
+  const html = `
+  <div class="notice">Tick off each client once their report has gone out. Every tap saves immediately — nothing to submit. Need to add or remove a client? Use <a class="linklike" onclick="goTo('master-${cat==='BB'?'bb':cat.toLowerCase()}')">Master Data</a>.</div>
+  <div class="panel">
+    <div class="section-head">
+      <h2>${cfg.title}</h2>
+      <p id="checklistCount-${cat}"></p>
+    </div>
+    <div class="searchbar">
+      <input type="date" value="${date}" onchange="checklistDate['${cat}']=this.value; renderChecklistPage('${cat}','${pageId}')">
+      <input type="text" id="checklistSearchInput-${cat}" placeholder="Search client…" value="${escapeHtml(checklistSearch[cat])}" oninput="checklistSearch['${cat}']=this.value; renderChecklistRowsOnly('${cat}','${pageId}')">
+      <button class="btn sm" onclick="markAll('${cat}','sent')">Mark all sent</button>
+      <button class="btn sm ghost" onclick="markAll('${cat}','not_sent')">Mark all not sent</button>
+    </div>
+    <div class="progress" id="checklistProgress-${cat}"><div style="width:0%"></div></div>
+    <div style="margin-top:10px;" id="checklistRows-${cat}"></div>
+  </div>`;
+  document.getElementById(pageId).innerHTML = html;
+  renderChecklistRowsOnly(cat, pageId);
+}
+
+/* Only touches the rows list, count and progress bar — the search input itself is left alone. */
+function renderChecklistRowsOnly(cat, pageId){
+  const cfg = checklistState()[cat];
+  const date = checklistDate[cat];
+  const search = (checklistSearch[cat]||'').toLowerCase();
+  const entriesToday = loadEntries().filter(e=>e.category===cat && e.date===date);
+  const sentMap = {}; entriesToday.forEach(e=> sentMap[e.client] = e.status);
+  const clients = cfg.clients.filter(c=>c.toLowerCase().includes(search));
+  const sentCount = cfg.clients.filter(c=>sentMap[c]==='sent').length;
+
+  const rows = clients.map(c=>{
+    const status = sentMap[c] || 'not_sent'; // default to Not Sent until the officer marks it Sent
+    const freq = freqFor(c);
+    const last = lastSentBefore(cat, c, date);
+    const safeC = encodeURIComponent(c);
+    return `<div class="checklist-row">
+      <div class="name">${escapeHtml(c)}${freq?` <span class="freq-tag">${escapeHtml(freq)}</span>`:''}</div>
+      <div class="meta">${last? 'last sent '+last : 'no prior record'}</div>
+      <div class="toggle">
+        <button class="sentbtn ${status==='sent'?'on':''}" onclick="toggleChecklist('${cat}',decodeURIComponent('${safeC}'),'sent')">Sent</button>
+        <button class="notbtn ${status==='not_sent'?'on':''}" onclick="toggleChecklist('${cat}',decodeURIComponent('${safeC}'),'not_sent')">Not sent</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  const rowsEl = document.getElementById('checklistRows-'+cat);
+  if(rowsEl) rowsEl.innerHTML = rows || (cfg.clients.length? '<div class="empty">No clients match your search.</div>' : '<div class="empty">No clients in the master list yet. Add some under Master Data.</div>');
+  const countEl = document.getElementById('checklistCount-'+cat);
+  if(countEl) countEl.textContent = `${sentCount} sent · ${cfg.clients.length-sentCount} not sent · ${cfg.clients.length} total`;
+  const progEl = document.getElementById('checklistProgress-'+cat);
+  if(progEl) progEl.firstElementChild.style.width = (cfg.clients.length? (sentCount/cfg.clients.length*100):0)+'%';
+}
+
+function toggleChecklist(cat, client, status){
+  const date = checklistDate[cat];
+  const entry = {category:cat, date, client, status, officer:loadOfficer(), notes:'', ts:new Date().toISOString()};
+  upsertEntry(entry, e=>e.category===cat && e.date===date && e.client===client);
+  renderChecklistRowsOnly(cat, CHECKLIST_PAGE_IDS[cat]);
+  if(currentPage==='dashboard') renderDashboard();
+}
+function markAll(cat, status){
+  const cfg = checklistState()[cat];
+  const date = checklistDate[cat];
+  const officer = loadOfficer();
+  const ts = new Date().toISOString();
+  const changed = [];
+  cfg.clients.forEach(client=>{
+    const idx = ENTRIES.findIndex(e=>e.category===cat && e.date===date && e.client===client);
+    const entry = {category:cat,date,client,status,officer,notes:'',ts};
+    if(idx>=0){ entry.id=ENTRIES[idx].id; ENTRIES[idx]=entry; } else { entry.id=uid(); ENTRIES.push(entry); }
+    changed.push(entry);
+  });
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE) cloudBulkUpsert(changed);
+  renderChecklistRowsOnly(cat, CHECKLIST_PAGE_IDS[cat]);
+  toast('Updated all clients for '+cat);
+  if(currentPage==='dashboard') renderDashboard();
+}
+function renderLogFCL(){ renderChecklistPage('FCL','page-log-fcl'); }
+function renderLogLCL(){ renderChecklistPage('LCL','page-log-lcl'); }
+function renderLogBB(){ renderChecklistPage('BB','page-log-bb'); }
+
+/* ============================================================
+   REPORTING MODULE — hierarchical Report Type → Client → Year →
+   Month → Week → Day filters over the logged report data.
+   ============================================================ */
+const REPORT_TYPES = [
+  {value:'KPA', label:'KPA Weekly'},
+  {value:'MBL', label:'MBL Guarantee'},
+  {value:'FCL', label:'FCL Container Status'},
+  {value:'LCL', label:'LCL Container Status'},
+  {value:'BB',  label:'Break Bulk Released and Unreleased Status'},
+];
+let rpt = {type:'', client:'', year:'', month:'', week:'', day:''};
+
+function reportClientList(type){
+  if(type==='FCL') return MASTER.FCL.map(c=>c.name).sort((a,b)=>a.localeCompare(b));
+  if(type==='LCL') return MASTER.LCL.map(c=>c.name).sort((a,b)=>a.localeCompare(b));
+  if(type==='BB')  return MASTER.BB.map(c=>c.name).sort((a,b)=>a.localeCompare(b));
+  if(type==='MBL') return MASTER.MBL_CLIENT.map(c=>c.name).sort((a,b)=>a.localeCompare(b));
+  return [];
+}
+function reportingYears(){
+  const ys = new Set();
+  DATA.kpa_monthly.forEach(r=>ys.add(r.year));
+  DATA.fcl_monthly.forEach(r=>ys.add(r.year));
+  DATA.lcl_monthly.forEach(r=>ys.add(r.year));
+  DATA.bb_monthly.forEach(r=>ys.add(r.year));
+  DATA.mbl_monthly.forEach(r=>ys.add(parseInt(r.month.split('-')[1])));
+  loadEntries().forEach(e=>{ if(e.date) ys.add(parseInt(e.date.slice(0,4))); });
+  ys.add(new Date().getFullYear());
+  return Array.from(ys).sort((a,b)=>b-a);
+}
+function daysInMonth(year, monthIdx){ return new Date(year, monthIdx+1, 0).getDate(); }
+function weeksForSelection(){
+  if(!rpt.year) return [];
+  let fromDate, toDate;
+  if(rpt.month){
+    const mi = MONTHS.indexOf(rpt.month);
+    fromDate = rpt.year+'-'+pad2(mi+1)+'-01';
+    toDate = rpt.year+'-'+pad2(mi+1)+'-'+pad2(daysInMonth(rpt.year, mi));
+  } else {
+    fromDate = rpt.year+'-01-01';
+    toDate = rpt.year+'-12-31';
+  }
+  const weeks = []; const seen = new Set();
+  let d = new Date(fromDate+'T00:00:00');
+  const end = new Date(toDate+'T00:00:00');
+  while(d <= end){
+    const info = isoWeekInfo(d);
+    if(!seen.has(info.key)){ seen.add(info.key); weeks.push(info); }
+    d.setDate(d.getDate()+1);
+  }
+  return weeks;
+}
+function daysForSelection(){
+  if(rpt.week){
+    const info = weeksForSelection().find(w=>w.key===rpt.week);
+    if(!info) return [];
+    const days = []; let d = new Date(info.mondayStr+'T00:00:00');
+    for(let i=0;i<7;i++){ days.push(d.toISOString().slice(0,10)); d.setDate(d.getDate()+1); }
+    return days;
+  }
+  if(rpt.month){
+    const mi = MONTHS.indexOf(rpt.month);
+    const n = daysInMonth(rpt.year, mi);
+    const days = [];
+    for(let i=1;i<=n;i++) days.push(rpt.year+'-'+pad2(mi+1)+'-'+pad2(i));
+    return days;
+  }
+  return [];
+}
+function setRptField(field, value){
+  rpt[field] = value;
+  if(field==='type'){ rpt.client=''; rpt.year=''; rpt.month=''; rpt.week=''; rpt.day=''; }
+  else if(field==='client'){ rpt.year=''; rpt.month=''; rpt.week=''; rpt.day=''; }
+  else if(field==='year'){ rpt.month=''; rpt.week=''; rpt.day=''; }
+  else if(field==='month'){ rpt.week=''; rpt.day=''; }
+  else if(field==='week'){ rpt.day=''; }
+  renderReportPage();
+}
+function resetReportFilters(){ rpt = {type:'', client:'', year:'', month:'', week:'', day:''}; renderReportPage(); }
+
+function renderReportPage(){
+  const weeks = weeksForSelection();
+  const days = daysForSelection();
+  const weekInfo = rpt.week ? weeks.find(w=>w.key===rpt.week) : null;
+  const html = `
+  <div class="notice">Build a report step by step: pick a report type, then narrow by client, year, month, week and — optionally — one exact day.</div>
+  <div class="panel" style="margin-bottom:18px;">
+    <div class="grid rpt-filter-grid">
+      <div class="field">
+        <label>1. Report Type</label>
+        <select onchange="setRptField('type', this.value)">
+          <option value="">— Select —</option>
+          ${REPORT_TYPES.map(t=>`<option value="${t.value}" ${rpt.type===t.value?'selected':''}>${t.label}</option>`).join('')}
+        </select>
+      </div>
+      <div class="field">
+        <label>2. Client</label>
+        <select ${!rpt.type?'disabled':''} onchange="setRptField('client', this.value)">
+          ${rpt.type==='KPA'
+            ? `<option value="">All (KPA has no client)</option>`
+            : `<option value="">${rpt.type? 'All Clients':'Select report type first'}</option>
+               ${reportClientList(rpt.type).map(c=>`<option value="${escapeHtml(c)}" ${rpt.client===c?'selected':''}>${escapeHtml(c)}</option>`).join('')}`
+          }
+        </select>
+      </div>
+      <div class="field">
+        <label>3. Year</label>
+        <select ${!rpt.type?'disabled':''} onchange="setRptField('year', this.value)">
+          <option value="">${rpt.type?'Select year':'Select report type first'}</option>
+          ${reportingYears().map(y=>`<option value="${y}" ${String(rpt.year)===String(y)?'selected':''}>${y}</option>`).join('')}
+        </select>
+      </div>
+      <div class="field">
+        <label>4. Month</label>
+        <select ${!rpt.year?'disabled':''} onchange="setRptField('month', this.value)">
+          <option value="">${rpt.year? 'All months':'Select year first'}</option>
+          ${MONTHS.map(m=>`<option value="${m}" ${rpt.month===m?'selected':''}>${m}</option>`).join('')}
+        </select>
+      </div>
+      <div class="field">
+        <label>5. Week</label>
+        <select ${!rpt.year?'disabled':''} onchange="setRptField('week', this.value)">
+          <option value="">${rpt.year? 'All weeks':'Select year first'}</option>
+          ${weeks.map(w=>`<option value="${w.key}" ${rpt.week===w.key?'selected':''}>Wk ${w.week} · ${w.mondayStr} – ${w.sundayStr}</option>`).join('')}
+        </select>
+        ${weekInfo ? `<div class="hint" style="margin-top:6px;">Start: <strong>${weekInfo.mondayStr}</strong> &nbsp; End: <strong>${weekInfo.sundayStr}</strong></div>` : ''}
+      </div>
+      <div class="field">
+        <label>6. Day <span class="hint">(optional)</span></label>
+        <select ${(!rpt.week && !rpt.month)?'disabled':''} onchange="setRptField('day', this.value)">
+          <option value="">${(rpt.week||rpt.month)? 'All days':'Select week or month first'}</option>
+          ${days.map(d=>`<option value="${d}" ${rpt.day===d?'selected':''}>${fmtDateLong(d)}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+    <div style="margin-top:14px;">
+      <button class="btn sm ghost" onclick="resetReportFilters()">Reset filters</button>
+    </div>
+  </div>
+  <div id="reportResults"></div>`;
+  document.getElementById('page-reporting').innerHTML = html;
+  renderReportResults();
+}
+function reportPeriodLabel(){
+  if(rpt.day) return fmtDateLong(rpt.day);
+  if(rpt.week){ const info = weeksForSelection().find(w=>w.key===rpt.week); return info? `Week of ${info.mondayStr} – ${info.sundayStr}` : ''; }
+  if(rpt.month) return rpt.month+' '+rpt.year;
+  if(rpt.year) return String(rpt.year);
+  return 'All time';
+}
+function reportMatchesDate(e){
+  if(!e.date) return false;
+  if(rpt.day) return e.date === rpt.day;
+  if(rpt.week){
+    const info = weeksForSelection().find(w=>w.key===rpt.week);
+    return info ? (e.date >= info.mondayStr && e.date <= info.sundayStr) : false;
+  }
+  if(rpt.month){
+    const mi = MONTHS.indexOf(rpt.month);
+    const from = rpt.year+'-'+pad2(mi+1)+'-01';
+    const to = rpt.year+'-'+pad2(mi+1)+'-'+pad2(daysInMonth(rpt.year, mi));
+    return e.date>=from && e.date<=to;
+  }
+  if(rpt.year) return e.date.slice(0,4) === String(rpt.year);
+  return true;
+}
+function reportFilteredEntries(){
+  if(!rpt.type) return [];
+  return loadEntries().filter(e => e.category===rpt.type
+    && (rpt.client===''|| e.client===rpt.client)
+    && reportMatchesDate(e))
+    .sort((a,b)=> b.date.localeCompare(a.date) || (b.ts||'').localeCompare(a.ts||''));
+}
+function agreedPerWeekFor(cat, clientName){
+  const item = (MASTER[cat]||[]).find(c=>c.name===clientName);
+  if(!item || item.agreedPerWeek===undefined || item.agreedPerWeek===null) return null;
+  return item.agreedPerWeek;
+}
+function reportSelectionRange(){
+  if(rpt.day) return {fromDate: rpt.day, toDate: rpt.day};
+  if(rpt.week){
+    const info = weeksForSelection().find(w=>w.key===rpt.week);
+    return info ? {fromDate: info.mondayStr, toDate: info.sundayStr} : {fromDate:null, toDate:null};
+  }
+  if(rpt.month){
+    const mi = MONTHS.indexOf(rpt.month);
+    return {fromDate: rpt.year+'-'+pad2(mi+1)+'-01', toDate: rpt.year+'-'+pad2(mi+1)+'-'+pad2(daysInMonth(rpt.year,mi))};
+  }
+  if(rpt.year) return {fromDate: rpt.year+'-01-01', toDate: rpt.year+'-12-31'};
+  return {fromDate:null, toDate:null};
+}
+// Send rate weighted by each active client's agreed weekly frequency, over the
+// current selection's date span. Falls back to a simple sent/total ratio for
+// clients (or periods) with no agreed frequency set yet.
+function computeNonMblSummary(rows){
+  const sent = rows.filter(e=>e.status==='sent').length;
+  const notSent = rows.filter(e=>e.status==='not_sent').length;
+  const total = rows.length;
+  let sendRatePct = total? sent/total : null;
+  let sendRateLabel = 'Of logged entries';
+  if(rpt.type==='FCL' || rpt.type==='LCL' || rpt.type==='BB'){
+    const clients = rpt.client ? [rpt.client] : categoryClientList(rpt.type); // active only
+    const {fromDate, toDate} = reportSelectionRange();
+    if(fromDate && toDate && clients.length){
+      const days = Math.round((new Date(toDate) - new Date(fromDate))/86400000) + 1;
+      let expected = 0, anyFreqSet = false;
+      clients.forEach(name=>{
+        const freq = agreedPerWeekFor(rpt.type, name);
+        if(freq!==null){ anyFreqSet = true; expected += freq * (days/7); }
+      });
+      if(anyFreqSet && expected>0){
+        sendRatePct = sent/expected;
+        sendRateLabel = 'Of agreed sends (active clients)';
+      }
+    }
+  }
+  return {sent, notSent, total, sendRatePct, sendRateLabel};
+}
+function renderReportResults(){
+  const el = document.getElementById('reportResults');
+  if(!el) return;
+  if(!rpt.type){ el.innerHTML = '<div class="panel"><div class="empty">Select a report type above to generate a report.</div></div>'; return; }
+
+  const rows = reportFilteredEntries();
+  const typeLabel = (REPORT_TYPES.find(t=>t.value===rpt.type)||{}).label || rpt.type;
+  const isMbl = rpt.type==='MBL';
+
+  let summaryHtml;
+  if(isMbl){
+    const shipments = rows.length;
+    const late = rows.filter(e=>e.late).length;
+    const avg = shipments? rows.reduce((s,e)=>s+(e.turnaround||0),0)/shipments : null;
+    summaryHtml = `<div class="grid kpi-grid">
+      ${kpiCard('Shipments', shipments, 'Guarantee deliveries logged')}
+      ${kpiCard('Avg Turnaround', avg!==null? num(avg,1)+'h':'—', 'Within this selection')}
+      ${kpiCard('Late', late, 'Beyond 24h SLA')}
+      ${kpiCard('% Late', shipments? pct(late/shipments):'—', 'Of shipments in selection')}
+    </div>`;
+  } else {
+    const s = computeNonMblSummary(rows);
+    summaryHtml = `<div class="grid kpi-grid">
+      ${kpiCard('Sent', s.sent, 'Reports marked sent')}
+      ${kpiCard('Not Sent', s.notSent, 'Reports marked not sent')}
+      ${kpiCard('Total Logged', s.total, 'Entries in this selection')}
+      ${kpiCard('Send Rate', s.sendRatePct!==null? pct(s.sendRatePct):'—', s.sendRateLabel)}
+    </div>`;
+  }
+
+  const colCount = isMbl ? 9 : 6;
+  const tableHead = isMbl
+    ? `<tr><th>BL Number</th><th>Client</th><th>Received</th><th>Delivered</th><th>Turnaround</th><th>SLA</th><th>Officer</th><th>Notes</th><th></th></tr>`
+    : `<tr><th>Date</th><th>Client</th><th>Status</th><th>Officer</th><th>Notes</th><th></th></tr>`;
+
+  const tableRows = rows.length ? rows.map(e=>{
+    if(isMbl){
+      const slaBadge = e.late? '<span class="stamp notsent">Late</span>' : '<span class="stamp sent">On-time</span>';
+      return `<tr>
+        <td>${escapeHtml(e.bl)||'—'}</td>
+        <td style="white-space:normal;">${escapeHtml(e.client)||'—'}</td>
+        <td>${fmtDateTime(e.received)}</td>
+        <td>${fmtDateTime(e.delivered)}</td>
+        <td>${e.turnaround!==null&&e.turnaround!==undefined? num(e.turnaround,1)+'h':'—'}</td>
+        <td>${slaBadge}</td>
+        <td>${escapeHtml(e.officer)||'—'}</td>
+        <td style="white-space:normal;">${escapeHtml(e.notes)||'—'}</td>
+        <td><button class="btn sm ghost" onclick="openEditModal('${e.id}')">Edit</button></td>
+      </tr>`;
+    }
+    let statusBadge = '<span class="stamp pending">Pending</span>';
+    if(e.status==='sent') statusBadge = '<span class="stamp sent">Sent</span>';
+    else if(e.status==='not_sent') statusBadge = '<span class="stamp notsent">Not sent</span>';
+    return `<tr>
+      <td>${e.date}</td>
+      <td style="white-space:normal;">${escapeHtml(e.client)||'—'}</td>
+      <td>${statusBadge}</td>
+      <td>${escapeHtml(e.officer)||'—'}</td>
+      <td style="white-space:normal;">${escapeHtml(e.notes)||'—'}</td>
+      <td><button class="btn sm ghost" onclick="openEditModal('${e.id}')">Edit</button></td>
+    </tr>`;
+  }).join('') : `<tr><td colspan="${colCount}" style="font-family:var(--sans);color:var(--ink-soft);">No entries logged for this selection yet.</td></tr>`;
+
+  el.innerHTML = `
+  <div class="section-head"><h2>${typeLabel}${rpt.client? ' · '+escapeHtml(rpt.client) : ' · All Clients'}</h2><p>${reportPeriodLabel()}</p></div>
+  ${summaryHtml}
+  <div class="section-head" style="margin-top:20px;"><h2>Matching Entries</h2><p>${rows.length} result(s)</p></div>
+  <div class="tablewrap panel" style="padding:0;">
+    <table><thead>${tableHead}</thead>
+    <tbody>${tableRows}</tbody></table>
+  </div>
+  <div style="margin-top:12px;display:flex;gap:10px;">
+    <button class="btn sm" onclick="exportReportCsv()">Export CSV</button>
+    <button class="btn sm primary" onclick="generateReportPdf()">Download PDF</button>
+  </div>`;
+}
+function exportReportCsv(){
+  const rows = reportFilteredEntries();
+  const header = ['date','category','client','bl','status','officer','notes','line','received','delivered','turnaround','late'];
+  const lines = [header.join(',')];
+  rows.forEach(e=>{
+    const line = header.map(k=>{
+      let v = e[k]; v = (v===undefined||v===null)?'':String(v);
+      if(v.includes(',')||v.includes('"')) v = '"'+v.replace(/"/g,'""')+'"';
+      return v;
+    });
+    lines.push(line.join(','));
+  });
+  downloadFile('omlin_report_'+(rpt.type||'all')+'_'+todayStr()+'.csv', lines.join('\n'), 'text/csv');
+}
+function generateReportPdf(){
+  if(!rpt.type){ toast('Select a report type first'); return; }
+  if(!window.jspdf || !window.jspdf.jsPDF){ toast('PDF library did not load — check your internet connection'); return; }
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'pt', format:'a4'});
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const typeLabel = (REPORT_TYPES.find(t=>t.value===rpt.type)||{}).label || rpt.type;
+  const rows = reportFilteredEntries();
+  const isMbl = rpt.type==='MBL';
+
+  // Brand palette (matches the app's CSS variables)
+  const HULL=[30,61,46], BROWN=[138,90,46], AMBER=[217,119,42], GREEN=[47,163,101],
+        RED=[180,67,42], PAPER=[246,245,241], INK=[33,38,31], INKSOFT=[91,100,89],
+        WHITE=[255,255,255], LINE=[225,222,211];
+
+  // ---- Header band ----
+  doc.setFillColor(...HULL);
+  doc.rect(0, 0, pageWidth, 92, 'F');
+  doc.setFillColor(...AMBER);
+  doc.rect(0, 92, pageWidth, 4, 'F');
+
+  doc.setTextColor(...WHITE);
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(9);
+  doc.text('C O N S O L B A S E   C U S T O M E R   S E R V I C E', pageWidth/2, 26, {align:'center'});
+  doc.setFontSize(20);
+  doc.text(typeLabel, pageWidth/2, 54, {align:'center'});
+
+  // Filter summary — client / year / month / week / day, only what's set, centered below the title
+  doc.setFont('helvetica','normal');
+  doc.setFontSize(10);
+  const parts = ['Client: ' + (rpt.client || 'All Clients')];
+  if(rpt.year) parts.push('Year: '+rpt.year);
+  if(rpt.month) parts.push('Month: '+rpt.month);
+  if(rpt.week){
+    const info = weeksForSelection().find(w=>w.key===rpt.week);
+    if(info) parts.push('Week: '+info.mondayStr+' to '+info.sundayStr);
+  }
+  if(rpt.day) parts.push('Day: '+rpt.day);
+  const line1 = parts.slice(0, Math.ceil(parts.length/2)).join('     |     ');
+  const line2 = parts.slice(Math.ceil(parts.length/2)).join('     |     ');
+  doc.setTextColor(230,236,232);
+  doc.text(line1, pageWidth/2, 72, {align:'center'});
+  if(line2) doc.text(line2, pageWidth/2, 84, {align:'center'});
+
+  // ---- Summary stat chips ----
+  let chips;
+  if(isMbl){
+    const shipments = rows.length;
+    const late = rows.filter(e=>e.late).length;
+    const avg = shipments? (rows.reduce((s,e)=>s+(e.turnaround||0),0)/shipments) : null;
+    chips = [
+      {label:'Shipments', value: String(shipments), color: BROWN},
+      {label:'Avg Turnaround', value: avg!==null? avg.toFixed(1)+'h':'—', color: BROWN},
+      {label:'Late (>24h)', value: String(late), color: RED},
+      {label:'% Late', value: shipments? ((late/shipments)*100).toFixed(1)+'%':'—', color: RED},
+    ];
+  } else {
+    const s = computeNonMblSummary(rows);
+    chips = [
+      {label:'Sent', value:String(s.sent), color: GREEN},
+      {label:'Not Sent', value:String(s.notSent), color: RED},
+      {label:'Total Logged', value:String(s.total), color: HULL},
+      {label:'Send Rate', value: s.sendRatePct!==null? (s.sendRatePct*100).toFixed(1)+'%':'—', color: AMBER},
+    ];
+  }
+  const chipTop = 116;
+  const chipH = 46;
+  const margin = 40;
+  const gap = 10;
+  const chipW = (pageWidth - margin*2 - gap*(chips.length-1)) / chips.length;
+  chips.forEach((chip, i)=>{
+    const x = margin + i*(chipW+gap);
+    doc.setFillColor(...PAPER);
+    doc.roundedRect(x, chipTop, chipW, chipH, 5, 5, 'F');
+    doc.setFillColor(...chip.color);
+    doc.roundedRect(x, chipTop, chipW, 4, 2, 2, 'F');
+    doc.setTextColor(...INK);
+    doc.setFont('helvetica','bold');
+    doc.setFontSize(14);
+    doc.text(chip.value, x+10, chipTop+27);
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(7.2);
+    doc.setTextColor(...INKSOFT);
+    doc.text(chip.label.toUpperCase(), x+10, chipTop+38);
+  });
+
+  // ---- Results table ----
+  const head = isMbl
+    ? [['BL Number','Client','Received','Delivered','Turnaround','SLA','Officer','Notes']]
+    : [['Date','Client','Status','Officer','Notes']];
+  const body = isMbl
+    ? rows.map(e=> [e.bl||'—', e.client||'—', fmtDateTime(e.received), fmtDateTime(e.delivered),
+        (e.turnaround!==null&&e.turnaround!==undefined? num(e.turnaround,1)+'h':'—'),
+        e.late? 'Late':'On-time', e.officer||'—', e.notes||'—'])
+    : rows.map(e=>{
+        let statusLabel = 'Pending';
+        if(e.status==='sent') statusLabel = 'Sent';
+        else if(e.status==='not_sent') statusLabel = 'Not sent';
+        return [e.date, e.client||'—', statusLabel, e.officer||'—', e.notes||'—'];
+      });
+
+  const slaColIdx = isMbl ? 5 : -1;
+  const statusColIdx = isMbl ? -1 : 2;
+
+  doc.autoTable({
+    head, body, startY: chipTop+chipH+18,
+    styles:{fontSize:8, cellPadding:5, textColor:INK, lineColor:LINE, lineWidth:0.5},
+    headStyles:{fillColor:HULL, textColor:WHITE, fontStyle:'bold', fontSize:8},
+    alternateRowStyles:{fillColor:PAPER},
+    margin:{left:margin, right:margin, bottom:50},
+    didParseCell: (data)=>{
+      if(data.section!=='body') return;
+      if(slaColIdx>=0 && data.column.index===slaColIdx){
+        if(data.cell.raw==='Late'){ data.cell.styles.textColor = RED; data.cell.styles.fontStyle='bold'; }
+        else if(data.cell.raw==='On-time'){ data.cell.styles.textColor = GREEN; data.cell.styles.fontStyle='bold'; }
+      }
+      if(statusColIdx>=0 && data.column.index===statusColIdx){
+        if(data.cell.raw==='Sent'){ data.cell.styles.textColor = GREEN; data.cell.styles.fontStyle='bold'; }
+        else if(data.cell.raw==='Not sent'){ data.cell.styles.textColor = RED; data.cell.styles.fontStyle='bold'; }
+      }
+    },
+    didDrawPage: ()=>{
+      const h = doc.internal.pageSize.getHeight();
+      doc.setDrawColor(...BROWN);
+      doc.setLineWidth(1.2);
+      doc.line(margin, h-38, pageWidth-margin, h-38);
+      doc.setFont('helvetica','normal');
+      doc.setFontSize(8);
+      doc.setTextColor(...INKSOFT);
+      doc.text('Generated '+new Date().toLocaleString()+' by '+loadOfficer(), margin, h-24);
+      doc.text('Consolbase Customer Service · KPI Dashboard · Powered by Omlin', pageWidth-margin, h-24, {align:'right'});
+      const pageNum = doc.internal.getCurrentPageInfo().pageNumber;
+      doc.text('Page '+pageNum, pageWidth/2, h-24, {align:'center'});
+    }
+  });
+
+  doc.save('omlin_report_'+rpt.type+'_'+todayStr()+'.pdf');
+}
+
+/* ============================================================
+   MASTER DATA — add / remove clients & shipping lines
+   ============================================================ */
+let masterSearch = {FCL:'', LCL:'', BB:'', MBL_CLIENT:'', MBL_LINE:''};
+let masterStatusFilter = {FCL:'', LCL:'', BB:'', MBL_CLIENT:'', MBL_LINE:''};
+const MASTER_PAGE_META = {
+  FCL:        {pageId:'page-master-fcl',  label:'FCL Clients',         singular:'client'},
+  LCL:        {pageId:'page-master-lcl',  label:'LCL Clients',         singular:'client'},
+  BB:         {pageId:'page-master-bb',   label:'Break Bulk Clients',  singular:'client'},
+  MBL_CLIENT: {pageId:'page-master-mblc', label:'MBL Clients',         singular:'client'},
+  MBL_LINE:   {pageId:'page-master-mbll', label:'MBL Shipping Lines',  singular:'shipping line'},
+};
+function renderMasterCategory(cat){
+  const meta = MASTER_PAGE_META[cat];
+  const showFreq = (cat==='FCL' || cat==='LCL' || cat==='BB');
+  const html = `
+  <div class="notice">Add, remove, or set ${meta.label.toLowerCase()} active/inactive here. Only <strong>active</strong> clients appear on the daily Log a Report checklists and in "Clients Tracked" counts — inactive ones stay visible here and in Reporting, but drop off today's checklist.${showFreq? ' "Agreed / wk" is the number of times a week Consolbase and this client have agreed reports will be sent — this is used to work out their real send rate.' : ''} Changes apply everywhere this list is used${CLOUD_MODE?', live, for every officer':' on this device'}. Removing a ${meta.singular} does not delete any reports already logged for them.</div>
+  <div class="panel">
+    <div class="section-head"><h2>${meta.label}</h2><p id="masterCount-${cat}"></p></div>
+    <div class="searchbar">
+      <input type="text" id="masterAddInput-${cat}" placeholder="Add a new ${meta.singular}…" style="min-width:220px;">
+      <button class="btn sm primary" id="masterAddBtn-${cat}" onclick="submitAddMaster('${cat}')">Add</button>
+      <select id="masterStatusFilter-${cat}" onchange="masterStatusFilter['${cat}']=this.value; renderMasterRowsOnly('${cat}')">
+        <option value="" ${!masterStatusFilter[cat]?'selected':''}>All statuses</option>
+        <option value="active" ${masterStatusFilter[cat]==='active'?'selected':''}>Active only</option>
+        <option value="inactive" ${masterStatusFilter[cat]==='inactive'?'selected':''}>Inactive only</option>
+      </select>
+      <input type="text" id="masterSearchInput-${cat}" placeholder="Search…" value="${escapeHtml(masterSearch[cat])}" oninput="masterSearch['${cat}']=this.value; renderMasterRowsOnly('${cat}')" style="margin-left:auto;min-width:200px;">
+    </div>
+    <div id="masterRows-${cat}" style="margin-top:8px;"></div>
+  </div>`;
+  document.getElementById(meta.pageId).innerHTML = html;
+  const addInput = document.getElementById('masterAddInput-'+cat);
+  addInput.addEventListener('keydown', e=>{ if(e.key==='Enter'){ submitAddMaster(cat); } });
+  renderMasterRowsOnly(cat);
+}
+function submitAddMaster(cat){
+  const input = document.getElementById('masterAddInput-'+cat);
+  addMasterClient(cat, input.value);
+  input.value = '';
+  input.focus();
+  renderMasterRowsOnly(cat);
+}
+function renderMasterRowsOnly(cat){
+  const search = (masterSearch[cat]||'').toLowerCase();
+  const statusFilter = masterStatusFilter[cat]||'';
+  const showFreq = (cat==='FCL' || cat==='LCL' || cat==='BB');
+  let list = MASTER[cat].filter(item=>item.name.toLowerCase().includes(search));
+  if(statusFilter==='active') list = list.filter(item=>item.active!==false);
+  else if(statusFilter==='inactive') list = list.filter(item=>item.active===false);
+  list = list.sort((a,b)=>a.name.localeCompare(b.name));
+  const rowsHtml = list.map(item=>{
+    const isActive = item.active!==false;
+    const freqVal = (item.agreedPerWeek===null||item.agreedPerWeek===undefined) ? '' : item.agreedPerWeek;
+    return `
+    <div class="checklist-row">
+      <div class="name" style="${isActive?'':'opacity:.5;'}">${escapeHtml(item.name)}${isActive?'':' <span class="freq-tag">inactive</span>'}</div>
+      ${showFreq ? `<div class="freqinput"><label>Agreed&nbsp;/&nbsp;wk</label><input type="number" min="0" max="7" step="1" value="${freqVal}" placeholder="—" onchange="setAgreedPerWeek('${cat}','${item.id}',this.value)"></div>` : ''}
+      <div class="toggle">
+        <button class="sentbtn ${isActive?'on':''}" onclick="toggleMasterActive('${cat}','${item.id}',true)">Active</button>
+        <button class="notbtn ${!isActive?'on':''}" onclick="toggleMasterActive('${cat}','${item.id}',false)">Inactive</button>
+      </div>
+      <button class="btn sm ghost" onclick="removeMasterClient('${cat}','${item.id}')">Remove</button>
+    </div>`;
+  }).join('');
+  const rowsEl = document.getElementById('masterRows-'+cat);
+  if(rowsEl) rowsEl.innerHTML = rowsHtml || '<div class="empty">No matches.</div>';
+  const countEl = document.getElementById('masterCount-'+cat);
+  if(countEl) countEl.textContent = activeCount(cat)+' active of '+MASTER[cat].length+' total';
+}
+function renderMasterFCL(){ renderMasterCategory('FCL'); }
+function renderMasterLCL(){ renderMasterCategory('LCL'); }
+function renderMasterBB(){ renderMasterCategory('BB'); }
+function renderMasterMBLC(){ renderMasterCategory('MBL_CLIENT'); }
+function renderMasterMBLL(){ renderMasterCategory('MBL_LINE'); }
+
+/* ============================================================
+   LOG A REPORT — MBL Guarantee (transactional log)
+   ============================================================ */
+function renderLogMBL(){
+  const now = new Date();
+  const nowTime = pad2(now.getHours())+':'+pad2(now.getMinutes());
+  const html = `
+  <div class="notice">Add a record each time a guarantee document is delivered to a client. Turnaround (in hours) and SLA status are calculated automatically. Client/line not in the suggestions? Add it under <a class="linklike" onclick="goTo('master-mblc')">Master Data</a>.</div>
+  <div class="panel">
+    <div class="section-head"><h2>New Guarantee Delivery</h2><p>SLA threshold: 24 hours</p></div>
+    <div class="formrow">
+      <div class="field"><label>Client</label><input list="mblClientList" id="mblClient" placeholder="Client name"></div>
+      <div class="field"><label>Shipping Line</label><input list="mblLineList" id="mblLine" placeholder="Shipping line"></div>
+      <div class="field"><label>BL Number <span class="hint">(required)</span></label><input type="text" id="mblBlNumber" placeholder="Bill of lading number"></div>
+    </div>
+    <div class="formrow" style="margin-top:10px;">
+      <div class="field"><label>MBL Received — Date</label><input type="date" id="mblReceivedDate" value="${todayStr()}"></div>
+      <div class="field"><label>MBL Received — Time</label><input type="time" id="mblReceivedTime" value="${nowTime}"></div>
+    </div>
+    <div class="formrow" style="margin-top:10px;">
+      <div class="field"><label>Delivered to Client — Date</label><input type="date" id="mblDeliveredDate" value="${todayStr()}"></div>
+      <div class="field"><label>Delivered to Client — Time</label><input type="time" id="mblDeliveredTime" value="${nowTime}"></div>
+    </div>
+    <div class="formrow" style="margin-top:10px;">
+      <div class="field" style="flex:2;"><label>Notes (optional)</label><input type="text" id="mblNotes" placeholder="File number, vessel, etc."></div>
+    </div>
+    <datalist id="mblClientList">${MASTER.MBL_CLIENT.filter(c=>c.active!==false).map(c=>`<option value="${escapeHtml(c.name)}">`).join('')}</datalist>
+    <datalist id="mblLineList">${MASTER.MBL_LINE.map(c=>`<option value="${escapeHtml(c.name)}">`).join('')}</datalist>
+    <div style="margin-top:14px;">
+      <button class="btn primary" onclick="saveMbl()">Save record</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Logged in this app</h2><p>Most recent first</p></div>
+    <div class="tablewrap panel" style="padding:0;">
+      <table><thead><tr><th>BL Number</th><th>Delivered</th><th>Client</th><th>Line</th><th>Received</th><th>Turnaround</th><th>SLA</th><th>Officer</th><th></th></tr></thead>
+      <tbody>${mblRows()}</tbody></table>
+    </div>
+  </div>`;
+  document.getElementById('page-log-mbl').innerHTML = html;
+}
+function fmtDateTime(iso){
+  if(!iso) return '—';
+  const d = new Date(iso);
+  if(isNaN(d)) return iso;
+  return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}) + ' ' +
+    d.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'});
+}
+function mblRows(){
+  const rows = loadEntries().filter(e=>e.category==='MBL').sort((a,b)=> (b.delivered||'').localeCompare(a.delivered||''));
+  if(!rows.length) return `<tr><td colspan="9" style="font-family:var(--sans);color:var(--ink-soft);">No guarantee deliveries logged yet.</td></tr>`;
+  return rows.map(e=>`<tr>
+    <td>${escapeHtml(e.bl)||'—'}</td>
+    <td>${fmtDateTime(e.delivered)}</td>
+    <td style="white-space:normal;">${escapeHtml(e.client)}</td>
+    <td>${escapeHtml(e.line)||'—'}</td>
+    <td>${fmtDateTime(e.received)}</td>
+    <td>${e.turnaround!==null&&e.turnaround!==undefined? num(e.turnaround,1)+'h':'—'}</td>
+    <td>${e.late? '<span class="stamp notsent">Late</span>' : '<span class="stamp sent">On-time</span>'}</td>
+    <td>${escapeHtml(e.officer)||'—'}</td>
+    <td><button class="btn sm ghost" onclick="openEditModal('${e.id}')">Edit</button> <button class="btn sm ghost" onclick="deleteEntry('${e.id}');renderLogMBL();">Delete</button></td>
+  </tr>`).join('');
+}
+function saveMbl(){
+  const client = document.getElementById('mblClient').value.trim();
+  const line = document.getElementById('mblLine').value.trim();
+  const bl = document.getElementById('mblBlNumber').value.trim();
+  const receivedDate = document.getElementById('mblReceivedDate').value;
+  const receivedTime = document.getElementById('mblReceivedTime').value;
+  const deliveredDate = document.getElementById('mblDeliveredDate').value;
+  const deliveredTime = document.getElementById('mblDeliveredTime').value;
+  const notes = document.getElementById('mblNotes').value;
+  if(!client || !receivedDate || !receivedTime || !deliveredDate || !deliveredTime){
+    toast('Client, received date/time and delivered date/time are required'); return;
+  }
+  if(!bl){ toast('BL number is required'); return; }
+  const received = receivedDate+'T'+receivedTime;
+  const delivered = deliveredDate+'T'+deliveredTime;
+  const receivedDT = new Date(received);
+  const deliveredDT = new Date(delivered);
+  if(isNaN(receivedDT) || isNaN(deliveredDT)){ toast('Check the received/delivered date and time'); return; }
+  const turnaround = Math.round(((deliveredDT - receivedDT) / 3600000) * 10) / 10; // hours, 1dp
+  const late = turnaround > 24;
+  const entry = {category:'MBL', date: deliveredDate, client, line, bl, received, delivered, turnaround, late,
+    status:'logged', officer: loadOfficer(), notes, ts: new Date().toISOString()};
+  addEntry(entry);
+  toast('Guarantee delivery logged');
+  document.getElementById('mblClient').value='';
+  document.getElementById('mblLine').value='';
+  document.getElementById('mblBlNumber').value='';
+  document.getElementById('mblNotes').value='';
+  renderLogMBL();
+  if(currentPage==='dashboard') renderDashboard();
+}
+
+/* ============================================================
+   HISTORY
+   ============================================================ */
+let historyFilter = {cat:'', from:'', to:'', q:''};
+function renderHistory(){
+  const html = `
+  <div class="section-head"><h2>All Logged Activity</h2><p>Everything recorded in this app, across every category</p></div>
+  <div class="searchbar">
+    <select onchange="historyFilter.cat=this.value; renderHistoryRowsOnly()">
+      <option value="">All categories</option>
+      <option value="KPA" ${historyFilter.cat==='KPA'?'selected':''}>KPA Weekly</option>
+      <option value="MBL" ${historyFilter.cat==='MBL'?'selected':''}>MBL Guarantee</option>
+      <option value="FCL" ${historyFilter.cat==='FCL'?'selected':''}>FCL Container Status</option>
+      <option value="LCL" ${historyFilter.cat==='LCL'?'selected':''}>LCL Container Status</option>
+      <option value="BB" ${historyFilter.cat==='BB'?'selected':''}>Break Bulk Released and Unreleased Status</option>
+    </select>
+    <input type="date" value="${historyFilter.from}" onchange="historyFilter.from=this.value; renderHistoryRowsOnly()">
+    <span class="hint">to</span>
+    <input type="date" value="${historyFilter.to}" onchange="historyFilter.to=this.value; renderHistoryRowsOnly()">
+    <input type="text" id="historySearchInput" placeholder="Search client / officer / notes…" value="${escapeHtml(historyFilter.q)}" oninput="historyFilter.q=this.value; renderHistoryRowsOnly()" style="min-width:220px;">
+    <button class="btn sm" onclick="exportCsv()">Export CSV</button>
+  </div>
+  <div class="tablewrap panel" style="padding:0;">
+    <table><thead><tr><th>Date</th><th>Category</th><th>Client</th><th>Status</th><th>Officer</th><th>Notes</th><th>Logged At</th><th></th></tr></thead>
+    <tbody id="historyRowsBody"></tbody></table>
+  </div>`;
+  document.getElementById('page-history').innerHTML = html;
+  renderHistoryRowsOnly();
+}
+function renderHistoryRowsOnly(){
+  const body = document.getElementById('historyRowsBody');
+  if(body) body.innerHTML = historyRows();
+}
+function filteredEntries(){
+  let rows = loadEntries();
+  if(historyFilter.cat) rows = rows.filter(e=>e.category===historyFilter.cat);
+  if(historyFilter.from) rows = rows.filter(e=>e.date>=historyFilter.from);
+  if(historyFilter.to) rows = rows.filter(e=>e.date<=historyFilter.to);
+  if(historyFilter.q){
+    const q = historyFilter.q.toLowerCase();
+    rows = rows.filter(e=> (e.client||'').toLowerCase().includes(q) || (e.officer||'').toLowerCase().includes(q) || (e.notes||'').toLowerCase().includes(q));
+  }
+  return rows.sort((a,b)=> b.date.localeCompare(a.date) || (b.ts||'').localeCompare(a.ts||''));
+}
+function historyRows(){
+  const rows = filteredEntries();
+  if(!rows.length) return `<tr><td colspan="8" style="font-family:var(--sans);color:var(--ink-soft);">No entries match. Try widening your filters, or head to <a class="linklike" onclick="goTo('log-fcl')">Log a Report</a>.</td></tr>`;
+  return rows.map(e=>{
+    let statusBadge = '<span class="stamp pending">Pending</span>';
+    if(e.status==='sent') statusBadge = '<span class="stamp sent">Sent</span>';
+    else if(e.status==='not_sent') statusBadge = '<span class="stamp notsent">Not sent</span>';
+    else if(e.status==='logged') statusBadge = e.late? '<span class="stamp notsent">Late</span>' : '<span class="stamp logged">Logged</span>';
+    return `<tr>
+      <td>${e.date}</td>
+      <td>${e.category}</td>
+      <td style="white-space:normal;">${escapeHtml(e.client)||'—'}</td>
+      <td>${statusBadge}</td>
+      <td>${escapeHtml(e.officer)||'—'}</td>
+      <td style="white-space:normal;">${escapeHtml(e.notes)||'—'}</td>
+      <td>${e.ts? new Date(e.ts).toLocaleString():'—'}</td>
+      <td><button class="btn sm ghost" onclick="openEditModal('${e.id}')">Edit</button> <button class="btn sm ghost" onclick="deleteEntry('${e.id}');renderHistoryRowsOnly();">Delete</button></td>
+    </tr>`;
+  }).join('');
+}
+function exportCsv(){
+  const rows = filteredEntries();
+  const header = ['date','category','client','bl','status','officer','notes','received','delivered','turnaround','late','logged_at'];
+  const lines = [header.join(',')];
+  rows.forEach(e=>{
+    const line = header.map(k=>{
+      let v = e[k]; if(k==='logged_at') v = e.ts;
+      v = (v===undefined||v===null)?'':String(v);
+      if(v.includes(',')||v.includes('"')) v = '"'+v.replace(/"/g,'""')+'"';
+      return v;
+    });
+    lines.push(line.join(','));
+  });
+  downloadFile('omlin_report_log_'+todayStr()+'.csv', lines.join('\n'), 'text/csv');
+}
+
+/* ============================================================
+   EDIT ENTRY MODAL — edit any previously logged entry
+   ============================================================ */
+let editingEntryId = null;
+let editPendingStatus = null;
+
+function openEditModal(id){
+  const entry = loadEntries().find(e=>e.id===id);
+  if(!entry) return;
+  editingEntryId = id;
+  editPendingStatus = entry.status;
+  const title = document.getElementById('editModalTitle');
+  const body = document.getElementById('editModalBody');
+  const catLabel = (REPORT_TYPES.find(t=>t.value===entry.category)||{}).label || entry.category;
+  title.textContent = 'Edit '+catLabel+' Entry';
+
+  if(entry.category==='MBL'){
+    body.innerHTML = `
+      <div class="field"><label>Client</label><input type="text" id="editClient" value="${escapeHtml(entry.client||'')}"></div>
+      <div class="field"><label>Shipping Line</label><input type="text" id="editLine" value="${escapeHtml(entry.line||'')}"></div>
+      <div class="field"><label>BL Number</label><input type="text" id="editBl" value="${escapeHtml(entry.bl||'')}"></div>
+      <div class="formrow">
+        <div class="field"><label>Received — Date</label><input type="date" id="editReceivedDate" value="${(entry.received||'').slice(0,10)}"></div>
+        <div class="field"><label>Received — Time</label><input type="time" id="editReceivedTime" value="${(entry.received||'').slice(11,16)||'00:00'}"></div>
+      </div>
+      <div class="formrow">
+        <div class="field"><label>Delivered — Date</label><input type="date" id="editDeliveredDate" value="${(entry.delivered||'').slice(0,10)}"></div>
+        <div class="field"><label>Delivered — Time</label><input type="time" id="editDeliveredTime" value="${(entry.delivered||'').slice(11,16)||'00:00'}"></div>
+      </div>
+      <div class="field"><label>Notes</label><textarea id="editNotes">${escapeHtml(entry.notes||'')}</textarea></div>
+    `;
+  } else if(entry.category==='KPA'){
+    body.innerHTML = `
+      <div class="field"><label>Week Of</label><input type="text" value="${entry.date}" disabled></div>
+      <div class="field"><label>Status</label>
+        <div class="toggle" id="editStatusToggle">
+          <button class="sentbtn ${entry.status==='sent'?'on':''}" onclick="setEditStatus('sent')">Sent</button>
+          <button class="notbtn ${entry.status!=='sent'?'on':''}" onclick="setEditStatus('not_sent')">Not sent</button>
+        </div>
+      </div>
+      <div class="field"><label>Notes</label><textarea id="editNotes">${escapeHtml(entry.notes||'')}</textarea></div>
+    `;
+  } else {
+    body.innerHTML = `
+      <div class="field"><label>Date</label><input type="text" value="${entry.date}" disabled></div>
+      <div class="field"><label>Client</label><input type="text" value="${escapeHtml(entry.client||'')}" disabled></div>
+      <div class="field"><label>Status</label>
+        <div class="toggle" id="editStatusToggle">
+          <button class="sentbtn ${entry.status==='sent'?'on':''}" onclick="setEditStatus('sent')">Sent</button>
+          <button class="notbtn ${entry.status==='not_sent'?'on':''}" onclick="setEditStatus('not_sent')">Not sent</button>
+        </div>
+      </div>
+      <div class="field"><label>Notes</label><textarea id="editNotes">${escapeHtml(entry.notes||'')}</textarea></div>
+    `;
+  }
+  document.getElementById('editModalOverlay').classList.add('show');
+}
+function setEditStatus(s){
+  editPendingStatus = s;
+  document.querySelectorAll('#editStatusToggle button').forEach(b=>b.classList.remove('on'));
+  document.querySelector('#editStatusToggle .'+(s==='sent'?'sentbtn':'notbtn')).classList.add('on');
+}
+function closeEditModal(){
+  document.getElementById('editModalOverlay').classList.remove('show');
+  editingEntryId = null;
+  editPendingStatus = null;
+}
+function saveEditModal(){
+  if(!editingEntryId) return;
+  const entry = loadEntries().find(e=>e.id===editingEntryId);
+  if(!entry) return;
+  let changes = {};
+  if(entry.category==='MBL'){
+    const client = document.getElementById('editClient').value.trim();
+    const line = document.getElementById('editLine').value.trim();
+    const bl = document.getElementById('editBl').value.trim();
+    const receivedDate = document.getElementById('editReceivedDate').value;
+    const receivedTime = document.getElementById('editReceivedTime').value || '00:00';
+    const deliveredDate = document.getElementById('editDeliveredDate').value;
+    const deliveredTime = document.getElementById('editDeliveredTime').value || '00:00';
+    const notes = document.getElementById('editNotes').value;
+    if(!client || !bl || !receivedDate || !deliveredDate){ toast('Client, BL number and both dates are required'); return; }
+    const received = receivedDate+'T'+receivedTime;
+    const delivered = deliveredDate+'T'+deliveredTime;
+    const rd = new Date(received), dd = new Date(delivered);
+    if(isNaN(rd)||isNaN(dd)){ toast('Check the received/delivered date and time'); return; }
+    const turnaround = Math.round(((dd-rd)/3600000)*10)/10;
+    changes = {client, line, bl, received, delivered, turnaround, late: turnaround>24, date: deliveredDate, notes};
+  } else if(entry.category==='KPA'){
+    changes = {status: editPendingStatus || entry.status, notes: document.getElementById('editNotes').value};
+  } else {
+    changes = {status: editPendingStatus || entry.status, notes: document.getElementById('editNotes').value};
+  }
+  changes.officer = loadOfficer();
+  changes.ts = new Date().toISOString();
+  updateEntry(editingEntryId, changes);
+  toast('Entry updated');
+  closeEditModal();
+  if(currentPage==='history') renderHistoryRowsOnly();
+  else renderPage(currentPage);
+}
+
+/* ============================================================
+   REFERENCE DATA (read-only, from source workbook)
+   ============================================================ */
+function renderRefKPA(){
+  const html = `
+  <div class="notice">Read-only reference from the source KPI workbook. Compliance = weeks submitted ÷ weeks due, by month.</div>
+  <div class="section-head"><h2>Year Totals</h2></div>
+  <div class="tablewrap panel" style="padding:0; margin-bottom:20px;">
+    <table><thead><tr><th>Year</th><th>Weeks Due</th><th>Weeks Submitted</th><th>Compliance</th></tr></thead>
+    <tbody>${DATA.kpa_yearly.map(r=>`<tr><td>${r.year}</td><td>${r.weeks_due}</td><td>${r.weeks_submitted}</td><td>${pct(r.compliance)}</td></tr>`).join('')}</tbody></table>
+  </div>
+  <div class="section-head"><h2>By Month</h2></div>
+  <div class="tablewrap panel" style="padding:0;">
+    <table><thead><tr><th>Year</th><th>Month</th><th>Weeks Due</th><th>Weeks Submitted</th><th>Compliance</th></tr></thead>
+    <tbody>${DATA.kpa_monthly.map(r=>`<tr><td>${r.year}</td><td>${r.month}</td><td>${r.weeks_due}</td><td>${r.weeks_submitted}</td><td>${pct(r.compliance)}</td></tr>`).join('')}</tbody></table>
+  </div>`;
+  document.getElementById('page-ref-kpa').innerHTML = html;
+}
+function renderRefMBL(){
+  const html = `
+  <div class="notice">Read-only reference from the source KPI workbook. Turnaround = MBL received → guarantee delivered, shown in hours. SLA threshold: 24 hours.</div>
+  <div class="section-head"><h2>All-Time</h2></div>
+  <div class="grid kpi-grid" style="margin-bottom:20px;grid-template-columns:repeat(4,1fr);">
+    <div class="card"><h3>Shipments</h3><div class="big">${DATA.mbl_alltime.shipments}</div></div>
+    <div class="card"><h3>Avg Turnaround</h3><div class="big">${num(DATA.mbl_alltime.avg_turnaround*24,1)}h</div></div>
+    <div class="card"><h3>Late</h3><div class="big">${DATA.mbl_alltime.late}</div></div>
+    <div class="card"><h3>% Late</h3><div class="big">${pct(DATA.mbl_alltime.pct_late)}</div></div>
+  </div>
+  <div class="section-head"><h2>By Month</h2></div>
+  <div class="tablewrap panel" style="padding:0;margin-bottom:20px;">
+    <table><thead><tr><th>Month</th><th>Shipments</th><th>Avg Turnaround</th><th>Late</th><th>% Late</th></tr></thead>
+    <tbody>${DATA.mbl_monthly.map(r=>`<tr><td>${r.month}</td><td>${r.shipments}</td><td>${num(r.avg_turnaround*24,1)}h</td><td>${r.late}</td><td>${pct(r.pct_late)}</td></tr>`).join('')}</tbody></table>
+  </div>
+  <div class="section-head"><h2>By Shipping Line</h2></div>
+  <div class="tablewrap panel" style="padding:0;">
+    <table><thead><tr><th>Line</th><th>Shipments</th><th>Avg Turnaround</th><th>Late</th><th>% Late</th></tr></thead>
+    <tbody>${DATA.mbl_by_line.map(r=>`<tr><td>${escapeHtml(r.line)}</td><td>${r.shipments}</td><td>${num(r.avg_turnaround*24,1)}h</td><td>${r.late}</td><td>${pct(r.pct_late)}</td></tr>`).join('')}</tbody></table>
+  </div>`;
+  document.getElementById('page-ref-mbl').innerHTML = html;
+}
+function refClientTable(list){
+  const sorted = [...list].sort((a,b)=>a.rank-b.rank);
+  return `<div class="tablewrap panel" style="padding:0;">
+    <table><thead><tr><th>Rank</th><th>Client</th><th>Reports Sent</th><th>Client-Days</th><th>Send Rate</th></tr></thead>
+    <tbody>${sorted.map(r=>`<tr><td><span class="rankbadge">#${r.rank}</span></td><td style="white-space:normal;">${escapeHtml(r.client)}</td><td>${r.sent}</td><td>${r.client_days}</td><td>${pct(r.rate)}</td></tr>`).join('')}</tbody></table>
+  </div>`;
+}
+function renderRefFCL(){
+  document.getElementById('page-ref-fcl').innerHTML = `
+  <div class="notice">Read-only reference from the source KPI workbook, 2024–2026.</div>
+  <div class="section-head"><h2>By Month (all clients combined)</h2></div>
+  <div class="tablewrap panel" style="padding:0;margin-bottom:20px;">
+    <table><thead><tr><th>Year</th><th>Month</th><th>Total Sent</th><th>Client-Days</th><th>Avg Send Rate</th></tr></thead>
+    <tbody>${DATA.fcl_monthly.map(r=>`<tr><td>${r.year}</td><td>${r.month}</td><td>${r.total_sent}</td><td>${r.client_days}</td><td>${pct(r.avg_rate)}</td></tr>`).join('')}</tbody></table>
+  </div>
+  <div class="section-head"><h2>By Client (all-time)</h2></div>
+  ${refClientTable(DATA.fcl_clients)}`;
+}
+function renderRefLCL(){
+  document.getElementById('page-ref-lcl').innerHTML = `
+  <div class="notice">Read-only reference from the source KPI workbook, 2024–2026.</div>
+  <div class="section-head"><h2>By Month (all clients combined)</h2></div>
+  <div class="tablewrap panel" style="padding:0;margin-bottom:20px;">
+    <table><thead><tr><th>Year</th><th>Month</th><th>Total Sent</th><th>Client-Days</th><th>Avg Send Rate</th></tr></thead>
+    <tbody>${DATA.lcl_monthly.map(r=>`<tr><td>${r.year}</td><td>${r.month}</td><td>${r.total_sent}</td><td>${r.client_days}</td><td>${pct(r.avg_rate)}</td></tr>`).join('')}</tbody></table>
+  </div>
+  <div class="section-head"><h2>By Client (all-time)</h2></div>
+  ${refClientTable(DATA.lcl_clients)}`;
+}
+function renderRefBB(){
+  document.getElementById('page-ref-bb').innerHTML = `
+  <div class="notice">Read-only reference from the source KPI workbook, 2023–2026.</div>
+  <div class="section-head"><h2>By Month (all clients combined)</h2></div>
+  <div class="tablewrap panel" style="padding:0;margin-bottom:20px;">
+    <table><thead><tr><th>Year</th><th>Month</th><th>Total Sent</th><th>Client-Days</th><th>Avg Send Rate</th></tr></thead>
+    <tbody>${DATA.bb_monthly.map(r=>`<tr><td>${r.year}</td><td>${r.month}</td><td>${r.total_sent}</td><td>${r.client_days}</td><td>${pct(r.avg_rate)}</td></tr>`).join('')}</tbody></table>
+  </div>
+  <div class="section-head"><h2>By Client (all-time)</h2></div>
+  ${refClientTable(DATA.bb_clients)}`;
+}
+
+/* ============================================================
+   DATA / BACKUP
+   ============================================================ */
+function downloadFile(filename, content, mime){
+  const blob = new Blob([content], {type: mime});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; document.body.appendChild(a); a.click();
+  setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(url); }, 200);
+}
+const FIRESTORE_RULES = `rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}`;
+
+function renderData(){
+  const entries = loadEntries();
+  const bytes = new Blob([JSON.stringify(entries)]).size;
+  const cloudNotice = CLOUD_MODE
+    ? `<div class="notice">This device is connected to the shared Firebase database. Every officer who logs in sees the same live log. Sync happens instantly when you're online, automatically catches up every hour otherwise, and — if you go offline mid-shift — <strong>keeps working</strong>: entries you log while offline are saved immediately on this device and sync to everyone else the moment your connection comes back, with no action needed from you.</div>`
+    : `<div class="notice warn">Team sync is <strong>not configured</strong> — this device is only storing entries in its own browser, and login is disabled until Firebase is set up. Follow the steps below (once).</div>`;
+
+  const swNotice = `<div class="notice" style="margin-top:0;">For the app itself to open with <strong>zero internet connection</strong> (not just the data), make sure <code>sw.js</code> is uploaded in the same folder as this HTML file when you deploy. Once you've loaded the app at least once while online, it'll keep opening even with no connection at all.</div>`;
+
+  const html = `
+  ${cloudNotice}
+  ${swNotice}
+
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px;">
+    <div class="card"><h3>Entries Logged</h3><div class="big">${entries.length}</div></div>
+    <div class="card"><h3>Storage Used</h3><div class="big">${(bytes/1024).toFixed(1)} KB</div></div>
+    <div class="card"><h3>Logged In As</h3><div class="big" style="font-size:16px;">${escapeHtml(loadOfficer())||'—'}</div></div>
+    <div class="card"><h3>Sync Status</h3><div class="big" style="font-size:16px;">${!isOnline? 'Offline' : (CLOUD_MODE? (syncStatus==='live'?'Live':syncStatus==='error'?'Error':'Connecting') : 'Local only')}</div></div>
+  </div>
+
+  <div class="panel" style="margin-bottom:16px;">
+    <div class="section-head"><h2>Team Sync &amp; Login ${CLOUD_MODE?'<span class="stamp sent" style="margin-left:8px;">Connected</span>':'<span class="stamp notsent" style="margin-left:8px;">Not connected</span>'}</h2><p>Share one live log across every device, with named logins — free, via Firebase</p></div>
+    ${CLOUD_MODE ? `
+      <p class="hint">Connected. To change projects, edit <code>FIREBASE_CONFIG</code> near the top of the HTML file and redeploy.</p>
+      <button class="btn" onclick="refreshFromCloud(true)">Refresh now</button>
+      <p class="hint" style="margin-top:12px;">${STAFF_ACCESS_CODE==='CHANGE-ME' ? '<strong style="color:var(--red);">Signups are currently disabled</strong> — set <code>STAFF_ACCESS_CODE</code> near the top of the file to a real passphrase and share it only with staff.' : 'New officers need the staff access code to create an account — share it directly with your team, not in this app.'}</p>
+    ` : `
+      <ol class="hint" style="line-height:1.9;padding-left:18px;">
+        <li>Create a free project at <strong>console.firebase.google.com</strong>.</li>
+        <li>Go to <strong>Build → Authentication → Get started</strong>, and enable the <strong>Email/Password</strong> sign-in method.</li>
+        <li>Go to <strong>Build → Firestore Database → Create database</strong> (production mode is fine).</li>
+        <li>In Firestore, open the <strong>Rules</strong> tab, paste the rules below, and click <strong>Publish</strong>.</li>
+        <li>Go to <strong>Project settings</strong> (gear icon) → <strong>General</strong> → <strong>Your apps</strong> → add a <strong>Web app</strong> → copy the config object.</li>
+        <li>In this app's HTML file, find <code>FIREBASE_CONFIG</code> near the top of the script and paste your config in.</li>
+        <li>Right below it, set <code>STAFF_ACCESS_CODE</code> to a passphrase of your choice, and share that passphrase only with your team — this is what stops a random person with the link from signing themselves up.</li>
+        <li>Save, redeploy to Netlify <strong>alongside the <code>sw.js</code> file</strong> (same folder), and reload — officers can now create an account (with the access code) and log in, and everyone shares the same live log, online or off.</li>
+      </ol>
+      <div class="tablewrap panel" style="padding:12px;background:var(--paper);margin-top:8px;">
+        <pre style="white-space:pre-wrap;font-family:var(--mono);font-size:11px;margin:0;color:var(--ink-soft);">${escapeHtml(FIRESTORE_RULES)}</pre>
+      </div>
+      <button class="btn sm" style="margin-top:10px;" onclick="copyRules()">Copy Rules</button>
+      <p class="hint" style="margin-top:8px;">These rules require anyone reading or writing data to be logged in, but don't restrict what a logged-in officer can see or change. That matches this app's shared-team design — everyone with an account has full access. The staff access code above is what actually keeps signups to your team; the rules alone don't do that.</p>
+    `}
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="section-head"><h2>Export backup</h2><p>Download all logged entries as a JSON file</p></div>
+      <button class="btn primary" onclick="exportJson()">Download JSON backup</button>
+      <p class="hint" style="margin-top:10px;">Also available: <a class="linklike" onclick="goTo('history')">export as CSV</a> from the History page.</p>
+    </div>
+    <div class="panel">
+      <div class="section-head"><h2>Import backup</h2><p>Restore or merge entries from a JSON file</p></div>
+      <input type="file" id="importFile" accept="application/json" style="margin-bottom:10px;">
+      <div style="display:flex;gap:10px;">
+        <button class="btn" onclick="importJson('merge')">Merge into current log</button>
+        <button class="btn" onclick="importJson('replace')">Replace current log</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:16px;border-color:var(--red);">
+    <div class="section-head"><h2 style="color:var(--red);">Clear all data</h2><p>Permanently deletes every entry${CLOUD_MODE? ' — for everyone, everywhere':' on this device'}</p></div>
+    <button class="btn danger" onclick="clearAll()">Clear all logged data</button>
+  </div>
+  `;
+  document.getElementById('page-data').innerHTML = html;
+}
+function copyRules(){
+  navigator.clipboard.writeText(FIRESTORE_RULES).then(()=>toast('Rules copied')).catch(()=>toast('Could not copy — select and copy manually'));
+}
+function exportJson(){
+  const payload = {exported_at: new Date().toISOString(), officer: loadOfficer(), entries: loadEntries()};
+  downloadFile('omlin_kpi_backup_'+todayStr()+'.json', JSON.stringify(payload, null, 2), 'application/json');
+  toast('Backup downloaded');
+}
+function importJson(mode){
+  const file = document.getElementById('importFile').files[0];
+  if(!file){ toast('Choose a JSON file first'); return; }
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{
+      const payload = JSON.parse(reader.result);
+      const incoming = Array.isArray(payload) ? payload : (payload.entries||[]);
+      if(mode==='replace'){
+        replaceAllEntries(incoming, true);
+      } else {
+        const current = loadEntries();
+        const byId = {}; current.forEach(e=>byId[e.id]=e);
+        incoming.forEach(e=>{ byId[e.id||uid()] = e; });
+        replaceAllEntries(Object.values(byId), false);
+      }
+      applyMasterReconciliation(payload);
+      toast('Import complete');
+      renderData();
+    }catch(err){ toast('Could not read that file'); }
+  };
+  reader.readAsText(file);
+}
+function applyMasterReconciliation(payload){
+  if(payload.master_add){
+    Object.keys(payload.master_add).forEach(cat=>{
+      if(!MASTER[cat]) return;
+      (payload.master_add[cat]||[]).forEach(name=>{
+        const exists = MASTER[cat].some(item=>item.name.toLowerCase()===String(name).toLowerCase());
+        if(!exists){
+          const item = {id:uid(), name:String(name)};
+          MASTER[cat].push(item);
+          if(CLOUD_MODE) cloudUpsertMaster(cat, item);
+        }
+      });
+    });
+  }
+  if(payload.master_remove){
+    Object.keys(payload.master_remove).forEach(cat=>{
+      if(!MASTER[cat]) return;
+      const removeNames = new Set((payload.master_remove[cat]||[]).map(n=>String(n).toLowerCase()));
+      const toRemove = MASTER[cat].filter(item=>removeNames.has(item.name.toLowerCase()));
+      MASTER[cat] = MASTER[cat].filter(item=>!removeNames.has(item.name.toLowerCase()));
+      toRemove.forEach(item=>{ if(CLOUD_MODE) cloudDeleteMaster(item.id); });
+    });
+  }
+  if(payload.master_add || payload.master_remove) saveLocalMaster();
+}
+function clearAll(){
+  const warnWho = CLOUD_MODE ? 'for every officer, on every device' : 'on this device';
+  if(!confirm(`This deletes every logged entry ${warnWho}. This cannot be undone. Continue?`)) return;
+  if(!confirm('Are you absolutely sure? Consider exporting a backup first.')) return;
+  ENTRIES = [];
+  saveLocalEntries(ENTRIES);
+  if(CLOUD_MODE) cloudClearAll().then(()=>updateSyncBadge());
+  toast('All logged data cleared');
+  renderData();
+}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+const RENDERERS = {
+  'dashboard': renderDashboard,
+  'reporting': renderReportPage,
+  'log-kpa': renderLogKPA,
+  'log-mbl': renderLogMBL,
+  'log-fcl': renderLogFCL,
+  'log-lcl': renderLogLCL,
+  'log-bb': renderLogBB,
+  'history': renderHistory,
+  'master-fcl': renderMasterFCL,
+  'master-lcl': renderMasterLCL,
+  'master-bb': renderMasterBB,
+  'master-mblc': renderMasterMBLC,
+  'master-mbll': renderMasterMBLL,
+  'ref-kpa': renderRefKPA,
+  'ref-mbl': renderRefMBL,
+  'ref-fcl': renderRefFCL,
+  'ref-lcl': renderRefLCL,
+  'ref-bb': renderRefBB,
+  'data': renderData,
+};
+
+/* ============================================================
+   AUTH — Name + Password login screen gating the whole app
+   ============================================================ */
+let signupMode = false;
+
+function nameToEmail(name){
+  const slug = String(name).trim().toLowerCase().replace(/[^a-z0-9]+/g,'.').replace(/^\.+|\.+$/g,'');
+  return (slug || 'user') + '@omlin-app.local';
+}
+function friendlyAuthError(e){
+  const code = (e && e.code) || '';
+  if(code.includes('user-not-found')) return 'No account with that name yet. Try "Create an account" below.';
+  if(code.includes('wrong-password')) return 'Incorrect password.';
+  if(code.includes('email-already-in-use')) return 'That name is already registered. Try logging in instead.';
+  if(code.includes('weak-password')) return 'Password must be at least 6 characters.';
+  if(code.includes('invalid-email')) return "That name contains characters that aren't supported — try letters, numbers and spaces.";
+  if(code.includes('too-many-requests')) return 'Too many attempts. Please wait a moment and try again.';
+  if(code.includes('network-request-failed')) return 'Network error — check your connection and try again.';
+  return 'Something went wrong: ' + (e && e.message ? e.message : code);
+}
+function showLoginError(msg){
+  const el = document.getElementById('loginError');
+  if(!el) return;
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+function toggleSignupMode(){
+  signupMode = !signupMode;
+  document.getElementById('authSubmitBtn').textContent = signupMode ? 'Create Account' : 'Log In';
+  document.getElementById('authToggleLink').textContent = signupMode ? 'Already have an account? Log in' : 'New officer? Create an account';
+  document.getElementById('loginHeading').textContent = signupMode ? 'Create your account' : 'Welcome back';
+  document.getElementById('accessCodeField').style.display = signupMode ? 'block' : 'none';
+  document.getElementById('loginError').style.display = 'none';
+}
+function submitAuthForm(){
+  const name = document.getElementById('loginName').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  document.getElementById('loginError').style.display = 'none';
+  if(!name || !password){ showLoginError('Enter your name and password.'); return; }
+  if(!FIREBASE_READY){ showLoginError("Firebase isn't configured yet. Ask an administrator to add FIREBASE_CONFIG near the top of this file."); return; }
+  const email = nameToEmail(name);
+  const btn = document.getElementById('authSubmitBtn');
+  btn.disabled = true;
+  const done = ()=>{ btn.disabled = false; };
+  if(signupMode){
+    const code = document.getElementById('loginAccessCode').value.trim();
+    if(!STAFF_ACCESS_CODE || STAFF_ACCESS_CODE === 'CHANGE-ME'){
+      showLoginError("Signups are disabled until an administrator sets STAFF_ACCESS_CODE near the top of this file.");
+      done(); return;
+    }
+    if(code !== STAFF_ACCESS_CODE){ showLoginError('Incorrect staff access code.'); done(); return; }
+    if(password.length < 6){ showLoginError('Password must be at least 6 characters.'); done(); return; }
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(cred=> cred.user.updateProfile({displayName:name}))
+      .then(()=>{
+        // updateProfile mutates the current user object but doesn't re-fire
+        // onAuthStateChanged, so refresh anything already rendered from it.
+        const el = document.getElementById('whoamiName');
+        if(el) el.textContent = loadOfficer();
+      })
+      .then(done)
+      .catch(e=>{ showLoginError(friendlyAuthError(e)); done(); });
+  } else {
+    auth.signInWithEmailAndPassword(email, password)
+      .then(done)
+      .catch(e=>{ showLoginError(friendlyAuthError(e)); done(); });
+  }
+}
+function doLogout(){
+  if(auth) auth.signOut();
+}
+function showLoginScreen(){
+  const login = document.getElementById('loginScreen');
+  const shell = document.getElementById('shell');
+  if(login) login.style.display = 'flex';
+  if(shell) shell.style.display = 'none';
+  if(!FIREBASE_READY){
+    document.getElementById('loginName').disabled = true;
+    document.getElementById('loginPassword').disabled = true;
+    document.getElementById('authSubmitBtn').disabled = true;
+    showLoginError("Firebase isn't configured yet. Ask an administrator to add FIREBASE_CONFIG near the top of this file before anyone can log in.");
+  }
+}
+async function onLoginSuccess(){
+  const login = document.getElementById('loginScreen');
+  const shell = document.getElementById('shell');
+  if(login) login.style.display = 'none';
+  if(shell) shell.style.display = 'flex';
+  document.getElementById('whoamiName').textContent = loadOfficer();
+
+  ENTRIES = loadLocalEntries();
+  const localM = loadLocalMaster();
+  MASTER = localM || seedMasterFromWorkbook();
+  if(!localM) saveLocalMaster();
+  buildNav();
+  scaffoldPages();
+  goTo('dashboard');
+  updateSyncBadge();
+
+  if(CLOUD_MODE){
+    await refreshFromCloud(false);
+    await syncMasterFromCloud();
+    if(!pollStarted){
+      pollStarted = true;
+      setInterval(()=>{ refreshFromCloud(false); syncMasterFromCloud(); }, 3600000);
+      window.addEventListener('focus', ()=>{ refreshFromCloud(false); syncMasterFromCloud(); });
+    }
+  }
+}
+
+function init(){
+  document.getElementById('todaypill').textContent = fmtDateLong(todayStr());
+  initFirebase();
+  initInstallPrompt();
+  registerServiceWorker();
+}
+function registerServiceWorker(){
+  if('serviceWorker' in navigator){
+    // sw.js must be uploaded alongside this HTML file, in the same folder,
+    // so its default scope covers the page. If it's missing, the app still
+    // works normally online — it just won't be able to load itself with zero
+    // connectivity from a cold start (offline *data* entry still works fine
+    // once the page is open, via Firestore's own offline persistence).
+    navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('Service worker registration failed (offline app-shell caching disabled):', e));
+  }
+}
+
+/* ============================================================
+   PWA INSTALL PROMPT — branded banner for "add to home screen"
+   ============================================================ */
+const LS_INSTALL_DISMISSED = 'omlin_install_dismissed_v1';
+let deferredInstallPrompt = null;
+
+function isStandaloneDisplay(){
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+function isIOSDevice(){
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+function initInstallPrompt(){
+  if(isStandaloneDisplay()) return; // already installed / running standalone
+  if(localStorage.getItem(LS_INSTALL_DISMISSED)==='1') return;
+
+  window.addEventListener('beforeinstallprompt', (e)=>{
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    showInstallBanner(false);
+  });
+  window.addEventListener('appinstalled', ()=>{
+    hideInstallBanner();
+    deferredInstallPrompt = null;
+  });
+
+  if(isIOSDevice()){
+    // Safari on iOS has no beforeinstallprompt — show manual instructions instead.
+    setTimeout(()=>showInstallBanner(true), 1200);
+  }
+}
+function showInstallBanner(isIOS){
+  const banner = document.getElementById('installBanner');
+  if(!banner) return;
+  document.getElementById('installTitle').textContent = isIOS ? 'Add to Home Screen' : 'Install this app';
+  document.getElementById('installSubtitle').textContent = isIOS
+    ? 'Tap the Share icon, then "Add to Home Screen", for quick full-screen access.'
+    : 'Add it to your device for quick, full-screen access — no browser bar, opens like an app.';
+  document.getElementById('installActionBtn').style.display = isIOS ? 'none' : 'inline-block';
+  banner.classList.add('show');
+}
+function hideInstallBanner(){
+  const banner = document.getElementById('installBanner');
+  if(banner) banner.classList.remove('show');
+}
+function handleInstallClick(){
+  if(!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.finally(()=>{
+    deferredInstallPrompt = null;
+    hideInstallBanner();
+  });
+}
+function dismissInstallBanner(){
+  hideInstallBanner();
+  localStorage.setItem(LS_INSTALL_DISMISSED, '1');
+}
+
+init();
+
+</script>
+</body>
+</html>
