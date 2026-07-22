@@ -202,6 +202,15 @@ input:disabled{opacity:.6;cursor:not-allowed;background:var(--line-soft);}
 .field textarea{resize:vertical;min-height:56px;}
 .formrow{display:flex;gap:12px;flex-wrap:wrap;}
 .formrow .field{flex:1;min-width:160px;}
+.pw-wrap{position:relative;}
+.pw-wrap input{padding-right:42px;}
+.pw-toggle{
+  position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  background:transparent;border:none;cursor:pointer;padding:6px 8px;
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.02em;
+  color:var(--ink-soft);border-radius:6px;
+}
+.pw-toggle:hover{color:var(--ink);background:var(--line-soft);}
 .subtabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
 .subtabs button{
   font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:8px 14px;
@@ -323,11 +332,17 @@ a.linklike{color:var(--steel);text-decoration:none;font-weight:700;cursor:pointe
     </div>
     <div class="field">
       <label>Password</label>
-      <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
+      <div class="pw-wrap">
+        <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
+        <button type="button" class="pw-toggle" id="loginPasswordToggle" onclick="togglePasswordField('loginPassword','loginPasswordToggle')">Show</button>
+      </div>
     </div>
     <div class="field" id="accessCodeField" style="display:none;">
       <label>Staff Access Code</label>
-      <input id="loginAccessCode" type="password" placeholder="Given to you by your admin" autocomplete="off">
+      <div class="pw-wrap">
+        <input id="loginAccessCode" type="password" placeholder="Given to you by your admin" autocomplete="off">
+        <button type="button" class="pw-toggle" id="loginAccessCodeToggle" onclick="togglePasswordField('loginAccessCode','loginAccessCodeToggle')">Show</button>
+      </div>
     </div>
     <div id="loginError" class="login-error"></div>
     <button class="btn primary" id="authSubmitBtn" style="width:100%;margin-top:8px;" onclick="submitAuthForm()">Log In</button>
@@ -531,7 +546,7 @@ function initFirebase(){
 }
 function toDbRow(e){
   return { id:e.id, category:e.category, date:e.date, client:e.client||null, status:e.status||null,
-    officer:e.officer||null, notes:e.notes||null, line:e.line||null, received:e.received||null,
+    officer:e.officer||null, notes:e.notes||null, line:e.line||null, bl:e.bl||null, received:e.received||null,
     delivered:e.delivered||null, turnaround:(e.turnaround===undefined?null:e.turnaround),
     late: !!e.late, ts: e.ts || new Date().toISOString() };
 }
@@ -2596,6 +2611,15 @@ const RENDERERS = {
   'ref-bb': renderRefBB,
   'data': renderData,
 };
+
+function togglePasswordField(inputId, btnId){
+  const input = document.getElementById(inputId);
+  const btn = document.getElementById(btnId);
+  if(!input || !btn) return;
+  const show = input.type === 'password';
+  input.type = show ? 'text' : 'password';
+  btn.textContent = show ? 'Hide' : 'Show';
+}
 
 /* ============================================================
    AUTH — Name + Password login screen gating the whole app
